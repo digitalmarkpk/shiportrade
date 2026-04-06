@@ -54,7 +54,11 @@ export const metadata: Metadata = {
     images: ["/Logo.png"],
   },
 };
-
+// === Google Verification Code Yahan Add Karein ===
+  verification: {
+    google: "google-site-verification=Uqxi_FsvFbJANEEp_eYxOyKIguZVuoyUcXFJ-voxYfs",
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
