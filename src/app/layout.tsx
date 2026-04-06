@@ -53,10 +53,10 @@ export const metadata: Metadata = {
     description: "Global Supply Chain Intelligence Hub",
     images: ["/Logo.png"],
   },
-};
-// === Google Verification Code Yahan Add Karein ===
+
+  // === Google Verification (Added Here) ===
   verification: {
-    google: "google-site-verification=Uqxi_FsvFbJANEEp_eYxOyKIguZVuoyUcXFJ-voxYfs",
+    google: "Uqxi_FsvFbJANEEp_eYxOyKIguZVuoyUcXFJ-voxYfs",
   },
 };
 export default function RootLayout({
