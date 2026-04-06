@@ -73,7 +73,7 @@ const defaultLineItem = (): LineItem => ({
 
 const units = ["PCS", "SET", "KG", "MT", "LBS", "M", "FT", "M2", "M3", "CTN", "ROL", "BOX"];
 
-export function ProformaInvoiceGenerator() {
+export default function ProFormaInvoiceGenerator() {
   const [proformaData, setProformaData] = useState<ProformaData>({
     proformaNumber: `PI-${new Date().getFullYear()}-${String(Math.floor(Math.random() * 10000)).padStart(4, '0')}`,
     proformaDate: new Date().toISOString().split('T')[0],
