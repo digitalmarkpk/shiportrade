@@ -54,11 +54,12 @@ export const metadata: Metadata = {
     images: ["/Logo.png"],
   },
 
-  // === Google Verification (Added Here) ===
+  // Google Verification Code
   verification: {
     google: "Uqxi_FsvFbJANEEp_eYxOyKIguZVuoyUcXFJ-voxYfs",
   },
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -67,8 +68,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* === Google Verification Code Start === */}
-        {/* === Google Verification Code End === */}
         <OrganizationSchema />
         <WebSiteSchema />
       </head>
