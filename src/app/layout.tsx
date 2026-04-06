@@ -23,20 +23,35 @@ export const metadata: Metadata = {
   description: "The ultimate platform for global logistics, trade finance, and supply chain management. 82+ calculators, 72+ document generators, and comprehensive trade intelligence.",
   keywords: ["logistics", "freight", "supply chain", "trade finance", "CBM calculator", "HS code", "landed cost", "shipping documents", "Incoterms"],
   authors: [{ name: "Shiportrade Team" }],
+  
+  // Browser Tab (Favicon) ke liye
   icons: {
-    icon: "/logo.svg",
+    icon: "/Logo.svg",
   },
+
+  // Google Search & Facebook Share ke liye
   openGraph: {
     title: "Shiportrade.com - Global Supply Chain Intelligence Hub",
     description: "The ultimate platform for global logistics, trade finance, and supply chain management.",
     url: "https://shiportrade.com",
     siteName: "Shiportrade",
     type: "website",
+    images: [
+      {
+        url: "/Logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Shiportrade Logo",
+      },
+    ],
   },
+
+  // Twitter Share ke liye
   twitter: {
     card: "summary_large_image",
     title: "Shiportrade.com",
     description: "Global Supply Chain Intelligence Hub",
+    images: ["/Logo.png"],
   },
 };
 
