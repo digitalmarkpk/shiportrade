@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ProformaInvoiceGenerator from "@/components/documents/ProFormaInvoiceGenerator";
+import ProformaInvoiceGenerator from "@/components/documents/ProformaInvoiceGenerator";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Info, CheckCircle2, Clock } from "lucide-react";
