@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { FileText, Calculator, Clock, FileCheck } from 'lucide-react';
-import ProFormaInvoiceGenerator from '@/components/documents/ProFormaInvoiceGenerator';
+import ProFormaInvoiceGenerator from '@/components/documents/ProformaInvoiceGenerator';
 import DocumentLayout, { DocumentData } from '@/components/documents/DocumentLayout';
 
 export const metadata: Metadata = {
