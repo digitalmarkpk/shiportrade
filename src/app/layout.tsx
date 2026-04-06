@@ -67,6 +67,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* === Google Verification Code Start === */}
+        <meta name="google-site-verification" content="Uqxi_FsvFbJANEEp_eYxOyKIguZVuoyUcXFJ-voxYfs" />
+        {/* === Google Verification Code End === */}
         <OrganizationSchema />
         <WebSiteSchema />
       </head>
