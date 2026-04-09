@@ -24,12 +24,10 @@ export const metadata: Metadata = {
   keywords: ["logistics", "freight", "supply chain", "trade finance", "CBM calculator", "HS code", "landed cost", "shipping documents", "Incoterms"],
   authors: [{ name: "Shiportrade Team" }],
   
-  // Browser Tab (Favicon) ke liye
   icons: {
     icon: "/Logo.svg",
   },
 
-  // Google Search & Facebook Share ke liye
   openGraph: {
     title: "Shiportrade.com - Global Supply Chain Intelligence Hub",
     description: "The ultimate platform for global logistics, trade finance, and supply chain management.",
@@ -46,7 +44,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Twitter Share ke liye
   twitter: {
     card: "summary_large_image",
     title: "Shiportrade.com",
@@ -54,7 +51,6 @@ export const metadata: Metadata = {
     images: ["/Logo.png"],
   },
 
-  // Google Verification Code
   verification: {
     google: "Uqxi_FsvFbJANEEp_eYxOyKIguZVuoyUcXFJ-voxYfs",
   },
@@ -76,6 +72,23 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
+          
+          {/* === CANYON SHIPPING AD START === */}
+          <div className="w-full flex justify-center bg-slate-100 dark:bg-slate-900 py-2 border-b">
+            <a 
+              href="https://www.canyonshippingpak.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <img 
+                src="/canyon-banner.png" 
+                alt="Canyon Shipping Services" 
+                className="h-auto max-w-full rounded-sm shadow-sm"
+              />
+            </a>
+          </div>
+          {/* === CANYON SHIPPING AD END === */}
+
           <main className="flex-1">
             {children}
           </main>
