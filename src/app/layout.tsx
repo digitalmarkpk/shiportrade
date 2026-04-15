@@ -7,6 +7,9 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
+// Imports Added
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,6 +73,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
+        {/* Suspense Wrapping Added - Ye Error Fix kar dega */}
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
+        
         <Providers>
           <Header />
           
