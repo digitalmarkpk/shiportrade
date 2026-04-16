@@ -8,7 +8,8 @@ import { Footer } from "@/components/layout/Footer";
 import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
 // Imports Added
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import Script from "next/script"; // <--- 1. Script import kiya
+// Removed old import: import { GoogleAnalytics } ...
 import { Suspense } from "react";
 
 const geistSans = Geist({
@@ -69,14 +70,27 @@ export default function RootLayout({
       <head>
         <OrganizationSchema />
         <WebSiteSchema />
+        
+        {/* --- 2. Google Tag (Manual Code) Start --- */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-H2P9E4PDWM"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H2P9E4PDWM');
+          `}
+        </Script>
+        {/* --- Google Tag End --- */}
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
       >
-        {/* Suspense Wrapping Added - Ye Error Fix kar dega */}
-        <Suspense fallback={null}>
-          <GoogleAnalytics />
-        </Suspense>
+        {/* 3. Purana GoogleAnalytics component remove kar diya */}
         
         <Providers>
           <Header />
