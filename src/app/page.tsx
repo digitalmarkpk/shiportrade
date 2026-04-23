@@ -32,13 +32,21 @@ import {
   Leaf,
   Briefcase,
   Landmark,
+  Sparkles,
   ChevronRight,
+  Bell,
   Flame,
   CheckCircle,
+  Users,
   Building,
+  Star,
+  Play,
+  Pause,
+  Search,
   Moon,
   Sun,
   X,
+  MessageCircle,
   Keyboard,
   Lightbulb,
   Cloud,
@@ -46,14 +54,16 @@ import {
   CloudRain,
   ArrowUp,
   Target,
+  Sunrise,
+  Sunset,
   Compass,
   Layers,
   Radar,
   ExternalLink,
-  Sun as Sunrise,
-  Sunset,
-  Search,
-  Sparkles,
+  Ruler,
+  Route,
+  FileCheck,
+  Timer,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -123,12 +133,134 @@ const KEYBOARD_SHORTCUTS = [
   { key: "Esc", action: "Close Modal", icon: X },
 ];
 
-// Did You Know Facts
-const tradeFacts = [
-  "Around 90% of world trade is carried by the international shipping industry.",
-  "The largest container ships can carry over 24,000 containers at once.",
-  "The Suez Canal shortcut saves about 7,000 km on a journey from London to Mumbai.",
-  "Singapore is the world's busiest transshipment hub, handling over 37 million TEUs annually.",
+// Quick Access Pills for Hero
+const quickPills = [
+  { name: "CBM Calculator", icon: Container, href: "/tools/ocean-freight/cbm-calculator" },
+  { name: "Container Planner", icon: Boxes, href: "/tools/ocean-freight/container-loading-calculator" },
+  { name: "HS Code", icon: Layers, href: "/tools/customs-compliance/hs-code-search" },
+  { name: "Port Finder", icon: Anchor, href: "/tools/ocean-freight/port-code-finder" },
+  { name: "Landed Cost", icon: DollarSign, href: "/tools/international-trade/landed-cost-calculator" },
+];
+
+// Trade Tools Grid (8 Tools)
+const tradeTools = [
+  { name: "Distance & Time", description: "Calculate transit times between ports", icon: Route, href: "/tools/ocean-freight/transit-time", color: OCEAN_BLUE },
+  { name: "Volumetric Weight", description: "Air freight chargeable weight", icon: Package, href: "/tools/air-freight/volumetric-weight", color: "#8B5CF6" },
+  { name: "Freight Rates", description: "Compare shipping rates", icon: TrendingUp, href: "/tools/ocean-freight/freight-rate-calculator", color: LOGISTICS_GREEN },
+  { name: "Currency", description: "Live exchange rates", icon: DollarSign, href: "/tools/international-trade/currency-converter", color: "#F59E0B" },
+  { name: "Incoterms", description: "Trade terms guide", icon: Globe, href: "/tools/international-trade/incoterms-guide", color: "#EC4899" },
+  { name: "Demurrage", description: "Port storage fees", icon: Timer, href: "/tools/ocean-freight/demurrage-calculator", color: "#EF4444" },
+  { name: "Tracking", description: "Container tracking", icon: Radar, href: "/tools/ocean-freight/container-tracking", color: "#06B6D4" },
+  { name: "Documents", description: "Generate trade docs", icon: FileCheck, href: "/documents", color: "#10B981" },
+];
+
+// Featured Calculators (3 Cards)
+const featuredCalculators = [
+  { 
+    name: "CBM Calculator", 
+    description: "Calculate cubic meters and container fit", 
+    icon: Container, 
+    href: "/tools/ocean-freight/cbm-calculator", 
+    color: OCEAN_BLUE,
+    features: ["Volume calculation", "Container fit", "Multi-package support"]
+  },
+  { 
+    name: "Container Load Planner", 
+    description: "Optimize pallet placement in containers", 
+    icon: Boxes, 
+    href: "/tools/ocean-freight/container-loading-calculator", 
+    color: LOGISTICS_GREEN,
+    features: ["Pallet optimization", "Maximize space", "Load visualization"]
+  },
+  { 
+    name: "HS Code Finder", 
+    description: "Find customs codes for products", 
+    icon: Layers, 
+    href: "/tools/customs-compliance/hs-code-search", 
+    color: "#8B5CF6",
+    features: ["Product search", "Duty rates", "Trade agreements"]
+  },
+];
+
+// Quick Actions - For Modal
+const quickActions = [
+  { name: "CBM Calculator", icon: Container, href: "/tools/ocean-freight/cbm-calculator", color: OCEAN_BLUE, shortcut: "Alt+1", modal: "cbm" },
+  { name: "Container Tracking", icon: MapPin, href: "/tools/ocean-freight/container-tracking", color: LOGISTICS_GREEN, shortcut: "Alt+2", modal: "tracking" },
+  { name: "HS Code Search", icon: Search, href: "/tools/customs-compliance/hs-code-search", color: "#8B5CF6", shortcut: "Alt+3", modal: "hscode" },
+  { name: "Currency Converter", icon: DollarSign, href: "/tools/international-trade/currency-converter", color: "#F59E0B", shortcut: "Alt+4", modal: null },
+];
+
+// Statistics data
+const stats = [
+  { value: 82, label: "Logistics Calculators", icon: Calculator, suffix: "+" },
+  { value: 72, label: "Document Generators", icon: FileText, suffix: "+" },
+  { value: 40, label: "News Sources", icon: Newspaper, suffix: "+" },
+  { value: 50, label: "Currencies Supported", icon: DollarSign, suffix: "+" },
+];
+
+// Trust badges
+const trustBadges = [
+  { icon: Shield, text: "ISO 27001 Certified" },
+  { icon: CheckCircle, text: "SOC 2 Compliant" },
+  { icon: Globe, text: "GDPR Ready" },
+  { icon: Zap, text: "99.9% Uptime" },
+];
+
+// Freight rate data for chart
+const freightRateData = [
+  { month: "Jan", rate: 2450, index: 102 },
+  { month: "Feb", rate: 2380, index: 99 },
+  { month: "Mar", rate: 2520, index: 105 },
+  { month: "Apr", rate: 2680, index: 111 },
+  { month: "May", rate: 2850, index: 118 },
+  { month: "Jun", rate: 3120, index: 129 },
+  { month: "Jul", rate: 3450, index: 143 },
+  { month: "Aug", rate: 3280, index: 136 },
+  { month: "Sep", rate: 3520, index: 146 },
+  { month: "Oct", rate: 3680, index: 153 },
+  { month: "Nov", rate: 3850, index: 160 },
+  { month: "Dec", rate: 3920, index: 163 },
+];
+
+// Market indices - Compact for strip
+const marketIndicesStrip = [
+  { name: "FBX", value: "3,920", change: "+2.4%", up: true },
+  { name: "BDI", value: "1,847", change: "-1.2%", up: false },
+  { name: "EUR/USD", value: "1.0842", change: "+0.12%", up: true },
+  { name: "WTI", value: "$79.20", change: "+0.8%", up: true },
+];
+
+// Educational content
+const educationalContent = [
+  {
+    title: "Incoterms 2020",
+    description: "Understand the 11 international trade terms that define responsibilities between buyers and sellers.",
+    icon: Globe,
+    href: "/tools/international-trade/incoterms-guide",
+    color: OCEAN_BLUE,
+  },
+  {
+    title: "HS Codes Guide",
+    description: "Learn how to classify products for customs declarations and duty calculations.",
+    icon: BarChart3,
+    href: "/tools/customs-compliance/hs-code-search",
+    color: LOGISTICS_GREEN,
+  },
+  {
+    title: "Container Types",
+    description: "Complete guide to ISO container specifications, dimensions, and applications.",
+    icon: Container,
+    href: "/tools/ocean-freight/container-guide",
+    color: "#8B5CF6",
+  },
+];
+
+// Directories preview
+const directoriesPreview = [
+  { name: "Global Ports", count: "500+", icon: Anchor, href: "/tools/ocean-freight/port-code-finder" },
+  { name: "Shipping Lines", count: "150+", icon: Ship, href: "/directories/shipping-lines" },
+  { name: "Freight Forwarders", count: "200+", icon: Truck, href: "/directories/freight-forwarders" },
+  { name: "Customs Brokers", count: "100+", icon: Shield, href: "/directories/customs-brokers" },
 ];
 
 // Shipping Hub Timezones
@@ -149,183 +281,9 @@ const categoryConfig: Record<string, { bg: string; text: string; gradient: strin
   "Technology": { bg: "bg-indigo-500", text: "text-indigo-600", gradient: "from-indigo-500 to-blue-500", icon: Zap, image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop", imageCredit: "Photo by Louis Reed" },
   "Sustainability": { bg: "bg-green-500", text: "text-green-600", gradient: "from-green-500 to-emerald-500", icon: Leaf, image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=300&fit=crop", imageCredit: "Photo by Matt Howard" },
   "Logistics": { bg: "bg-orange-500", text: "text-orange-600", gradient: "from-orange-500 to-amber-500", icon: Truck, image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=300&fit=crop", imageCredit: "Photo by Kyle Deang" },
+  "E-Commerce": { bg: "bg-pink-500", text: "text-pink-600", gradient: "from-pink-500 to-rose-500", icon: Briefcase, image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop", imageCredit: "Photo by CardMapr" },
   "Geopolitical": { bg: "bg-red-600", text: "text-red-700", gradient: "from-red-600 to-rose-600", icon: Landmark, image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=400&h=300&fit=crop", imageCredit: "Photo by Colin Watts" },
 };
-
-// News categories - MATCH API CATEGORIES
-const newsCategories = [
-  { name: "All", filter: "all", icon: Flame },
-  { name: "Shipping", filter: "Ocean Freight", icon: Ship },
-  { name: "Trade Finance", filter: "Trade Finance", icon: DollarSign },
-  { name: "Geopolitical", filter: "Geopolitical", icon: Landmark },
-  { name: "Technology", filter: "Technology", icon: TrendingUp },
-  { name: "Customs", filter: "Customs", icon: Shield },
-  { name: "Sustainability", filter: "Sustainability", icon: Leaf },
-];
-
-// Quick Actions
-const quickActions = [
-  { name: "CBM Calculator", icon: Container, href: "/tools/ocean-freight/cbm-calculator", color: OCEAN_BLUE, shortcut: "Alt+1", modal: "cbm" },
-  { name: "Container Tracking", icon: MapPin, href: "/tools/ocean-freight/container-tracking", color: LOGISTICS_GREEN, shortcut: "Alt+2", modal: "tracking" },
-  { name: "HS Code Search", icon: Search, href: "/tools/customs-compliance/hs-code-search", color: "#8B5CF6", shortcut: "Alt+3", modal: "hscode" },
-  { name: "Currency Converter", icon: DollarSign, href: "/tools/international-trade/currency-converter", color: "#F59E0B", shortcut: "Alt+4", modal: null },
-];
-
-// Popular tools - 10 tools for 5-column grid
-const popularTools = [
-  { name: "CBM Calculator", category: "Ocean Freight", icon: Container, href: "/tools/ocean-freight/cbm-calculator", color: OCEAN_BLUE },
-  { name: "Landed Cost", category: "Trade", icon: DollarSign, href: "/tools/international-trade/landed-cost-calculator", color: LOGISTICS_GREEN },
-  { name: "HS Code Search", category: "Compliance", icon: Globe, href: "/tools/customs-compliance/hs-code-search", color: "#8B5CF6" },
-  { name: "Volumetric Weight", category: "Air Freight", icon: Package, href: "/tools/air-freight/volumetric-weight", color: "#F59E0B" },
-  { name: "Incoterms Guide", category: "Trade Terms", icon: MapPin, href: "/tools/international-trade/incoterms-guide", color: "#EC4899" },
-  { name: "Container Tracking", category: "Visibility", icon: Radar, href: "/tools/ocean-freight/container-tracking", color: "#06B6D4" },
-  { name: "Port Code Finder", category: "Reference", icon: Anchor, href: "/tools/ocean-freight/port-code-finder", color: "#0F4C81" },
-  { name: "Currency Converter", category: "Finance", icon: DollarSign, href: "/tools/international-trade/currency-converter", color: "#10B981" },
-  { name: "Freight Index", category: "Market Data", icon: BarChart3, href: "/tools/ocean-freight/freight-index", color: "#F97316" },
-  { name: "Duty Calculator", category: "Customs", icon: Calculator, href: "/tools/customs-compliance/duty-calculator", color: "#EF4444" },
-];
-
-// Freight rate data for FBX chart
-const freightRateData = [
-  { month: "Jan", rate: 2450, index: 102 },
-  { month: "Feb", rate: 2380, index: 99 },
-  { month: "Mar", rate: 2520, index: 105 },
-  { month: "Apr", rate: 2680, index: 111 },
-  { month: "May", rate: 2850, index: 118 },
-  { month: "Jun", rate: 3120, index: 129 },
-  { month: "Jul", rate: 3450, index: 143 },
-  { month: "Aug", rate: 3280, index: 136 },
-  { month: "Sep", rate: 3520, index: 146 },
-  { month: "Oct", rate: 3680, index: 153 },
-  { month: "Nov", rate: 3850, index: 160 },
-  { month: "Dec", rate: 3920, index: 163 },
-];
-
-// BDI Baltic Dry Index data
-const bdiData = [
-  { month: "Jan", rate: 1540 },
-  { month: "Feb", rate: 1620 },
-  { month: "Mar", rate: 1580 },
-  { month: "Apr", rate: 1720 },
-  { month: "May", rate: 1890 },
-  { month: "Jun", rate: 1950 },
-  { month: "Jul", rate: 1820 },
-  { month: "Aug", rate: 1780 },
-  { month: "Sep", rate: 1690 },
-  { month: "Oct", rate: 1850 },
-  { month: "Nov", rate: 1920 },
-  { month: "Dec", rate: 1847 },
-];
-
-// Currency data for EUR/USD
-const currencyData = [
-  { month: "Jan", rate: 1.082 },
-  { month: "Feb", rate: 1.078 },
-  { month: "Mar", rate: 1.085 },
-  { month: "Apr", rate: 1.072 },
-  { month: "May", rate: 1.088 },
-  { month: "Jun", rate: 1.091 },
-  { month: "Jul", rate: 1.095 },
-  { month: "Aug", rate: 1.099 },
-  { month: "Sep", rate: 1.107 },
-  { month: "Oct", rate: 1.086 },
-  { month: "Nov", rate: 1.078 },
-  { month: "Dec", rate: 1.0842 },
-];
-
-// Crude Oil (WTI) data - NEW
-const crudeOilData = [
-  { month: "Apr", price: 78.5 },
-  { month: "May", price: 76.2 },
-  { month: "Jun", price: 81.4 },
-  { month: "Jul", price: 82.8 },
-  { month: "Aug", price: 77.3 },
-  { month: "Sep", price: 73.6 },
-  { month: "Oct", price: 75.9 },
-  { month: "Nov", price: 71.2 },
-  { month: "Dec", price: 68.4 },
-  { month: "Jan", price: 72.8 },
-  { month: "Feb", price: 76.5 },
-  { month: "Mar", price: 79.2 },
-];
-
-// Market indices
-const marketIndices = [
-  { name: "FBX Index", value: "3,920", change: "+2.4%", up: true },
-  { name: "BDI Baltic", value: "1,847", change: "-1.2%", up: false },
-  { name: "SCFI", value: "2,156", change: "+3.1%", up: true },
-  { name: "WCI", value: "2,890", change: "+1.8%", up: true },
-];
-
-// Currencies
-const currencies = [
-  { pair: "EUR/USD", rate: "1.0842", change: "+0.12%", up: true },
-  { pair: "GBP/USD", rate: "1.2658", change: "-0.08%", up: false },
-  { pair: "USD/CNY", rate: "7.2456", change: "+0.05%", up: true },
-  { pair: "USD/JPY", rate: "149.85", change: "+0.32%", up: true },
-];
-
-// Educational content - 6 cards
-const educationalContent = [
-  {
-    title: "Incoterms 2020",
-    description: "Understand the 11 international trade terms that define responsibilities.",
-    icon: Globe,
-    href: "/tools/international-trade/incoterms-guide",
-    color: OCEAN_BLUE,
-  },
-  {
-    title: "HS Codes Guide",
-    description: "Learn how to classify products for customs declarations.",
-    icon: BarChart3,
-    href: "/tools/customs-compliance/hs-code-search",
-    color: LOGISTICS_GREEN,
-  },
-  {
-    title: "Container Types",
-    description: "Complete guide to ISO container specifications and dimensions.",
-    icon: Container,
-    href: "/tools/ocean-freight/container-guide",
-    color: "#8B5CF6",
-  },
-  {
-    title: "Bill of Lading",
-    description: "Understanding B/L types, functions, and best practices.",
-    icon: FileText,
-    href: "/documents/bill-of-lading",
-    color: "#F59E0B",
-  },
-  {
-    title: "Customs Valuation",
-    description: "Methods and rules for determining customs value.",
-    icon: Calculator,
-    href: "/tools/customs-compliance/duty-calculator",
-    color: "#EC4899",
-  },
-  {
-    title: "Letter of Credit",
-    description: "Guide to LC types and international payment security.",
-    icon: DollarSign,
-    href: "/tools/international-trade/letter-of-credit-guide",
-    color: "#06B6D4",
-  },
-];
-
-// Directories preview
-const directoriesPreview = [
-  { name: "Global Ports", count: "500+", icon: Anchor, href: "/tools/ocean-freight/port-code-finder" },
-  { name: "Shipping Lines", count: "150+", icon: Ship, href: "/directories/shipping-lines" },
-  { name: "Freight Forwarders", count: "200+", icon: Truck, href: "/directories/freight-forwarders" },
-  { name: "Customs Brokers", count: "100+", icon: Shield, href: "/directories/customs-brokers" },
-];
-
-// Weather data for ports
-const portWeatherData = [
-  { port: "Shanghai", temp: "24°C", condition: "partly-cloudy", humidity: "72%" },
-  { port: "Rotterdam", temp: "16°C", condition: "rainy", humidity: "85%" },
-  { port: "Singapore", temp: "31°C", condition: "sunny", humidity: "78%" },
-  { port: "Los Angeles", temp: "22°C", condition: "sunny", humidity: "45%" },
-];
 
 // Format relative time
 const formatRelativeTime = (dateString: string) => {
@@ -343,11 +301,14 @@ const formatRelativeTime = (dateString: string) => {
   return `${diffDays}d ago`;
 };
 
-// Calculate read time
-const calculateReadTime = (text: string): number => {
-  const wordsPerMinute = 200;
-  const words = text.split(/\s+/).length;
-  return Math.max(1, Math.ceil(words / wordsPerMinute));
+// Get greeting based on time
+const getDefaultGreeting = () => ({ text: "Welcome", icon: Sun });
+const getGreeting = () => {
+  if (typeof window === 'undefined') return getDefaultGreeting();
+  const hour = new Date().getHours();
+  if (hour < 12) return { text: "Good Morning", icon: Sunrise };
+  if (hour < 18) return { text: "Good Afternoon", icon: CloudSun };
+  return { text: "Good Evening", icon: Sunset };
 };
 
 // Animated Counter Component
@@ -379,6 +340,79 @@ function AnimatedCounter({ value, suffix = "", duration = 2 }: { value: number; 
     <span ref={ref} className="tabular-nums">
       {count}{suffix}
     </span>
+  );
+}
+
+// Enhanced Search Suggestions Component
+function SearchSuggestions({ query, onClose }: { query: string; onClose: () => void }) {
+  const suggestions = useMemo(() => {
+    if (!query) return [];
+    const allItems = [
+      ...tradeTools.map(t => ({ type: 'tool' as const, name: t.name, href: t.href, category: 'Tool' })),
+      ...featuredCalculators.map(t => ({ type: 'tool' as const, name: t.name, href: t.href, category: 'Calculator' })),
+      { type: 'news' as const, name: 'Latest Shipping News', href: '/news', category: 'News' },
+      { type: 'document' as const, name: 'Commercial Invoice Generator', href: '/documents/commercial-invoice', category: 'Documents' },
+      { type: 'document' as const, name: 'Bill of Lading Generator', href: '/documents/bill-of-lading', category: 'Documents' },
+    ];
+    return allItems.filter(item => 
+      item.name.toLowerCase().includes(query.toLowerCase()) ||
+      item.category.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 8);
+  }, [query]);
+
+  if (suggestions.length === 0) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl shadow-2xl z-50 overflow-hidden p-4"
+      >
+        <p className="text-sm text-muted-foreground text-center">No results found for "{query}"</p>
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-xl shadow-2xl z-50 overflow-hidden"
+    >
+      <ScrollArea className="max-h-80">
+        {suggestions.map((item, i) => (
+          <Link
+            key={i}
+            href={item.href}
+            onClick={onClose}
+            className="flex items-center gap-3 px-4 py-3 hover:bg-muted/50 transition-colors group"
+          >
+            <div className={cn(
+              "w-9 h-9 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110",
+              item.type === 'tool' && 'bg-[#0F4C81]/10',
+              item.type === 'news' && 'bg-[#2E8B57]/10',
+              item.type === 'document' && 'bg-amber-500/10'
+            )}>
+              {item.type === 'tool' && <Calculator className="h-4 w-4 text-[#0F4C81]" />}
+              {item.type === 'news' && <Newspaper className="h-4 w-4 text-[#2E8B57]" />}
+              {item.type === 'document' && <FileText className="h-4 w-4 text-amber-600" />}
+            </div>
+            <div className="flex-1">
+              <p className="font-medium text-sm group-hover:text-[#0F4C81] transition-colors">{item.name}</p>
+              <p className="text-xs text-muted-foreground">{item.category}</p>
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+          </Link>
+        ))}
+      </ScrollArea>
+      <div className="border-t border-border px-4 py-2 bg-muted/30">
+        <p className="text-xs text-muted-foreground">
+          <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] mr-1">Enter</kbd> to select • 
+          <kbd className="px-1.5 py-0.5 bg-muted rounded text-[10px] mx-1">Esc</kbd> to close
+        </p>
+      </div>
+    </motion.div>
   );
 }
 
@@ -420,50 +454,83 @@ function QuickCBMModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => vo
           </DialogTitle>
           <DialogDescription>Calculate cubic meters instantly</DialogDescription>
         </DialogHeader>
-        <div className="space-y-3 mt-3">
+        <div className="space-y-4 mt-4">
           <div className="grid grid-cols-3 gap-2">
             <div>
               <label className="text-xs text-muted-foreground mb-1 block">Length (cm)</label>
-              <Input placeholder="100" value={length} onChange={(e) => setLength(e.target.value)} className="h-10 text-center font-mono" type="number" />
+              <Input
+                placeholder="100"
+                value={length}
+                onChange={(e) => setLength(e.target.value)}
+                className="h-10 text-center font-mono"
+                type="number"
+              />
             </div>
             <div>
               <label className="text-xs text-muted-foreground mb-1 block">Width (cm)</label>
-              <Input placeholder="50" value={width} onChange={(e) => setWidth(e.target.value)} className="h-10 text-center font-mono" type="number" />
+              <Input
+                placeholder="50"
+                value={width}
+                onChange={(e) => setWidth(e.target.value)}
+                className="h-10 text-center font-mono"
+                type="number"
+              />
             </div>
             <div>
               <label className="text-xs text-muted-foreground mb-1 block">Height (cm)</label>
-              <Input placeholder="40" value={height} onChange={(e) => setHeight(e.target.value)} className="h-10 text-center font-mono" type="number" />
+              <Input
+                placeholder="40"
+                value={height}
+                onChange={(e) => setHeight(e.target.value)}
+                className="h-10 text-center font-mono"
+                type="number"
+              />
             </div>
           </div>
-          <div className="bg-gradient-to-r from-[#0F4C81]/10 to-[#2E8B57]/10 rounded-lg p-3">
-            <div className="text-center">
-              <p className="text-xs text-muted-foreground">Total Volume</p>
-              <p className="text-2xl font-bold bg-gradient-to-r from-[#0F4C81] to-[#2E8B57] bg-clip-text text-transparent">
+          <div>
+            <label className="text-xs text-muted-foreground mb-1 block">Quantity</label>
+            <Input
+              placeholder="1"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              className="h-10 text-center font-mono"
+              type="number"
+            />
+          </div>
+          
+          <div className="bg-gradient-to-r from-[#0F4C81]/10 to-[#2E8B57]/10 rounded-xl p-4">
+            <div className="text-center mb-3">
+              <p className="text-sm text-muted-foreground">Total Volume</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-[#0F4C81] to-[#2E8B57] bg-clip-text text-transparent">
                 {cbm.toFixed(4)} m³
               </p>
             </div>
             {cbm > 0 && (
-              <div className="grid grid-cols-3 gap-2 text-center text-xs mt-2">
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded p-1.5">
+              <div className="grid grid-cols-3 gap-2 text-center text-xs">
+                <div className="bg-white/50 dark:bg-slate-900/50 rounded-lg p-2">
                   <p className="text-muted-foreground">20&apos; GP</p>
                   <p className="font-semibold">{containerFit['20ft']}x</p>
                 </div>
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded p-1.5">
+                <div className="bg-white/50 dark:bg-slate-900/50 rounded-lg p-2">
                   <p className="text-muted-foreground">40&apos; GP</p>
                   <p className="font-semibold">{containerFit['40ft']}x</p>
                 </div>
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded p-1.5">
+                <div className="bg-white/50 dark:bg-slate-900/50 rounded-lg p-2">
                   <p className="text-muted-foreground">40&apos; HC</p>
                   <p className="font-semibold">{containerFit['40hc']}x</p>
                 </div>
               </div>
             )}
           </div>
+          
           <div className="flex gap-2">
-            <Button variant="outline" className="flex-1" onClick={onClose}>Close</Button>
+            <Button variant="outline" className="flex-1" onClick={onClose}>
+              Close
+            </Button>
             <Button asChild className="flex-1 bg-[#0F4C81] hover:bg-[#0F4C81]/90">
               <Link href="/tools/ocean-freight/cbm-calculator" onClick={onClose}>
-                Full Calculator <ArrowRight className="h-4 w-4 ml-1" />
+                Full Calculator
+                <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </div>
@@ -498,19 +565,55 @@ function QuickTrackingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             </div>
             Container Tracking
           </DialogTitle>
-          <DialogDescription>Enter container number to track</DialogDescription>
+          <DialogDescription>Enter container number to track your shipment</DialogDescription>
         </DialogHeader>
-        <div className="space-y-3 mt-3">
-          <Input placeholder="e.g., MSKU1234567" value={containerNumber} onChange={(e) => setContainerNumber(e.target.value.toUpperCase())} className="h-12 text-lg font-mono text-center" maxLength={11} />
+        <div className="space-y-4 mt-4">
+          <div>
+            <label className="text-xs text-muted-foreground mb-1 block">Container Number</label>
+            <Input
+              placeholder="e.g., MSKU1234567"
+              value={containerNumber}
+              onChange={(e) => setContainerNumber(e.target.value.toUpperCase())}
+              className="h-12 text-lg font-mono text-center"
+              maxLength={11}
+            />
+            <p className="text-xs text-muted-foreground mt-1">Format: 4 letters + 7 digits</p>
+          </div>
+          
           <div className="flex flex-wrap gap-2">
             {['MAEU', 'MSCU', 'CMAU', 'EGLV', 'HLCU'].map((prefix) => (
-              <Button key={prefix} variant="outline" size="sm" onClick={() => setContainerNumber(prefix)} className="text-xs font-mono">{prefix}</Button>
+              <Button
+                key={prefix}
+                variant="outline"
+                size="sm"
+                onClick={() => setContainerNumber(prefix)}
+                className="text-xs font-mono"
+              >
+                {prefix}
+              </Button>
             ))}
           </div>
+          
           <div className="flex gap-2">
-            <Button variant="outline" className="flex-1" onClick={onClose}>Cancel</Button>
-            <Button className="flex-1 bg-[#2E8B57] hover:bg-[#2E8B57]/90" onClick={handleSearch} disabled={!containerNumber || isSearching}>
-              {isSearching ? <><RefreshCw className="h-4 w-4 mr-2 animate-spin" />Tracking...</> : <><MapPin className="h-4 w-4 mr-2" />Track Now</>}
+            <Button variant="outline" className="flex-1" onClick={onClose}>
+              Cancel
+            </Button>
+            <Button 
+              className="flex-1 bg-[#2E8B57] hover:bg-[#2E8B57]/90"
+              onClick={handleSearch}
+              disabled={!containerNumber || isSearching}
+            >
+              {isSearching ? (
+                <>
+                  <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
+                  Tracking...
+                </>
+              ) : (
+                <>
+                  <MapPin className="h-4 w-4 mr-2" />
+                  Track Now
+                </>
+              )}
             </Button>
           </div>
         </div>
@@ -522,7 +625,11 @@ function QuickTrackingModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
 // Quick HS Code Search Modal
 function QuickHSCodeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const popularSearches = ["Electronics", "Textiles", "Machinery", "Chemicals", "Plastics", "Food Products"];
+  
+  const popularSearches = [
+    "Electronics", "Textiles", "Machinery", "Chemicals", 
+    "Plastics", "Food Products", "Automotive Parts"
+  ];
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -534,23 +641,44 @@ function QuickHSCodeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =>
             </div>
             HS Code Search
           </DialogTitle>
-          <DialogDescription>Find Harmonized System codes</DialogDescription>
+          <DialogDescription>Find Harmonized System codes for your products</DialogDescription>
         </DialogHeader>
-        <div className="space-y-3 mt-3">
+        <div className="space-y-4 mt-4">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-            <Input placeholder="Search product or HS code..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="pl-10 h-12" />
+            <Input
+              placeholder="Search product or HS code..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 h-12"
+            />
           </div>
-          <div className="flex flex-wrap gap-2">
-            {popularSearches.map((term) => (
-              <Button key={term} variant="outline" size="sm" onClick={() => setSearchTerm(term)} className="text-xs">{term}</Button>
-            ))}
+          
+          <div>
+            <p className="text-xs text-muted-foreground mb-2">Popular Searches</p>
+            <div className="flex flex-wrap gap-2">
+              {popularSearches.map((term) => (
+                <Button
+                  key={term}
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setSearchTerm(term)}
+                  className="text-xs"
+                >
+                  {term}
+                </Button>
+              ))}
+            </div>
           </div>
+          
           <div className="flex gap-2">
-            <Button variant="outline" className="flex-1" onClick={onClose}>Cancel</Button>
+            <Button variant="outline" className="flex-1" onClick={onClose}>
+              Cancel
+            </Button>
             <Button asChild className="flex-1 bg-purple-600 hover:bg-purple-600/90">
               <Link href={`/tools/customs-compliance/hs-code-search?q=${encodeURIComponent(searchTerm)}`} onClick={onClose}>
-                Search <ArrowRight className="h-4 w-4 ml-1" />
+                Search
+                <ArrowRight className="h-4 w-4 ml-2" />
               </Link>
             </Button>
           </div>
@@ -588,17 +716,22 @@ function WorldClocks() {
   }, []);
 
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 md:gap-4">
       {shippingHubs.map((hub) => (
         <TooltipProvider key={hub.city}>
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="flex items-center gap-1.5 text-xs bg-muted/50 px-2 py-1 rounded-full">
+              <motion.div 
+                className="flex items-center gap-1.5 text-xs bg-white/50 dark:bg-slate-800/50 px-2 py-1 rounded-full backdrop-blur-sm"
+                whileHover={{ scale: 1.05 }}
+              >
                 <span className="text-sm">{hub.flag}</span>
                 <span className="font-mono font-medium">{times[hub.city] || '--:--'}</span>
-              </div>
+              </motion.div>
             </TooltipTrigger>
-            <TooltipContent><p className="font-medium">{hub.city} Local Time</p></TooltipContent>
+            <TooltipContent>
+              <p className="font-medium">{hub.city} Local Time</p>
+            </TooltipContent>
           </Tooltip>
         </TooltipProvider>
       ))}
@@ -618,15 +751,23 @@ function KeyboardShortcutsModal({ isOpen, onClose }: { isOpen: boolean; onClose:
           </DialogTitle>
           <DialogDescription>Navigate faster with these shortcuts</DialogDescription>
         </DialogHeader>
-        <div className="space-y-2 mt-3">
+        <div className="space-y-2 mt-4">
           {KEYBOARD_SHORTCUTS.map((shortcut, i) => (
-            <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-muted/50">
-              <div className="flex items-center gap-2">
+            <motion.div 
+              key={i} 
+              className="flex items-center justify-between p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.05 }}
+            >
+              <div className="flex items-center gap-3">
                 <shortcut.icon className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm">{shortcut.action}</span>
               </div>
-              <kbd className="px-2 py-1 text-xs font-mono bg-background rounded border">{shortcut.key}</kbd>
-            </div>
+              <kbd className="px-2 py-1 text-xs font-mono bg-background rounded border">
+                {shortcut.key}
+              </kbd>
+            </motion.div>
           ))}
         </div>
       </DialogContent>
@@ -634,55 +775,15 @@ function KeyboardShortcutsModal({ isOpen, onClose }: { isOpen: boolean; onClose:
   );
 }
 
-// Weather Widget Component
-function WeatherWidget() {
-  const getWeatherIcon = (condition: string) => {
-    switch (condition) {
-      case 'sunny': return <CloudSun className="h-4 w-4 text-amber-500" />;
-      case 'partly-cloudy': return <Cloud className="h-4 w-4 text-gray-400" />;
-      case 'rainy': return <CloudRain className="h-4 w-4 text-blue-400" />;
-      default: return <Cloud className="h-4 w-4" />;
-    }
-  };
-
-  return (
-    <ScrollArea className="w-full">
-      <div className="flex gap-2 pb-1">
-        {portWeatherData.map((port, i) => (
-          <div key={i} className="flex items-center gap-2 px-2 py-1.5 rounded-lg bg-muted/50 flex-shrink-0">
-            {getWeatherIcon(port.condition)}
-            <div className="text-xs">
-              <p className="font-medium">{port.port}</p>
-              <p className="text-muted-foreground">{port.temp}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </ScrollArea>
-  );
-}
-
-// News Card Skeleton
-function NewsCardSkeleton() {
-  return (
-    <Card className="h-full border-0 shadow-lg overflow-hidden">
-      <Skeleton className="h-36 w-full" />
-      <CardContent className="p-3 space-y-2">
-        <Skeleton className="h-4 w-3/4" />
-        <Skeleton className="h-3 w-full" />
-        <Skeleton className="h-3 w-2/3" />
-      </CardContent>
-    </Card>
-  );
-}
-
 // Back to Top Component
 function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const [progress, setProgress] = useState(0);
   const { scrollYProgress } = useScroll();
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (value) => {
+      setProgress(value * 100);
       setIsVisible(value > 0.05);
     });
     return () => unsubscribe();
@@ -696,19 +797,65 @@ function BackToTop() {
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.5, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.5, y: 20 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-20 right-6 z-40 h-10 w-10 rounded-full bg-card border shadow-lg flex items-center justify-center"
+          className="fixed bottom-24 right-6 z-40 h-12 w-12 rounded-full bg-card border-2 border-border shadow-lg hover:shadow-xl transition-all flex items-center justify-center group overflow-hidden"
           aria-label="Back to top"
         >
-          <ArrowUp className="h-4 w-4 text-[#0F4C81]" />
+          <svg className="absolute inset-0 w-full h-full -rotate-90">
+            <circle
+              cx="24"
+              cy="24"
+              r="22"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="text-muted/30"
+            />
+            <circle
+              cx="24"
+              cy="24"
+              r="22"
+              fill="none"
+              stroke="url(#progressGradient)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeDasharray={`${progress * 1.38} 138`}
+              className="transition-all duration-150"
+            />
+            <defs>
+              <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor={OCEAN_BLUE} />
+                <stop offset="100%" stopColor={LOGISTICS_GREEN} />
+              </linearGradient>
+            </defs>
+          </svg>
+          <ArrowUp className="h-5 w-5 text-[#0F4C81] group-hover:-translate-y-0.5 transition-transform" />
         </motion.button>
       )}
     </AnimatePresence>
+  );
+}
+
+// News Card Skeleton
+function NewsCardSkeleton() {
+  return (
+    <Card className="h-full border-0 shadow-lg overflow-hidden">
+      <Skeleton className="h-48 w-full" />
+      <CardContent className="p-4 space-y-3">
+        <Skeleton className="h-4 w-3/4" />
+        <Skeleton className="h-3 w-full" />
+        <Skeleton className="h-3 w-2/3" />
+        <div className="flex justify-between">
+          <Skeleton className="h-3 w-20" />
+          <Skeleton className="h-3 w-16" />
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
@@ -717,10 +864,9 @@ export default function HomePage() {
   const [newsData, setNewsData] = useState<NewsItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [savedNews, setSavedNews] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState("all");
-  const [isTickerPaused, setIsTickerPaused] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [currentFactIndex, setCurrentFactIndex] = useState(0);
   const [showShortcuts, setShowShortcuts] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(false);
   
@@ -728,89 +874,50 @@ export default function HomePage() {
   const [showCBMModal, setShowCBMModal] = useState(false);
   const [showTrackingModal, setShowTrackingModal] = useState(false);
   const [showHSCodeModal, setShowHSCodeModal] = useState(false);
-
+  
+  const searchInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
   // Scroll progress
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
+  // Greeting
+  const [greeting, setGreeting] = useState(getDefaultGreeting());
+  
+  // Breaking news state
+  const [breakingNews, setBreakingNews] = useState<NewsItem[]>([]);
+  const [isTickerPaused, setIsTickerPaused] = useState(false);
+
+  // Set greeting on mount
+  useEffect(() => {
+    setGreeting(getGreeting());
+  }, []);
+
   // Load saved news from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem("shiportrade-saved-news");
+    const saved = localStorage.getItem("savedNews");
     if (saved) {
-      setSavedNews(JSON.parse(saved));
-    }
-    const theme = localStorage.getItem("shiportrade-theme");
-    if (theme) {
-      setIsDarkMode(theme === "dark");
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
+      try {
+        setSavedNews(JSON.parse(saved));
+      } catch {
+        // ignore
       }
     }
   }, []);
 
-  // Rotate facts
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentFactIndex((prev) => (prev + 1) % tradeFacts.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Keyboard shortcuts
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
-        e.preventDefault();
-        toggleDarkMode();
-      }
-      if (e.key === 'Escape') {
-        setShowShortcuts(false);
-        setShowCBMModal(false);
-        setShowTrackingModal(false);
-        setShowHSCodeModal(false);
-      }
-      if ((e.ctrlKey || e.metaKey) && e.key === '/') {
-        e.preventDefault();
-        setShowShortcuts(true);
-      }
-      if (e.altKey && e.key === '1') {
-        e.preventDefault();
-        setShowCBMModal(true);
-      }
-      if (e.altKey && e.key === '2') {
-        e.preventDefault();
-        setShowTrackingModal(true);
-      }
-      if (e.altKey && e.key === '3') {
-        e.preventDefault();
-        setShowHSCodeModal(true);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  // Fetch news from API
+  // Fetch news
   const fetchNews = useCallback(async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("/api/news?limit=30");
+      const response = await fetch("/api/news?limit=8");
       const data: NewsResponse = await response.json();
-
-      if (data.success) {
-        const enhancedData = data.data.map((item) => ({
-          ...item,
-          readTime: calculateReadTime(item.content || item.excerpt),
-          views: Math.floor(Math.random() * 5000) + 100,
-          imageUrl: item.imageUrl || categoryConfig[item.category]?.image || categoryConfig["All"].image,
-        }));
-        setNewsData(enhancedData);
+      if (data.success && data.data) {
+        setNewsData(data.data);
+        setBreakingNews(data.data.filter((n: NewsItem) => n.isAlert || n.trending).slice(0, 3));
       }
-    } catch (err) {
-      console.error("News fetch error:", err);
+    } catch (error) {
+      console.error("Failed to fetch news:", error);
     } finally {
       setIsLoading(false);
     }
@@ -820,79 +927,85 @@ export default function HomePage() {
     fetchNews();
   }, [fetchNews]);
 
+  // Toggle save news
+  const toggleSaveNews = useCallback((newsId: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setSavedNews(prev => {
+      const updated = prev.includes(newsId)
+        ? prev.filter(id => id !== newsId)
+        : [...prev, newsId];
+      localStorage.setItem("savedNews", JSON.stringify(updated));
+      return updated;
+    });
+    toast({
+      title: savedNews.includes(newsId) ? "Removed from saved" : "Saved for later",
+      description: savedNews.includes(newsId) ? "Article removed from your saved list" : "Article added to your saved list",
+    });
+  }, [savedNews, toast]);
+
   // Toggle dark mode
   const toggleDarkMode = useCallback(() => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem("shiportrade-theme", newMode ? "dark" : "light");
-    document.documentElement.classList.toggle("dark", newMode);
-    toast({
-      title: newMode ? "Dark Mode Enabled" : "Light Mode Enabled",
-      description: "Theme preference saved",
+    setIsDarkMode(prev => {
+      const newMode = !prev;
+      document.documentElement.classList.toggle("dark", newMode);
+      localStorage.setItem("darkMode", String(newMode));
+      return newMode;
     });
-  }, [isDarkMode, toast]);
+  }, []);
 
-  // Toggle save news
-  const toggleSaveNews = useCallback(
-    (newsId: string, e: React.MouseEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const newSaved = savedNews.includes(newsId) ? savedNews.filter((id) => id !== newsId) : [...savedNews, newsId];
-      setSavedNews(newSaved);
-      localStorage.setItem("shiportrade-saved-news", JSON.stringify(newSaved));
-      toast({
-        title: savedNews.includes(newsId) ? "Removed from saved" : "Saved for later",
-      });
-    },
-    [savedNews, toast]
-  );
+  // Load dark mode preference
+  useEffect(() => {
+    const saved = localStorage.getItem("darkMode");
+    if (saved === "true") {
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
 
-  // Remove duplicate news by ID
-  const uniqueNewsData = useMemo(() => {
-    const seen = new Set<string>();
-    return newsData.filter((news) => {
-      if (seen.has(news.id)) return false;
-      seen.add(news.id);
-      return true;
-    });
-  }, [newsData]);
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+        setIsSearchOpen(true);
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === "d") {
+        e.preventDefault();
+        toggleDarkMode();
+      }
+      if ((e.ctrlKey || e.metaKey) && e.key === "/") {
+        e.preventDefault();
+        setShowShortcuts(true);
+      }
+      if (e.key === "Escape") {
+        setIsSearchOpen(false);
+        setShowShortcuts(false);
+        setShowCBMModal(false);
+        setShowTrackingModal(false);
+        setShowHSCodeModal(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [toggleDarkMode]);
 
-  // Filter news by category
-  const filteredNews = useMemo(() => {
-    if (selectedCategory === "all") return uniqueNewsData;
-    return uniqueNewsData.filter((news) => news.category === selectedCategory);
-  }, [uniqueNewsData, selectedCategory]);
-
-  // Breaking news (alerts)
-  const breakingNews = useMemo(() => uniqueNewsData.filter((n) => n.isAlert).slice(0, 5), [uniqueNewsData]);
-
-  // Trending news - show 5
-  const trendingNews = useMemo(() => uniqueNewsData.filter((n) => n.trending).slice(0, 5), [uniqueNewsData]);
-
-  // Featured news - ALWAYS return 8 items, padding from other categories if needed
+  // Featured news (limit to 3 for tools-focused homepage)
   const featuredNews = useMemo(() => {
-    const trendingIds = new Set(trendingNews.map(n => n.id));
-    let featured = filteredNews.filter(n => !trendingIds.has(n.id));
-    
-    // If we don't have enough items, pad with items from other categories
-    if (featured.length < 8) {
-      const allOther = uniqueNewsData.filter(n => !trendingIds.has(n.id) && !featured.includes(n));
-      featured = [...featured, ...allOther].slice(0, 8);
-    }
-    
-    return featured.slice(0, 8);
-  }, [filteredNews, trendingNews, uniqueNewsData]);
-
-  // Get last updated time
-  const lastUpdated = useMemo(() => {
-    if (uniqueNewsData.length > 0) {
-      return formatRelativeTime(uniqueNewsData[0].publishedAt);
-    }
-    return "Just now";
-  }, [uniqueNewsData]);
+    return newsData.slice(0, 3);
+  }, [newsData]);
 
   return (
     <div className="min-h-screen bg-background" role="main">
+      {/* Skip to Content Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md"
+      >
+        Skip to main content
+      </a>
+
       {/* Reading Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0F4C81] via-[#2E8B57] to-[#0F4C81] z-50 origin-left"
@@ -907,20 +1020,20 @@ export default function HomePage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-1.5 relative overflow-hidden"
+            className="bg-gradient-to-r from-red-600 via-red-500 to-orange-500 text-white py-2 relative overflow-hidden"
             role="marquee"
             aria-label="Breaking news"
           >
             <div className="container mx-auto px-4">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5 flex-shrink-0 bg-white/20 px-2 py-0.5 rounded-full">
-                  <AlertTriangle className="h-3 w-3 animate-pulse" aria-hidden="true" />
-                  <span className="font-bold text-xs">BREAKING</span>
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2 flex-shrink-0 bg-white/20 px-3 py-1 rounded-full">
+                  <AlertTriangle className="h-4 w-4 animate-pulse" aria-hidden="true" />
+                  <span className="font-bold text-sm">BREAKING</span>
                 </div>
                 <div className="flex-1 overflow-hidden">
                   <div
                     className={cn(
-                      "flex gap-6 animate-marquee whitespace-nowrap text-sm",
+                      "flex gap-8 animate-marquee whitespace-nowrap",
                       isTickerPaused && "animation-paused"
                     )}
                     onMouseEnter={() => setIsTickerPaused(true)}
@@ -930,7 +1043,7 @@ export default function HomePage() {
                       <Link
                         key={`${news.id}-${idx}`}
                         href={`/news/${news.slug}?id=${news.id}`}
-                        className="hover:text-white/80 transition-colors font-medium"
+                        className="hover:text-white/80 transition-colors font-medium text-sm"
                       >
                         {news.title}
                       </Link>
@@ -940,11 +1053,11 @@ export default function HomePage() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="h-5 w-5 text-white/80 hover:text-white flex-shrink-0"
+                  className="h-6 w-6 text-white/80 hover:text-white flex-shrink-0"
                   onClick={() => setIsTickerPaused(!isTickerPaused)}
                   aria-label={isTickerPaused ? "Play ticker" : "Pause ticker"}
                 >
-                  {isTickerPaused ? <div className="h-2 w-2" /> : <div className="h-2 w-2" />}
+                  {isTickerPaused ? <Play className="h-3 w-3" /> : <Pause className="h-3 w-3" />}
                 </Button>
               </div>
             </div>
@@ -952,90 +1065,375 @@ export default function HomePage() {
         )}
       </AnimatePresence>
 
-      {/* Top Bar - World Clocks */}
-      <div className="bg-muted/30 border-b border-border/40 py-2">
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <WorldClocks />
-          <div className="flex items-center gap-1">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" onClick={toggleDarkMode} className="h-8 w-8" aria-label="Toggle dark mode">
-                    {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent><p>Toggle theme (Ctrl+D)</p></TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon" onClick={() => setShowShortcuts(true)} className="h-8 w-8" aria-label="Keyboard shortcuts">
-                    <Keyboard className="h-4 w-4" />
-                  </Button>
-                </TooltipTrigger>
-                <TooltipContent><p>Keyboard shortcuts</p></TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+      {/* ============================================ */}
+      {/* SECTION 1: HERO SEARCH */}
+      {/* ============================================ */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0F4C81]/5 via-background to-[#2E8B57]/5" aria-labelledby="hero-title">
+        <div className="container mx-auto px-4 py-10 md:py-16 relative">
+          {/* Top Bar with Clocks */}
+          <motion.div
+            className="flex flex-wrap items-center justify-between gap-4 mb-8"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            <WorldClocks />
+            <div className="flex items-center gap-2">
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={toggleDarkMode}
+                      className="rounded-full hover:bg-white/50 dark:hover:bg-slate-800/50"
+                      aria-label="Toggle dark mode"
+                    >
+                      <motion.div
+                        initial={false}
+                        animate={{ rotate: isDarkMode ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                      </motion.div>
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Toggle theme (Ctrl+D)</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setShowShortcuts(true)}
+                      className="rounded-full hover:bg-white/50 dark:hover:bg-slate-800/50"
+                      aria-label="View keyboard shortcuts"
+                    >
+                      <Keyboard className="h-5 w-5" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Keyboard shortcuts (Ctrl+/)</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          </motion.div>
+
+          {/* Hero Content */}
+          <motion.div
+            className="text-center max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Title */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1 }}
+            >
+              <h1 id="hero-title" className="text-3xl md:text-5xl font-bold mb-3">
+                <span className="bg-gradient-to-r from-[#0F4C81] to-[#2E8B57] bg-clip-text text-transparent">
+                  Global Logistics Tools
+                </span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+                Calculate freight, find ports, check HS codes — all in one place
+              </p>
+            </motion.div>
+
+            {/* Large Search Bar */}
+            <motion.div
+              className="relative max-w-2xl mx-auto mb-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="relative">
+                <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground" aria-hidden="true" />
+                <Input
+                  ref={searchInputRef}
+                  type="text"
+                  placeholder="Search calculators, tools, ports, HS codes..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => setIsSearchOpen(true)}
+                  onBlur={() => setTimeout(() => setIsSearchOpen(false), 200)}
+                  className="pl-14 pr-24 h-16 text-lg rounded-2xl border-2 border-[#0F4C81]/20 focus:border-[#0F4C81] bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-xl hover:shadow-2xl transition-all"
+                  aria-label="Search calculators, tools, ports, HS codes"
+                />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                  <kbd className="px-2.5 py-1.5 text-xs font-mono bg-muted rounded-lg border hidden md:block">
+                    Ctrl+K
+                  </kbd>
+                </div>
+              </div>
+              <AnimatePresence>
+                {isSearchOpen && searchQuery && (
+                  <SearchSuggestions query={searchQuery} onClose={() => setIsSearchOpen(false)} />
+                )}
+              </AnimatePresence>
+            </motion.div>
+
+            {/* Quick Pills */}
+            <motion.div
+              className="flex flex-wrap justify-center gap-2 mb-8"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              {quickPills.map((pill, index) => (
+                <motion.div
+                  key={pill.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.35 + index * 0.05 }}
+                >
+                  <Link href={pill.href}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="rounded-full px-4 h-9 border-2 border-[#0F4C81]/20 hover:border-[#0F4C81] hover:bg-[#0F4C81]/5 transition-all"
+                    >
+                      <pill.icon className="h-4 w-4 mr-2 text-[#0F4C81]" />
+                      {pill.name}
+                    </Button>
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Stats Row */}
+            <motion.div
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 + index * 0.1 }}
+                >
+                  <Card className="text-center border-0 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 cursor-default bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm">
+                    <CardContent className="p-3">
+                      <stat.icon className="h-5 w-5 mx-auto mb-1 text-[#0F4C81]" aria-hidden="true" />
+                      <div className="text-xl font-bold bg-gradient-to-r from-[#0F4C81] to-[#2E8B57] bg-clip-text text-transparent">
+                        <AnimatedCounter value={stat.value} suffix={stat.suffix} />
+                      </div>
+                      <div className="text-xs text-muted-foreground">{stat.label}</div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* SECTION 2: MARKET DATA STRIP (Sticky) */}
+      {/* ============================================ */}
+      <section className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b shadow-sm" aria-labelledby="market-strip-title">
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
+            {marketIndicesStrip.map((idx, i) => (
+              <Link key={i} href="/tools/ocean-freight/freight-index" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span className="text-sm font-medium text-muted-foreground">{idx.name}</span>
+                <span className="text-sm font-bold">{idx.value}</span>
+                <Badge
+                  variant="outline"
+                  className={cn(
+                    "text-xs px-1.5 py-0",
+                    idx.up ? "text-green-600 border-green-600 bg-green-50 dark:bg-green-900/20" : "text-red-600 border-red-600 bg-red-50 dark:bg-red-900/20"
+                  )}
+                >
+                  {idx.change}
+                </Badge>
+              </Link>
+            ))}
+            <Link href="/tools/international-trade/currency-converter">
+              <Button variant="ghost" size="sm" className="text-xs text-muted-foreground hover:text-foreground">
+                More Data <ChevronRight className="h-3 w-3 ml-1" />
+              </Button>
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content */}
       <main id="main-content">
-        {/* Trade News Section */}
-        <section className="py-4 bg-background" aria-labelledby="news-title">
+        {/* ============================================ */}
+        {/* SECTION 3: TRADE TOOLS GRID (8 Tools) */}
+        {/* ============================================ */}
+        <section className="py-10 bg-background" aria-labelledby="tools-title">
           <div className="container mx-auto px-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              {/* Section Header */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-between mb-6">
                 <div>
-                  <h2 id="news-title" className="text-xl md:text-2xl font-bold flex items-center gap-2">
-                    <Newspaper className="h-6 w-6 text-[#0F4C81]" aria-hidden="true" />
-                    Trade News
+                  <h2 id="tools-title" className="text-2xl font-bold flex items-center gap-2">
+                    <Calculator className="h-6 w-6 text-[#0F4C81]" aria-hidden="true" />
+                    Trade Tools
                   </h2>
-                  <p className="text-sm text-muted-foreground">Last updated: {lastUpdated}</p>
+                  <p className="text-muted-foreground">Essential calculators for logistics professionals</p>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Button variant="outline" size="sm" onClick={fetchNews} disabled={isLoading}>
-                    <RefreshCw className={cn("h-3 w-3 mr-1", isLoading && "animate-spin")} aria-hidden="true" />
-                    Refresh
-                  </Button>
-                </div>
+                <Button asChild variant="outline">
+                  <Link href="/tools">
+                    All 82+ Tools
+                    <ChevronRight className="h-4 w-4 ml-1" aria-hidden="true" />
+                  </Link>
+                </Button>
               </div>
 
-              {/* Category Tabs */}
-              <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="mb-4">
-                <TabsList className="flex flex-wrap h-auto gap-1.5 bg-transparent p-0" role="tablist">
-                  {newsCategories.map((cat) => (
-                    <TabsTrigger
-                      key={cat.filter}
-                      value={cat.filter}
-                      className={cn(
-                        "data-[state=active]:bg-[#0F4C81] data-[state=active]:text-white rounded-full px-3 py-1.5 text-xs",
-                        "border border-border hover:border-[#0F4C81]/50 transition-all"
-                      )}
-                      role="tab"
-                    >
-                      <cat.icon className="h-3 w-3 mr-1" aria-hidden="true" />
-                      {cat.name}
-                    </TabsTrigger>
-                  ))}
-                </TabsList>
-              </Tabs>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {tradeTools.map((tool, index) => (
+                  <motion.div
+                    key={tool.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
+                    <Link href={tool.href}>
+                      <Card className="h-full border-0 shadow-md hover:shadow-2xl transition-all cursor-pointer group text-center bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm hover:-translate-y-1">
+                        <CardContent className="p-5">
+                          <motion.div
+                            className="w-14 h-14 rounded-xl mx-auto mb-3 flex items-center justify-center transition-transform group-hover:scale-110"
+                            style={{ backgroundColor: `${tool.color}15` }}
+                            whileHover={{ rotate: 5 }}
+                          >
+                            <tool.icon className="h-7 w-7" style={{ color: tool.color }} />
+                          </motion.div>
+                          <h3 className="font-semibold text-sm group-hover:text-[#0F4C81] transition-colors mb-1">
+                            {tool.name}
+                          </h3>
+                          <p className="text-xs text-muted-foreground line-clamp-2">{tool.description}</p>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ============================================ */}
+        {/* SECTION 4: FEATURED CALCULATORS (3 Cards) */}
+        {/* ============================================ */}
+        <section className="py-10 bg-gradient-to-br from-[#0F4C81]/5 to-[#2E8B57]/5" aria-labelledby="featured-title">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-center mb-8">
+                <Badge className="mb-3 bg-[#0F4C81]/10 text-[#0F4C81] border-[#0F4C81]/20">
+                  <Sparkles className="h-3 w-3 mr-1" aria-hidden="true" />
+                  Featured
+                </Badge>
+                <h2 id="featured-title" className="text-2xl md:text-3xl font-bold mb-2">Most Used Calculators</h2>
+                <p className="text-muted-foreground max-w-xl mx-auto">
+                  The tools logistics professionals rely on daily
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                {featuredCalculators.map((calc, index) => (
+                  <motion.div
+                    key={calc.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Link href={calc.href}>
+                      <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all cursor-pointer group bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm hover:-translate-y-1">
+                        <CardContent className="p-6">
+                          <motion.div
+                            className="w-16 h-16 rounded-2xl mb-4 flex items-center justify-center transition-transform group-hover:scale-110"
+                            style={{ backgroundColor: `${calc.color}15` }}
+                            whileHover={{ rotate: 5 }}
+                          >
+                            <calc.icon className="h-8 w-8" style={{ color: calc.color }} />
+                          </motion.div>
+                          <h3 className="font-semibold text-lg mb-2 group-hover:text-[#0F4C81] transition-colors">
+                            {calc.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mb-4">{calc.description}</p>
+                          <div className="space-y-2">
+                            {calc.features.map((feature, i) => (
+                              <div key={i} className="flex items-center gap-2 text-xs text-muted-foreground">
+                                <CheckCircle className="h-3 w-3 text-[#2E8B57]" />
+                                {feature}
+                              </div>
+                            ))}
+                          </div>
+                          <div className="mt-4 flex items-center text-sm font-medium text-[#0F4C81]">
+                            Open Tool
+                            <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ============================================ */}
+        {/* SECTION 5: TRADE NEWS (Limit to 3) */}
+        {/* ============================================ */}
+        <section className="py-10 bg-background" aria-labelledby="news-title">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 id="news-title" className="text-2xl font-bold flex items-center gap-2">
+                    <Newspaper className="h-6 w-6 text-[#0F4C81]" aria-hidden="true" />
+                    Latest Trade News
+                  </h2>
+                  <p className="text-muted-foreground">Real-time updates from global sources</p>
+                </div>
+                <Button asChild variant="outline" size="sm">
+                  <Link href="/news">
+                    View All News
+                    <ArrowRight className="h-4 w-4 ml-2" aria-hidden="true" />
+                  </Link>
+                </Button>
+              </div>
 
               {/* Loading State */}
               {isLoading && (
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-                  {[...Array(8)].map((_, i) => (
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[...Array(3)].map((_, i) => (
                     <NewsCardSkeleton key={i} />
                   ))}
                 </div>
               )}
 
-              {/* News Grid - 4x2 Layout */}
+              {/* News Grid - 3 Cards */}
               {!isLoading && featuredNews.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div className="grid md:grid-cols-3 gap-6">
                   {featuredNews.map((news, index) => {
                     const config = categoryConfig[news.category] || categoryConfig["Ocean Freight"];
                     const isSaved = savedNews.includes(news.id);
@@ -1045,43 +1443,57 @@ export default function HomePage() {
                         key={`${news.id}-${index}`}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.05 }}
+                        transition={{ delay: index * 0.1 }}
                         className="h-full"
                       >
-                        <Link href={`/news/${news.slug}?id=${news.id}`} className="block h-full">
-                          <Card className="h-full min-h-[260px] flex flex-col border-0 shadow-md hover:shadow-xl transition-all cursor-pointer group overflow-hidden">
-                            {/* Image */}
-                            <div className="relative h-32 flex-shrink-0 overflow-hidden">
+                        <Link href={`/news/${news.slug}?id=${news.id}`} aria-label={`Read article: ${news.title}`} className="block h-full">
+                          <Card className="h-full flex flex-col border-0 shadow-lg hover:shadow-2xl transition-all cursor-pointer group overflow-hidden bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm">
+                            <div className="relative h-44 flex-shrink-0 overflow-hidden">
                               <Image
                                 src={news.imageUrl || config.image}
                                 alt={news.title}
                                 fill
-                                className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                sizes="(max-width: 768px) 100vw, 25vw"
+                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 33vw"
                                 loading="lazy"
-                                unoptimized={news.imageUrl ? !news.imageUrl.includes('localhost') : false}
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                              <Badge className={`absolute top-2 left-2 bg-gradient-to-r ${config.gradient} text-white border-0 text-[10px]`}>
-                                {news.category}
-                              </Badge>
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                              <div className="absolute top-3 left-3">
+                                <Badge className={`bg-gradient-to-r ${config.gradient} text-white border-0`}>
+                                  <config.icon className="h-3 w-3 mr-1" />
+                                  {news.category}
+                                </Badge>
+                              </div>
                               {news.isAlert && (
-                                <Badge className="absolute top-2 right-2 bg-red-500 text-white animate-pulse border-0 text-[10px]">ALERT</Badge>
+                                <Badge className="absolute top-3 right-3 bg-red-500 text-white animate-pulse border-0">
+                                  <AlertTriangle className="h-3 w-3 mr-1" />
+                                  ALERT
+                                </Badge>
                               )}
+                              <motion.button
+                                onClick={(e) => toggleSaveNews(news.id, e)}
+                                className="absolute bottom-2 right-2 p-1.5 rounded-full bg-white/80 hover:bg-white transition-colors"
+                                aria-label={isSaved ? "Remove from saved" : "Save for later"}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                              >
+                                {isSaved ? (
+                                  <BookmarkCheck className="h-4 w-4 text-[#0F4C81]" />
+                                ) : (
+                                  <Bookmark className="h-4 w-4 text-gray-600" />
+                                )}
+                              </motion.button>
                             </div>
-                            {/* Content */}
-                            <CardContent className="p-3 flex flex-col flex-1">
-                              <h3 className="font-semibold text-sm line-clamp-2 group-hover:text-[#0F4C81] transition-colors mb-1">
+                            <CardContent className="p-4 flex flex-col flex-1">
+                              <h3 className="font-semibold text-base line-clamp-2 group-hover:text-[#0F4C81] transition-colors mb-2">
                                 {news.title}
                               </h3>
-                              <p className="text-xs text-muted-foreground line-clamp-2 mb-2 flex-1">{news.excerpt}</p>
-                              <div className="flex items-center justify-between text-[10px] text-muted-foreground mt-auto">
+                              <p className="text-sm text-muted-foreground line-clamp-2 mb-3 flex-1">{news.excerpt}</p>
+                              <div className="flex items-center justify-between text-xs text-muted-foreground mt-auto">
                                 <span className="font-medium text-foreground">{news.source}</span>
-                                <div className="flex items-center gap-2">
-                                  <span>{formatRelativeTime(news.publishedAt)}</span>
-                                  <button onClick={(e) => toggleSaveNews(news.id, e)} className="hover:text-[#0F4C81]">
-                                    {isSaved ? <BookmarkCheck className="h-3 w-3 text-[#0F4C81]" /> : <Bookmark className="h-3 w-3" />}
-                                  </button>
+                                <div className="flex items-center gap-1">
+                                  <Clock className="h-3 w-3" />
+                                  {formatRelativeTime(news.publishedAt)}
                                 </div>
                               </div>
                             </CardContent>
@@ -1095,326 +1507,63 @@ export default function HomePage() {
 
               {/* Empty State */}
               {!isLoading && featuredNews.length === 0 && (
-                <div className="text-center py-12 bg-muted/30 rounded-lg">
+                <div className="text-center py-12">
                   <Newspaper className="h-12 w-12 text-muted-foreground mx-auto mb-3" />
-                  <h3 className="text-lg font-semibold mb-2">No News Available</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Check back later for the latest trade news.</p>
-                  <Button onClick={fetchNews} variant="outline" size="sm">
-                    <RefreshCw className="h-4 w-4 mr-2" />
-                    Refresh
-                  </Button>
-                </div>
-              )}
-
-              {/* View All Button */}
-              {featuredNews.length > 0 && (
-                <div className="text-center mt-4">
-                  <Button asChild variant="outline" size="sm">
-                    <Link href="/news">
-                      View All News <ArrowRight className="h-4 w-4 ml-1" />
-                    </Link>
-                  </Button>
+                  <h3 className="text-lg font-semibold mb-2">No news found</h3>
+                  <p className="text-muted-foreground">Check back later for updates.</p>
                 </div>
               )}
             </motion.div>
           </div>
         </section>
 
-        {/* Trending News Section - Full Width Images */}
-        {trendingNews.length > 0 && (
-          <section className="py-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800" aria-labelledby="trending-title">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center gap-2 mb-2">
-                  <Flame className="h-5 w-5 text-orange-500" aria-hidden="true" />
-                  <h3 id="trending-title" className="text-xl font-bold">Trending Now</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">The most talked-about stories in global trade</p>
-              </div>
-              <div className="flex justify-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 max-w-7xl" role="list">
-                  {trendingNews.map((news, idx) => {
-                    const config = categoryConfig[news.category] || categoryConfig["Ocean Freight"];
-                    return (
-                      <motion.div
-                        key={`${news.id}-${idx}`}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.1 }}
-                        role="listitem"
-                      >
-                        <Link href={`/news/${news.slug}?id=${news.id}`} className="block h-full group">
-                          <Card className="h-full min-h-[280px] border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white dark:bg-slate-800">
-                            {/* Full Width Image */}
-                            <div className="relative h-40 w-full overflow-hidden">
-                              <Image
-                                src={news.imageUrl || config.image}
-                                alt={news.title}
-                                fill
-                                className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                                loading="lazy"
-                                unoptimized={news.imageUrl ? !news.imageUrl.includes('localhost') : false}
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                              {/* Category Badge */}
-                              <Badge className={`absolute top-3 left-3 bg-gradient-to-r ${config.gradient} text-white border-0 text-[10px] font-medium shadow-md`}>
-                                {news.category}
-                              </Badge>
-                              {/* Trending Number */}
-                              <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/90 dark:bg-slate-900/90 flex items-center justify-center shadow-md">
-                                <span className="text-xs font-bold text-[#0F4C81]">{idx + 1}</span>
-                              </div>
-                            </div>
-                            {/* Content */}
-                            <CardContent className="p-4 flex flex-col flex-1">
-                              <h4 className="font-semibold text-sm line-clamp-2 group-hover:text-[#0F4C81] transition-colors mb-2 leading-snug">
-                                {news.title}
-                              </h4>
-                              <p className="text-xs text-muted-foreground line-clamp-2 flex-1">{news.excerpt}</p>
-                              <div className="flex items-center justify-between mt-3 pt-2 border-t border-border/30">
-                                <span className="text-[10px] font-medium text-muted-foreground">{news.source}</span>
-                                <span className="text-[10px] text-muted-foreground">{formatRelativeTime(news.publishedAt)}</span>
-                              </div>
-                              {/* Image Credit */}
-                              {(news.imageCredit || config.imageCredit) && (
-                                <span className="text-[9px] text-muted-foreground/60 mt-1 block truncate">
-                                  {news.imageCredit || config.imageCredit}
-                                </span>
-                              )}
-                            </CardContent>
-                          </Card>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Quick Tools Section */}
-        <section className="py-4 bg-background" aria-labelledby="tools-title">
+        {/* ============================================ */}
+        {/* SECTION 6: KNOWLEDGE HUB */}
+        {/* ============================================ */}
+        <section className="py-10 bg-muted/30" aria-labelledby="learn-title">
           <div className="container mx-auto px-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="flex items-center justify-between mb-3">
-                <div>
-                  <h2 id="tools-title" className="text-lg font-bold flex items-center gap-2">
-                    <Zap className="h-5 w-5 text-amber-500" aria-hidden="true" />
-                    Trade Tools
-                  </h2>
-                  <p className="text-xs text-muted-foreground">Essential calculators and tools</p>
-                </div>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="/tools">
-                    All Tools <ChevronRight className="h-3 w-3 ml-1" />
-                  </Link>
-                </Button>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-center mb-8">
+                <Badge className="mb-3 bg-[#2E8B57]/10 text-[#2E8B57] border-[#2E8B57]/20">
+                  <Sparkles className="h-3 w-3 mr-1" aria-hidden="true" />
+                  Learn Trade
+                </Badge>
+                <h2 id="learn-title" className="text-2xl md:text-3xl font-bold mb-2">Essential Trade Knowledge</h2>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  Master the fundamentals of international trade, shipping, and logistics
+                </p>
               </div>
 
-              {/* 5-column grid of 10 tools */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
-                {popularTools.map((tool, index) => (
-                  <motion.div key={tool.name} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.03 }}>
-                    <Link href={tool.href}>
-                      <Card className="h-full border-0 shadow-sm hover:shadow-lg transition-all cursor-pointer group text-center">
-                        <CardContent className="p-3">
-                          <div className="w-9 h-9 rounded-lg mx-auto mb-2 flex items-center justify-center" style={{ backgroundColor: `${tool.color}15` }}>
-                            <tool.icon className="h-4 w-4" style={{ color: tool.color }} />
-                          </div>
-                          <h3 className="font-medium text-xs group-hover:text-[#0F4C81]">{tool.name}</h3>
-                          <p className="text-[10px] text-muted-foreground">{tool.category}</p>
-                        </CardContent>
-                      </Card>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Market Data Section - 2x2 Chart Grid */}
-        <section className="py-4 bg-gradient-to-br from-[#0F4C81]/5 to-[#2E8B57]/5" aria-labelledby="market-title">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="flex items-center justify-between mb-3">
-                <div>
-                  <h2 id="market-title" className="text-lg font-bold flex items-center gap-2">
-                    <BarChart3 className="h-5 w-5 text-[#0F4C81]" />
-                    Trade & Market Data
-                  </h2>
-                  <p className="text-xs text-muted-foreground">Real-time rates and indices</p>
-                </div>
-              </div>
-
-              {/* 2x2 Chart Grid */}
-              <div className="grid md:grid-cols-2 gap-3">
-                {/* Chart 1: FBX Container Freight Index */}
-                <Card className="border-0 shadow-md">
-                  <CardHeader className="pb-1 pt-3 px-3">
-                    <CardTitle className="text-sm flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-[#2E8B57]" />
-                      FBX Container Freight Index
-                    </CardTitle>
-                    <CardDescription className="text-xs">12-month trend (USD/FEU)</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-3 pt-0">
-                    <div className="h-32">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={freightRateData}>
-                          <defs>
-                            <linearGradient id="colorRate" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor={OCEAN_BLUE} stopOpacity={0.3} />
-                              <stop offset="95%" stopColor={OCEAN_BLUE} stopOpacity={0} />
-                            </linearGradient>
-                          </defs>
-                          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                          <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <RechartsTooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px" }} />
-                          <Area type="monotone" dataKey="rate" stroke={OCEAN_BLUE} strokeWidth={2} fillOpacity={1} fill="url(#colorRate)" />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                    </div>
-                    <div className="flex justify-between text-[10px] mt-2 px-1">
-                      <span className="text-muted-foreground">Current: <span className="font-semibold text-foreground">$3,920</span></span>
-                      <span className="text-green-600">+60.0% YoY</span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Chart 2: BDI Baltic Dry Index */}
-                <Card className="border-0 shadow-md">
-                  <CardHeader className="pb-1 pt-3 px-3">
-                    <CardTitle className="text-sm flex items-center gap-2">
-                      <Anchor className="h-4 w-4 text-[#0F4C81]" />
-                      BDI Baltic Dry Index
-                    </CardTitle>
-                    <CardDescription className="text-xs">12-month trend (Index Points)</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-3 pt-0">
-                    <div className="h-32">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={bdiData}>
-                          <defs>
-                            <linearGradient id="colorBDI" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor={LOGISTICS_GREEN} stopOpacity={0.3} />
-                              <stop offset="95%" stopColor={LOGISTICS_GREEN} stopOpacity={0} />
-                            </linearGradient>
-                          </defs>
-                          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                          <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <RechartsTooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px" }} />
-                          <Area type="monotone" dataKey="rate" stroke={LOGISTICS_GREEN} strokeWidth={2} fillOpacity={1} fill="url(#colorBDI)" />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                    </div>
-                    <div className="flex justify-between text-[10px] mt-2 px-1">
-                      <span className="text-muted-foreground">Current: <span className="font-semibold text-foreground">1,847</span></span>
-                      <span className="text-red-600">-1.2% MoM</span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Chart 3: EUR/USD Exchange Rate */}
-                <Card className="border-0 shadow-md">
-                  <CardHeader className="pb-1 pt-3 px-3">
-                    <CardTitle className="text-sm flex items-center gap-2">
-                      <DollarSign className="h-4 w-4 text-emerald-600" />
-                      EUR/USD Exchange Rate
-                    </CardTitle>
-                    <CardDescription className="text-xs">12-month trend</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-3 pt-0">
-                    <div className="h-32">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={currencyData}>
-                          <defs>
-                            <linearGradient id="colorEUR" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor="#10B981" stopOpacity={0.3} />
-                              <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
-                            </linearGradient>
-                          </defs>
-                          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                          <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={10} domain={['dataMin', 'dataMax']} />
-                          <RechartsTooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px" }} />
-                          <Area type="monotone" dataKey="rate" stroke="#10B981" strokeWidth={2} fillOpacity={1} fill="url(#colorEUR)" />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                    </div>
-                    <div className="flex justify-between text-[10px] mt-2 px-1">
-                      <span className="text-muted-foreground">Current: <span className="font-semibold text-foreground">1.0842</span></span>
-                      <span className="text-green-600">+0.12%</span>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Chart 4: Crude Oil (WTI) */}
-                <Card className="border-0 shadow-md">
-                  <CardHeader className="pb-1 pt-3 px-3">
-                    <CardTitle className="text-sm flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-amber-600" />
-                      Crude Oil (WTI)
-                    </CardTitle>
-                    <CardDescription className="text-xs">12-month trend (USD/barrel)</CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-3 pt-0">
-                    <div className="h-32">
-                      <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={crudeOilData}>
-                          <defs>
-                            <linearGradient id="colorOil" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="5%" stopColor="#F59E0B" stopOpacity={0.3} />
-                              <stop offset="95%" stopColor="#F59E0B" stopOpacity={0} />
-                            </linearGradient>
-                          </defs>
-                          <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                          <XAxis dataKey="month" stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <YAxis stroke="hsl(var(--muted-foreground))" fontSize={10} />
-                          <RechartsTooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px" }} />
-                          <Area type="monotone" dataKey="price" stroke="#F59E0B" strokeWidth={2} fillOpacity={1} fill="url(#colorOil)" />
-                        </AreaChart>
-                      </ResponsiveContainer>
-                    </div>
-                    <div className="flex justify-between text-[10px] mt-2 px-1">
-                      <span className="text-muted-foreground">Current: <span className="font-semibold text-foreground">$79.20</span></span>
-                      <span className="text-green-600">+0.9%</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Educational Content Section */}
-        <section className="py-4 bg-background" aria-labelledby="learn-title">
-          <div className="container mx-auto px-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="mb-3">
-                <h2 id="learn-title" className="text-lg font-bold">Trade Knowledge Hub</h2>
-                <p className="text-xs text-muted-foreground">Essential guides and resources</p>
-              </div>
-
-              {/* 3-column grid of 6 cards */}
-              <div className="grid md:grid-cols-3 gap-3">
+              <div className="grid md:grid-cols-3 gap-6">
                 {educationalContent.map((item, index) => (
-                  <motion.div key={item.title} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }}>
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
                     <Link href={item.href}>
-                      <Card className="h-full border-0 shadow-sm hover:shadow-lg transition-all cursor-pointer group">
-                        <CardContent className="p-3">
-                          <div className="flex items-start gap-2">
-                            <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${item.color}15` }}>
-                              <item.icon className="h-4 w-4" style={{ color: item.color }} />
-                            </div>
-                            <div>
-                              <h3 className="font-medium text-sm group-hover:text-[#0F4C81]">{item.title}</h3>
-                              <p className="text-xs text-muted-foreground line-clamp-2">{item.description}</p>
-                            </div>
+                      <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all cursor-pointer group bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm hover:-translate-y-1">
+                        <CardContent className="p-6">
+                          <motion.div
+                            className="w-14 h-14 rounded-2xl mb-4 flex items-center justify-center transition-transform group-hover:scale-110"
+                            style={{ backgroundColor: `${item.color}15` }}
+                            whileHover={{ rotate: 5 }}
+                          >
+                            <item.icon className="h-7 w-7" style={{ color: item.color }} />
+                          </motion.div>
+                          <h3 className="font-semibold text-lg mb-2 group-hover:text-[#0F4C81] transition-colors">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">{item.description}</p>
+                          <div className="mt-4 flex items-center text-sm font-medium text-[#0F4C81]">
+                            Learn More
+                            <ArrowRight className="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" />
                           </div>
                         </CardContent>
                       </Card>
@@ -1426,23 +1575,45 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Directories Section */}
-        <section className="py-4 bg-muted/30" aria-labelledby="directories-title">
+        {/* ============================================ */}
+        {/* SECTION 7: INDUSTRY DIRECTORIES */}
+        {/* ============================================ */}
+        <section className="py-10 bg-background" aria-labelledby="directories-title">
           <div className="container mx-auto px-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <div className="mb-3">
-                <h2 id="directories-title" className="text-lg font-bold">Industry Directories</h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 id="directories-title" className="text-2xl font-bold flex items-center gap-2">
+                    <Building className="h-6 w-6 text-[#0F4C81]" aria-hidden="true" />
+                    Industry Directories
+                  </h2>
+                  <p className="text-muted-foreground">Find trusted partners worldwide</p>
+                </div>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {directoriesPreview.map((dir, index) => (
-                  <motion.div key={dir.name} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.03 }}>
+                  <motion.div
+                    key={dir.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                  >
                     <Link href={dir.href}>
-                      <Card className="h-full border-0 shadow-sm hover:shadow-md transition-all cursor-pointer group text-center">
-                        <CardContent className="p-3">
-                          <dir.icon className="h-6 w-6 mx-auto mb-1 text-[#0F4C81]" />
-                          <h3 className="font-medium text-xs group-hover:text-[#0F4C81]">{dir.name}</h3>
-                          <p className="text-sm font-bold text-[#2E8B57]">{dir.count}</p>
+                      <Card className="h-full border-0 shadow-md hover:shadow-xl transition-all cursor-pointer group bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm hover:-translate-y-1">
+                        <CardContent className="p-5 text-center">
+                          <motion.div
+                            whileHover={{ scale: 1.1, rotate: 5 }}
+                          >
+                            <dir.icon className="h-10 w-10 mx-auto mb-3 text-[#0F4C81]" />
+                          </motion.div>
+                          <h3 className="font-medium group-hover:text-[#0F4C81] transition-colors">{dir.name}</h3>
+                          <p className="text-2xl font-bold text-[#2E8B57] mt-1">{dir.count}</p>
                         </CardContent>
                       </Card>
                     </Link>
@@ -1453,38 +1624,55 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Did You Know Strip */}
-        <section className="py-2 bg-muted/30 border-t border-border/40">
+        {/* Trust Badges */}
+        <section className="py-6 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="flex items-center gap-2 text-xs">
-              <Lightbulb className="h-3 w-3 text-amber-500" />
-              <span className="text-muted-foreground">Did you know?</span>
-              <AnimatePresence mode="wait">
-                <motion.span key={currentFactIndex} initial={{ opacity: 0, y: 5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -5 }} className="font-medium">
-                  {tradeFacts[currentFactIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap justify-center gap-6"
+            >
+              {trustBadges.map((badge, i) => (
+                <motion.div
+                  key={i}
+                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <badge.icon className="h-4 w-4 text-[#2E8B57]" />
+                  {badge.text}
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-4 bg-gradient-to-br from-[#0F4C81]/5 to-[#2E8B57]/5" aria-labelledby="cta-title">
+        {/* ============================================ */}
+        {/* SECTION 8: FINAL CTA */}
+        {/* ============================================ */}
+        <section className="py-12 bg-gradient-to-br from-[#0F4C81]/5 to-[#2E8B57]/5" aria-labelledby="cta-title">
           <div className="container mx-auto px-4">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-              <h2 id="cta-title" className="text-lg font-bold mb-1">Ready to Optimize Your Trade Operations?</h2>
-              <p className="text-xs text-muted-foreground mb-3">
-                Access 82+ calculators, real-time market data, and comprehensive trade tools.
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <h2 id="cta-title" className="text-2xl md:text-3xl font-bold mb-4">Ready to Optimize Your Trade Operations?</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto mb-6">
+                Access 82+ calculators, 72+ document generators, and real-time market data - all in one platform.
               </p>
-              <div className="flex flex-wrap justify-center gap-2">
-                <Button asChild size="sm" className="bg-[#0F4C81] hover:bg-[#0F4C81]/90 text-white">
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button asChild size="lg" className="bg-[#0F4C81] hover:bg-[#0F4C81]/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
                   <Link href="/tools">
-                    <Calculator className="mr-1 h-4 w-4" /> Explore Tools
+                    <Calculator className="mr-2 h-5 w-5" />
+                    Explore Calculators
                   </Link>
                 </Button>
-                <Button asChild size="sm" className="bg-[#2E8B57] hover:bg-[#2E8B57]/90 text-white">
-                  <Link href="/news">
-                    <Newspaper className="mr-1 h-4 w-4" /> Latest News
+                <Button asChild size="lg" className="bg-[#2E8B57] hover:bg-[#2E8B57]/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+                  <Link href="/documents">
+                    <FileText className="mr-2 h-5 w-5" />
+                    Generate Documents
                   </Link>
                 </Button>
               </div>
@@ -1494,24 +1682,38 @@ export default function HomePage() {
       </main>
 
       {/* Floating Quick Actions Button */}
-      <motion.div className="fixed bottom-6 right-6 z-40" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1 }}>
+      <motion.div
+        className="fixed bottom-6 right-6 z-40"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 1 }}
+      >
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <motion.button
                 onClick={() => setShowQuickActions(!showQuickActions)}
-                className="h-12 w-12 rounded-full shadow-lg bg-gradient-to-r from-[#0F4C81] to-[#2E8B57] text-white flex items-center justify-center"
+                className="h-14 w-14 rounded-full shadow-2xl bg-gradient-to-r from-[#0F4C81] to-[#2E8B57] hover:from-[#0F4C81]/90 hover:to-[#2E8B57]/90 text-white flex items-center justify-center"
+                aria-label="Toggle quick actions"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
                 <AnimatePresence mode="wait">
-                  <motion.div key={showQuickActions ? 'close' : 'zap'} initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }}>
-                    {showQuickActions ? <X className="h-5 w-5" /> : <Zap className="h-5 w-5" />}
+                  <motion.div
+                    key={showQuickActions ? 'close' : 'zap'}
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    {showQuickActions ? <X className="h-6 w-6" /> : <Zap className="h-6 w-6" />}
                   </motion.div>
                 </AnimatePresence>
               </motion.button>
             </TooltipTrigger>
-            <TooltipContent><p>Quick Actions</p></TooltipContent>
+            <TooltipContent>
+              <p>Quick Actions</p>
+            </TooltipContent>
           </Tooltip>
         </TooltipProvider>
         
@@ -1522,14 +1724,14 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.9 }}
-              className="absolute bottom-14 right-0 bg-card border rounded-lg shadow-lg p-1.5 min-w-48"
+              className="absolute bottom-16 right-0 bg-card border border-border rounded-xl shadow-2xl p-2 min-w-56 backdrop-blur-sm"
             >
               {quickActions.map((action, i) => (
                 <motion.button
                   key={action.name}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.03 }}
+                  transition={{ delay: i * 0.05 }}
                   onClick={() => {
                     if (action.modal === 'cbm') setShowCBMModal(true);
                     else if (action.modal === 'tracking') setShowTrackingModal(true);
@@ -1537,17 +1739,69 @@ export default function HomePage() {
                     else window.open(action.href, '_blank');
                     setShowQuickActions(false);
                   }}
-                  className="flex items-center gap-2 p-2 rounded hover:bg-muted/50 transition-colors w-full text-left"
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors w-full text-left"
                 >
-                  <div className="w-7 h-7 rounded flex items-center justify-center" style={{ backgroundColor: `${action.color}20` }}>
-                    <action.icon className="h-3 w-3" style={{ color: action.color }} />
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: `${action.color}20` }}
+                  >
+                    <action.icon className="h-4 w-4" style={{ color: action.color }} />
                   </div>
-                  <span className="text-xs font-medium">{action.name}</span>
+                  <div className="flex-1">
+                    <span className="text-sm font-medium">{action.name}</span>
+                    <span className="text-xs text-muted-foreground block">{action.shortcut}</span>
+                  </div>
+                  <ExternalLink className="h-3 w-3 text-muted-foreground" />
                 </motion.button>
               ))}
+              <div className="border-t border-border mt-2 pt-2">
+                <motion.button
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  onClick={() => {
+                    toggleDarkMode();
+                    setShowQuickActions(false);
+                  }}
+                  className="flex items-center gap-3 p-3 rounded-lg hover:bg-muted/50 transition-colors w-full text-left"
+                >
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-muted">
+                    {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+                  </div>
+                  <div className="flex-1">
+                    <span className="text-sm font-medium">{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
+                    <span className="text-xs text-muted-foreground block">Ctrl+D</span>
+                  </div>
+                </motion.button>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
+      </motion.div>
+
+      {/* Live Chat Widget Button */}
+      <motion.div
+        className="fixed bottom-6 left-6 z-40"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ delay: 1.2 }}
+      >
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                asChild
+                className="h-12 w-12 rounded-full shadow-2xl bg-[#2E8B57] hover:bg-[#2E8B57]/90 text-white"
+              >
+                <Link href="#chat">
+                  <MessageCircle className="h-5 w-5" />
+                </Link>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Live Chat Support</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </motion.div>
 
       {/* Back to Top Button */}
@@ -1564,8 +1818,12 @@ export default function HomePage() {
       {/* Marquee Animation Style */}
       <style jsx global>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
         .animate-marquee {
           animation: marquee 30s linear infinite;
