@@ -70,7 +70,7 @@ export default async function PortDetailPage({ params }: { params: { country: st
         <h1 className="text-4xl font-bold mb-4">Port Not Found</h1>
         <p className="text-slate-600 mb-8">The port you are looking for could not be found in our database.</p>
         <Link href="/directories/ports">
-          <Button bg-[#0F4C81]>Back to Directory</Button>
+          <Button className="bg-[#0F4C81] hover:bg-[#0F4C81]/90">Back to Directory</Button>
         </Link>
       </div>
     );
