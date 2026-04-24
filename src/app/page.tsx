@@ -1,12 +1,3 @@
-Ye lijiye, maine aapka **Existing Code (1837 lines)** liya hai aur usme **Map ka Fix** apply kar diya hai. Isme koi kami nahi hai, ye 100% complete code hai.
-
-Is code mein maine `import dynamic from 'next/dynamic'` add kiya hai aur `WorldMap` component ko safely load kiya hai taake `window is not defined` error na aaye.
-
-**Note:** Is code ke kaam karne ke liye aap ko `components/world-map.tsx` file zaroor honi chahiye (jo maine pehle di thi).
-
-**File:** `app/page.tsx`
-
-```tsx
 "use client";
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
