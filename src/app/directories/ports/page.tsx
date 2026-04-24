@@ -2,15 +2,15 @@
 
 import { useState, useMemo, useEffect } from "react";
 import nextDynamic from 'next/dynamic';
-import { 
-  Search, 
-  Globe, 
-  Ship, 
-  Anchor, 
-  MapPin, 
-  Info, 
-  ChevronRight, 
-  ExternalLink, 
+import {
+  Search,
+  Globe,
+  Ship,
+  Anchor,
+  MapPin,
+  Info,
+  ChevronRight,
+  ExternalLink,
   Navigation,
   ArrowRight,
   ChevronLeft
@@ -19,13 +19,12 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import portsData from '@/../../public/data/ports-full.json';
 
 // Dynamic import for Leaflet map to avoid SSR issues
-const GlobalPortsMap = nextDynamic(() => import('@/components/GlobalPortsMap'), { 
+const GlobalPortsMap = nextDynamic(() => import('@/components/GlobalPortsMap'), {
   ssr: false,
   loading: () => (
-    <div className="h-[500px] w-full bg-slate-100 animate-pulse flex items-center justify-center rounded-xl border border-slate-200">
+    <div className="h- w-full bg-slate-100 animate-pulse flex items-center justify-center rounded-xl border border-slate-200">
       <span className="text-slate-400 font-medium">Loading interactive map...</span>
     </div>
   )
@@ -48,38 +47,53 @@ interface Port {
 const ITEMS_PER_PAGE = 50;
 
 export default function PortsDirectoryPage() {
-  const [selected, setSelected] = useState<Port>(portsData[0]);
+  const [portsData, setPortsData] = useState<Port[]>([]);
+  const [selected, setSelected] = useState<Port | null>(null);
   const [search, setSearch] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
+  const [loading, setLoading] = useState(true);
 
-  // Initial selection from URL without useSearchParams
+  // Load ports data from public folder
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get('port');
-    if (code) {
-      const p = portsData.find(x => x.unlocode === code.toUpperCase());
-      if (p) setSelected(p);
-    }
+    fetch('/data/ports-full.json')
+     .then(res => res.json())
+     .then((data: Port[]) => {
+        setPortsData(data);
+        setSelected(data[0] || null);
+
+        // Check URL for initial port
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('port');
+        if (code) {
+          const p = data.find(x => x.unlocode === code.toUpperCase());
+          if (p) setSelected(p);
+        }
+        setLoading(false);
+      })
+     .catch(err => {
+        console.error('Failed to load ports:', err);
+        setLoading(false);
+      });
   }, []);
 
   // Update URL when selection changes
   useEffect(() => {
-    if (selected) {
+    if (selected && typeof window!== 'undefined') {
       const url = new URL(window.location.href);
       url.searchParams.set('port', selected.unlocode);
-      window.history.pushState({}, '', url.toString());
+      window.history.replaceState({}, '', url.toString());
     }
   }, [selected]);
 
   const filtered = useMemo(() => {
     if (!search) return portsData;
     const query = search.toLowerCase();
-    return portsData.filter(p => 
-      p.name.toLowerCase().includes(query) || 
+    return portsData.filter(p =>
+      p.name.toLowerCase().includes(query) ||
       p.unlocode.toLowerCase().includes(query) ||
       (p.country_name && p.country_name.toLowerCase().includes(query))
     );
-  }, [search]);
+  }, [search, portsData]);
 
   // Reset page when search changes
   useEffect(() => {
@@ -93,6 +107,17 @@ export default function PortsDirectoryPage() {
     setSelected(port);
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50/50 flex items-center justify-center">
+        <div className="text-center">
+          <Globe className="h-12 w-12 text-[#0F4C81] mx-auto mb-4 animate-pulse" />
+          <p className="text-slate-600">Loading 11,247 ports...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-slate-50/50">
       {/* Hero Section */}
@@ -101,15 +126,15 @@ export default function PortsDirectoryPage() {
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4 bg-[#0F4C81]/10 text-[#0F4C81] border-none px-4 py-1.5 rounded-full">
               <Globe className="h-4 w-4 mr-2 inline" />
-              11,247 Ports Worldwide
+              {portsData.length.toLocaleString()} Ports Worldwide
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
               Global Port Directory
             </h1>
             <div className="max-w-2xl mx-auto relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
-              <Input 
-                placeholder="Search by name, code, or country..." 
+              <Input
+                placeholder="Search by name, code, or country..."
                 className="pl-12 h-14 text-lg rounded-xl border-slate-200 shadow-sm focus-visible:ring-[#0F4C81]"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -122,45 +147,45 @@ export default function PortsDirectoryPage() {
       {/* Main Grid */}
       <main className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
+
           {/* LEFT: List & Pagination (4 columns) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center justify-between mb-2">
               <h2 className="font-bold text-slate-900">
-                {search ? `Results (${filtered.length})` : "All Ports"}
+                {search? `Results (${filtered.length})` : "All Ports"}
               </h2>
               <span className="text-xs text-slate-500 font-medium">
                 Page {currentPage} of {totalPages || 1}
               </span>
             </div>
 
-            <div className="space-y-3 max-h-[800px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200">
+            <div className="space-y-3 max-h- overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-slate-200">
               {paginatedPorts.map((port) => (
                 <button
                   key={port.unlocode}
                   onClick={() => handleSelect(port)}
                   className={`w-full text-left p-4 rounded-xl border transition-all ${
                     selected?.unlocode === port.unlocode
-                      ? "border-[#0F4C81] bg-white shadow-md ring-1 ring-[#0F4C81]"
+                     ? "border-[#0F4C81] bg-white shadow-md ring-1 ring-[#0F4C81]"
                       : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
                   }`}
                 >
                   <div className="flex justify-between items-start">
                     <div>
-                      <h4 className="font-bold text-slate-900 truncate max-w-[180px]">{port.name}</h4>
+                      <h4 className="font-bold text-slate-900 truncate max-w-">{port.name}</h4>
                       <p className="text-xs text-slate-500 mt-1 flex items-center">
                         <MapPin className="h-3 w-3 mr-1" />
                         {port.country_name}
                       </p>
                     </div>
-                    <Badge variant="outline" className="text-[10px] font-mono bg-slate-50">
+                    <Badge variant="outline" className="text- font-mono bg-slate-50">
                       {port.unlocode}
                     </Badge>
                   </div>
                 </button>
               ))}
-              
-              {filtered.length === 0 && (
+
+              {filtered.length === 0 &&!loading && (
                 <div className="py-20 text-center bg-white rounded-xl border border-dashed border-slate-200">
                   <Search className="h-10 w-10 text-slate-200 mx-auto mb-3" />
                   <p className="text-slate-500">No ports found matching "{search}"</p>
@@ -171,9 +196,9 @@ export default function PortsDirectoryPage() {
             {/* Pagination Controls */}
             {totalPages > 1 && (
               <div className="flex items-center justify-between pt-4">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   disabled={currentPage === 1}
                   onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                   className="rounded-lg"
@@ -183,9 +208,9 @@ export default function PortsDirectoryPage() {
                 <div className="text-sm font-medium text-slate-600">
                   {currentPage} / {totalPages}
                 </div>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
+                <Button
+                  variant="outline"
+                  size="sm"
                   disabled={currentPage === totalPages}
                   onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                   className="rounded-lg"
@@ -198,9 +223,9 @@ export default function PortsDirectoryPage() {
 
           {/* RIGHT: Map & Details (8 columns) */}
           <div className="lg:col-span-8 space-y-6">
-            <GlobalPortsMap 
-              ports={filtered} 
-              selectedId={selected?.unlocode} 
+            <GlobalPortsMap
+              ports={filtered}
+              selectedId={selected?.unlocode}
               onSelect={handleSelect}
               height="500px"
               maxMarkers={500}
@@ -235,13 +260,13 @@ export default function PortsDirectoryPage() {
                     <div className="space-y-1">
                       <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Annual Throughput</p>
                       <p className="text-xl font-bold text-slate-900">
-                        {selected.annual_teu ? `${(selected.annual_teu / 1000000).toFixed(1)}M TEU` : 'N/A'}
+                        {selected.annual_teu? `${(selected.annual_teu / 1000000).toFixed(1)}M TEU` : 'N/A'}
                       </p>
                     </div>
                     <div className="space-y-1">
                       <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Max Depth</p>
                       <p className="text-xl font-bold text-slate-900">
-                        {selected.max_depth_m ? `${selected.max_depth_m}m` : 'N/A'}
+                        {selected.max_depth_m? `${selected.max_depth_m}m` : 'N/A'}
                       </p>
                     </div>
                     <div className="space-y-1">
@@ -261,7 +286,7 @@ export default function PortsDirectoryPage() {
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Port Intelligence</h4>
                       <p className="text-sm text-slate-600 leading-relaxed">
-                        {selected.name} is a key {selected.port_type.toLowerCase()} in {selected.country_name}. 
+                        {selected.name} is a key {selected.port_type.toLowerCase()} in {selected.country_name}.
                         It handles significant maritime traffic and is essential for global supply chains.
                       </p>
                     </div>
