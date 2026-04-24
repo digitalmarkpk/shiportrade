@@ -420,7 +420,7 @@ export default function PortTerminalSelectorPage() {
                 {
                   title: "Port Code Finder",
                   description: "Search UN/LOCODE port codes worldwide",
-                  href: "/tools/ocean-freight/port-code-finder",
+                  href: "/directories/ports",
                   icon: Globe,
                 },
                 {

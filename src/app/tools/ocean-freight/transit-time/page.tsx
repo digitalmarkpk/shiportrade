@@ -468,7 +468,7 @@ export default function TransitTimePage() {
         <h2 className="text-xl font-bold mb-4">Related Tools</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {[
-            { name: "Port Code Finder", href: "/tools/ocean-freight/port-code-finder" },
+            { name: "Port Code Finder", href: "/directories/ports" },
             { name: "Demurrage Calculator", href: "/tools/ocean-freight/demurrage-calculator" },
             { name: "Container Tracking", href: "/tools/ocean-freight/container-tracking" },
             { name: "BAF/CAF Estimator", href: "/tools/ocean-freight/baf-estimator" },

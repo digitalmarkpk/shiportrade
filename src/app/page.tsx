@@ -87,11 +87,9 @@ import {
   Area,
 } from "recharts";
 
-// FIX: Map component ko dynamic import kiya gaya hai SSR disable karke
-const WorldMap = dynamic(() => import('@/components/world-map'), { 
-  ssr: false, 
-  loading: () => <div className="h-[500px] bg-muted rounded-xl animate-pulse flex items-center justify-center text-muted-foreground">Loading Map...</div>
-});
+import { useRouter } from 'next/navigation';
+import GlobalPortsMap from '@/components/GlobalPortsMap';
+import portsData from '../../public/data/ports-full.json';
 
 // Brand Colors
 const OCEAN_BLUE = "#0F4C81";
@@ -145,7 +143,7 @@ const quickPills = [
   { name: "CBM Calculator", icon: Container, href: "/tools/ocean-freight/cbm-calculator" },
   { name: "Container Planner", icon: Boxes, href: "/tools/ocean-freight/container-loading-calculator" },
   { name: "HS Code", icon: Layers, href: "/tools/customs-compliance/hs-code-search" },
-  { name: "Port Finder", icon: Anchor, href: "/tools/ocean-freight/port-code-finder" },
+  { name: "Port Finder", icon: Anchor, href: "/directories/ports" },
   { name: "Landed Cost", icon: DollarSign, href: "/tools/international-trade/landed-cost-calculator" },
 ];
 
@@ -264,7 +262,7 @@ const educationalContent = [
 
 // Directories preview
 const directoriesPreview = [
-  { name: "Global Ports", count: "500+", icon: Anchor, href: "/tools/ocean-freight/port-code-finder" },
+  { name: "Global Ports", count: "11,247", icon: Anchor, href: "/directories/ports" },
   { name: "Shipping Lines", count: "150+", icon: Ship, href: "/directories/shipping-lines" },
   { name: "Freight Forwarders", count: "200+", icon: Truck, href: "/directories/freight-forwarders" },
   { name: "Customs Brokers", count: "100+", icon: Shield, href: "/directories/customs-brokers" },
@@ -868,6 +866,7 @@ function NewsCardSkeleton() {
 
 // Main Component
 export default function HomePage() {
+  const router = useRouter();
   const [newsData, setNewsData] = useState<NewsItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [savedNews, setSavedNews] = useState<string[]>([]);
@@ -1291,13 +1290,17 @@ export default function HomePage() {
                   <p className="text-muted-foreground">Live view of major shipping hubs worldwide</p>
                 </div>
                 <Button asChild variant="outline">
-                  <Link href="/tools/ocean-freight/port-code-finder">
-                    View All Ports
-                    <ChevronRight className="h-4 w-4 ml-1" />
+                  <Link href="/directories/ports">
+                    Explore 11,247 Ports →
                   </Link>
                 </Button>
               </div>
-              <WorldMap />
+              <GlobalPortsMap 
+                ports={portsData.filter(p => p.annual_teu > 500000)} 
+                height="520px" 
+                maxMarkers={200} 
+                onSelect={(port) => router.push(`/directories/ports?port=${port.unlocode}`)} 
+              />
             </motion.div>
           </div>
         </section>

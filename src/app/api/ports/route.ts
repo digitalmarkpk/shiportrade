@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   const offset = parseInt(searchParams.get('offset') || '0');
 
   try {
-    const filePath = path.join(process.cwd(), 'public/data/ports.json');
+    const filePath = path.join(process.cwd(), 'public/data/ports-full.json');
     const fileContent = fs.readFileSync(filePath, 'utf8');
     let ports = JSON.parse(fileContent);
 
