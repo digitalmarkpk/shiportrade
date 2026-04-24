@@ -77,6 +77,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import { slugify } from "@/utils/slugify";
 import {
   XAxis,
   YAxis,
@@ -266,7 +267,7 @@ const educationalContent = [
 
 // Directories preview
 const directoriesPreview = [
-  { name: "Global Ports", count: "11,247", icon: Anchor, href: "/directories/ports" },
+  { name: "Global Ports", count: "1,500+", icon: Anchor, href: "/directories/ports" },
   { name: "Shipping Lines", count: "150+", icon: Ship, href: "/directories/shipping-lines" },
   { name: "Freight Forwarders", count: "200+", icon: Truck, href: "/directories/freight-forwarders" },
   { name: "Customs Brokers", count: "100+", icon: Shield, href: "/directories/customs-brokers" },
@@ -904,9 +905,9 @@ export default function HomePage() {
 
   // FIXED: Fetch ports data
   useEffect(() => {
-    fetch('/data/ports-full.json')
+    fetch('/data/ports-main.json')
     .then(r => r.json())
-    .then(data => setPorts(data.filter((p: any) => p.annual_teu > 500000).slice(0, 200)))
+    .then(data => setPorts(data.filter((p: any) => p.annual_teu > 500000).slice(0, 50)))
     .catch(() => setPorts([]));
   }, []);
 
@@ -1104,17 +1105,23 @@ export default function HomePage() {
                 </div>
                 <Button asChild variant="outline">
                   <Link href="/directories/ports">
-                    Explore 11,247 Ports →
+                    Explore 1,500 Ports →
                   </Link>
                 </Button>
               </div>
-              {/* FIXED: Use ports state instead of portsData */}
-              <GlobalPortsMap
-                ports={ports}
-                height="520px"
-                maxMarkers={200}
-                onSelect={(port) => router.push(`/directories/ports?port=${port.unlocode}`)}
-              />
+              {/* FIXED: Map marker logic and alignment */}
+              <div className="relative w-full h-[520px] rounded-xl overflow-hidden border border-slate-200 shadow-inner">
+                <GlobalPortsMap
+                  ports={ports}
+                  height="100%"
+                  maxMarkers={50}
+                  onSelect={(port) => {
+                    const countrySlug = slugify(port.country_name);
+                    const portSlug = `${slugify(port.name.replace('Port of ', ''))}-${port.unlocode.toLowerCase()}`;
+                    router.push(`/directories/ports/${countrySlug}/${portSlug}`);
+                  }}
+                />
+              </div>
             </motion.div>
           </div>
         </section>

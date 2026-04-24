@@ -35,16 +35,21 @@ interface GlobalPortsMapProps {
   maxMarkers?: number;
 }
 
-// Component to handle map centering when selection changes
-function MapController({ selectedPort }: { selectedPort: Port | undefined }) {
+// Component to handle map centering and bounds
+function MapController({ selectedPort, ports }: { selectedPort: Port | undefined; ports: Port[] }) {
   const map = useMap();
+  
   useEffect(() => {
     if (selectedPort) {
       map.flyTo([selectedPort.latitude, selectedPort.longitude], 6, {
         duration: 1.5
       });
+    } else if (ports.length > 1) {
+      const bounds = L.latLngBounds(ports.map(p => [p.latitude, p.longitude]));
+      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
     }
-  }, [selectedPort, map]);
+  }, [selectedPort, ports, map]);
+  
   return null;
 }
 
@@ -58,18 +63,19 @@ export default function GlobalPortsMap({
   const selectedPort = ports.find(p => p.unlocode === selectedId);
 
   return (
-    <div style={{ height, width: '100%' }} className="rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-50">
+    <div style={{ height, width: '100%', position: 'relative' }} className="rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-50">
       <MapContainer 
         center={[20, 0]} 
         zoom={2} 
-        style={{ height: '100%', width: '100%' }} 
+        style={{ height: '100%', width: '100%', position: 'absolute', top: 0, left: 0 }} 
         scrollWheelZoom={true}
+        zoomControl={true}
       >
         <TileLayer 
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
         />
-        <MapController selectedPort={selectedPort} />
+        <MapController selectedPort={selectedPort} ports={ports} />
         {ports.slice(0, maxMarkers).map(p => (
           <Marker 
             key={p.unlocode} 
