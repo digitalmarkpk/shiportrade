@@ -1,8 +1,18 @@
+Ye lijiye, maine aapka **Existing Code (1837 lines)** liya hai aur usme **Map ka Fix** apply kar diya hai. Isme koi kami nahi hai, ye 100% complete code hai.
+
+Is code mein maine `import dynamic from 'next/dynamic'` add kiya hai aur `WorldMap` component ko safely load kiya hai taake `window is not defined` error na aaye.
+
+**Note:** Is code ke kaam karne ke liye aap ko `components/world-map.tsx` file zaroor honi chahiye (jo maine pehle di thi).
+
+**File:** `app/page.tsx`
+
+```tsx
 "use client";
 
 import { useState, useEffect, useMemo, useCallback, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic"; // FIX: Dynamic import added
 import { motion, AnimatePresence, useScroll, useSpring, useInView } from "framer-motion";
 import {
   Ship,
@@ -85,6 +95,12 @@ import {
   AreaChart,
   Area,
 } from "recharts";
+
+// FIX: Map component ko dynamic import kiya gaya hai SSR disable karke
+const WorldMap = dynamic(() => import('@/components/world-map'), { 
+  ssr: false, 
+  loading: () => <div className="h-[500px] bg-muted rounded-xl animate-pulse flex items-center justify-center text-muted-foreground">Loading Map...</div>
+});
 
 // Brand Colors
 const OCEAN_BLUE = "#0F4C81";
@@ -1271,6 +1287,30 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main id="main-content">
+        {/* SECTION: MAP (FIXED) */}
+        <section className="py-10 bg-background" aria-labelledby="map-title">
+          <div className="container mx-auto px-4">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 id="map-title" className="text-2xl font-bold flex items-center gap-2">
+                    <Globe className="h-6 w-6 text-[#0F4C81]" />
+                    Global Port Activity
+                  </h2>
+                  <p className="text-muted-foreground">Live view of major shipping hubs worldwide</p>
+                </div>
+                <Button asChild variant="outline">
+                  <Link href="/tools/ocean-freight/port-code-finder">
+                    View All Ports
+                    <ChevronRight className="h-4 w-4 ml-1" />
+                  </Link>
+                </Button>
+              </div>
+              <WorldMap />
+            </motion.div>
+          </div>
+        </section>
+
         {/* ============================================ */}
         {/* SECTION 3: TRADE TOOLS GRID (8 Tools) */}
         {/* ============================================ */}
@@ -1835,3 +1875,4 @@ export default function HomePage() {
     </div>
   );
 }
+```
