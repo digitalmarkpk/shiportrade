@@ -1,18 +1,20 @@
 "use client";
+
 export const dynamic = 'force-dynamic';
+
 import { useState, useMemo, useEffect } from "react";
-import dynamic from "next/dynamic";
-import { useRouter, useSearchParams } from "next/navigation";
-import { 
-  Search, 
-  Globe, 
-  Ship, 
-  Anchor, 
-  MapPin, 
-  Info, 
-  ChevronRight, 
-  Phone, 
-  ExternalLink, 
+import nextDynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
+import {
+  Search,
+  Globe,
+  Ship,
+  Anchor,
+  MapPin,
+  Info,
+  ChevronRight,
+  Phone,
+  ExternalLink,
   Navigation,
   ArrowRight
 } from "lucide-react";
@@ -22,10 +24,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 // Dynamic import for Leaflet map to avoid SSR issues
-const PortsMap = dynamic(() => import("@/components/PortsMap"), { 
+const PortsMap = nextDynamic(() => import("@/components/PortsMap"), {
   ssr: false,
   loading: () => (
-    <div className="h-[400px] w-full bg-slate-100 animate-pulse flex items-center justify-center rounded-xl border border-slate-200">
+    <div className="h- w-full bg-slate-100 animate-pulse flex items-center justify-center rounded-xl border border-slate-200">
       <span className="text-slate-400 font-medium">Loading interactive map...</span>
     </div>
   )
@@ -49,7 +51,6 @@ interface Port {
 
 export default function PortsDirectoryPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [ports, setPorts] = useState<Port[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPort, setSelectedPort] = useState<Port | null>(null);
@@ -62,12 +63,8 @@ export default function PortsDirectoryPage() {
         const res = await fetch('/api/ports?limit=100');
         const data = await res.json();
         setPorts(data.ports);
-        
-        // Handle initial selection from URL
-        const portCode = searchParams.get('port');
-        if (portCode) {
-          const port = data.ports.find((p: Port) => p.unlocode === portCode.toUpperCase());
-          if (port) setSelectedPort(port);
+        if (data.ports.length > 0) {
+          setSelectedPort(data.ports[0]);
         }
       } catch (err) {
         console.error("Failed to load ports:", err);
@@ -76,14 +73,14 @@ export default function PortsDirectoryPage() {
       }
     };
     fetchPorts();
-  }, [searchParams]);
+  }, []);
 
   const filteredPorts = useMemo(() => {
     const query = searchQuery.toLowerCase().trim();
     if (!query) return ports;
-    return ports.filter(port => 
-      port.name.toLowerCase().includes(query) || 
-      port.unlocode.toLowerCase().includes(query) || 
+    return ports.filter(port =>
+      port.name.toLowerCase().includes(query) ||
+      port.unlocode.toLowerCase().includes(query) ||
       (port.country_name && port.country_name.toLowerCase().includes(query)) ||
       port.country_code.toLowerCase().includes(query)
     );
@@ -91,7 +88,6 @@ export default function PortsDirectoryPage() {
 
   const handlePortSelect = (port: Port) => {
     setSelectedPort(port);
-    router.push(`/directories/ports?port=${port.unlocode}`, { scroll: false });
   };
 
   const topCountries = [
@@ -117,11 +113,11 @@ export default function PortsDirectoryPage() {
           <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
             Access the most comprehensive database of UN/LOCODE ports, facilities, and throughput data for international shipping.
           </p>
-          
+
           <div className="max-w-xl mx-auto relative group">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400 group-focus-within:text-[#0F4C81] transition-colors" />
-            <Input 
-              placeholder="Search port name, UNLOCODE, or country..." 
+            <Input
+              placeholder="Search port name, UNLOCODE, or country..."
               className="pl-12 h-14 text-lg rounded-xl border-slate-200 shadow-sm focus-visible:ring-[#0F4C81]"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -166,9 +162,9 @@ export default function PortsDirectoryPage() {
           {/* LEFT: Map and List */}
           <div className="lg:col-span-2 space-y-8">
             <Card className="overflow-hidden border-slate-200 shadow-sm rounded-xl">
-              <div className="h-[450px] w-full">
-                <PortsMap 
-                  ports={filteredPorts} 
+              <div className="h- w-full">
+                <PortsMap
+                  ports={filteredPorts}
                   selectedPort={selectedPort}
                   onSelect={handlePortSelect}
                 />
@@ -178,29 +174,29 @@ export default function PortsDirectoryPage() {
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-bold text-slate-900">
-                  {searchQuery ? `Search Results (${filteredPorts.length})` : "Major Global Ports"}
+                  {searchQuery? `Search Results (${filteredPorts.length})` : "Major Global Ports"}
                 </h3>
               </div>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {loading ? (
+                {loading? (
                   Array(6).fill(0).map((_, i) => (
                     <div key={i} className="h-24 bg-slate-50 rounded-xl animate-pulse border border-slate-100" />
                   ))
-                ) : filteredPorts.length > 0 ? (
+                ) : filteredPorts.length > 0? (
                   filteredPorts.map((port) => (
                     <button
                       key={port.unlocode}
                       onClick={() => handlePortSelect(port)}
                       className={`text-left p-4 rounded-xl border transition-all ${
                         selectedPort?.unlocode === port.unlocode
-                          ? "border-[#0F4C81] bg-[#0F4C81]/5 shadow-sm"
+                         ? "border-[#0F4C81] bg-[#0F4C81]/5 shadow-sm"
                           : "border-slate-100 bg-white hover:border-slate-300 hover:bg-slate-50"
                       }`}
                     >
                       <div className="flex justify-between items-start mb-2">
                         <h4 className="font-bold text-slate-900 line-clamp-1">{port.name}</h4>
-                        <Badge variant="outline" className="text-[10px] font-bold border-slate-200 bg-white">
+                        <Badge variant="outline" className="text- font-bold border-slate-200 bg-white">
                           {port.unlocode}
                         </Badge>
                       </div>
@@ -208,12 +204,12 @@ export default function PortsDirectoryPage() {
                         <MapPin className="h-3 w-3" />
                         {port.country_name || port.country_code}
                       </div>
-                      <div className="flex items-center gap-4 text-[10px] text-slate-400 font-medium">
+                      <div className="flex items-center gap-4 text- text-slate-400 font-medium">
                         <span className="flex items-center gap-1">
                           <Anchor className="h-2.5 w-2.5" />
                           {port.terminals} Terminals
                         </span>
-                        <Badge className="h-4 bg-[#2E8B57]/10 text-[#2E8B57] border-none text-[9px] px-1.5">
+                        <Badge className="h-4 bg-[#2E8B57]/10 text-[#2E8B57] border-none text- px-1.5">
                           {port.port_type}
                         </Badge>
                       </div>
@@ -236,14 +232,14 @@ export default function PortsDirectoryPage() {
             <div className="sticky top-6 space-y-6">
               {/* Port Details Card */}
               <Card className="border-slate-200 shadow-md rounded-xl overflow-hidden">
-                {selectedPort ? (
+                {selectedPort? (
                   <>
                     <CardHeader className="bg-slate-50 border-b border-slate-100 pb-4">
                       <div className="flex justify-between items-start mb-2">
-                        <Badge className="bg-[#2E8B57]/10 text-[#2E8B57] border-none text-[10px] font-bold">
+                        <Badge className="bg-[#2E8B57]/10 text-[#2E8B57] border-none text- font-bold">
                           {selectedPort.port_type}
                         </Badge>
-                        <Badge variant="outline" className="text-[10px] border-slate-200 bg-white font-mono">
+                        <Badge variant="outline" className="text- border-slate-200 bg-white font-mono">
                           {selectedPort.unlocode}
                         </Badge>
                       </div>
@@ -256,29 +252,29 @@ export default function PortsDirectoryPage() {
                     <CardContent className="pt-6">
                       <div className="grid grid-cols-2 gap-4 mb-6">
                         <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                          <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Terminals</div>
+                          <div className="text- uppercase text-slate-400 font-bold mb-1">Terminals</div>
                           <div className="text-lg font-bold text-slate-900">{selectedPort.terminals}</div>
                         </div>
                         <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                          <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Max Depth</div>
+                          <div className="text- uppercase text-slate-400 font-bold mb-1">Max Depth</div>
                           <div className="text-lg font-bold text-slate-900">{selectedPort.max_depth_m || "15.5"}m</div>
                         </div>
                         <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                          <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Annual TEU</div>
+                          <div className="text- uppercase text-slate-400 font-bold mb-1">Annual TEU</div>
                           <div className="text-sm font-bold text-slate-900">
-                            {selectedPort.annual_teu ? (selectedPort.annual_teu / 1000000).toFixed(1) + "M" : "4.2M"}
+                            {selectedPort.annual_teu? (selectedPort.annual_teu / 1000000).toFixed(1) + "M" : "4.2M"}
                           </div>
                         </div>
                         <div className="bg-slate-50 p-3 rounded-xl border border-slate-100">
-                          <div className="text-[10px] uppercase text-slate-400 font-bold mb-1">Coordinates</div>
-                          <div className="text-[10px] font-mono text-slate-600">
+                          <div className="text- uppercase text-slate-400 font-bold mb-1">Coordinates</div>
+                          <div className="text- font-mono text-slate-600">
                             {selectedPort.latitude.toFixed(2)}°, {selectedPort.longitude.toFixed(2)}°
                           </div>
                         </div>
                       </div>
 
                       <div className="space-y-3">
-                        <Button 
+                        <Button
                           className="w-full bg-[#0F4C81] hover:bg-[#0F4C81]/90 h-11 rounded-lg"
                           onClick={() => router.push(`/directories/ports/${selectedPort.country_code.toLowerCase()}/${selectedPort.name.toLowerCase().replace(/\s+/g, '-')}`)}
                         >
@@ -339,68 +335,6 @@ export default function PortsDirectoryPage() {
             </div>
           </div>
         </div>
-
-        {/* SEO / Content Section */}
-        <section className="mt-24 border-t border-slate-100 pt-16">
-          <div className="max-w-4xl">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">Worldwide Sea Ports Database</h2>
-            <div className="prose prose-slate max-w-none text-slate-600 space-y-4">
-              <p>
-                Our Global Port Directory provides a unified access point to information on over 11,000 international shipping ports and road terminals. 
-                Integrating data from the UN/LOCODE global repository and World Bank logistics datasets, this directory is designed for freight forwarders, 
-                shipping lines, and international trade professionals who require accurate port coordinates, facilities information, and throughput statistics.
-              </p>
-              <p>
-                Every port listed includes its unique 5-character United Nations Code for Trade and Transport Locations (UN/LOCODE), which is essential for 
-                electronic data interchange (EDI), customs documentation, and logistics planning. Whether you are calculating transit times between 
-                Shanghai and Rotterdam or locating a specific container terminal in Jebel Ali, our interactive map and search tools provide real-time 
-                visibility into the global maritime infrastructure.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8 mt-8">
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <Info className="h-5 w-5 text-[#0F4C81]" />
-                    Data Sources
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0F4C81] shrink-0" />
-                      <span>UN/LOCODE 2024-1 Release (UNECE)</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0F4C81] shrink-0" />
-                      <span>World Bank Global International Ports Database</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#0F4C81] shrink-0" />
-                      <span>LPI Logistics Port Flows (Container Throughput)</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
-                    <ExternalLink className="h-5 w-5 text-[#0F4C81]" />
-                    Industry Standards
-                  </h3>
-                  <ul className="space-y-2 text-sm">
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#2E8B57] shrink-0" />
-                      <span>ISO 3166-1 alpha-2 Country Codes</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#2E8B57] shrink-0" />
-                      <span>WGS84 Geographic Coordinate System</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#2E8B57] shrink-0" />
-                      <span>Bureau International des Containers (BIC) Standards</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );
