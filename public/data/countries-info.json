@@ -6,7 +6,16 @@
     "currency": "AFN",
     "coastline_km": 0,
     "population": 43844000,
-    "flag_emoji": "🇦🇫"
+    "flag_emoji": "🇦🇫",
+    "id": 1,
+    "iso_code": "AF",
+    "slug": "afghanistan",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "AX",
@@ -15,7 +24,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 30654,
-    "flag_emoji": "🇦🇽"
+    "flag_emoji": "🇦🇽",
+    "id": 2,
+    "iso_code": "AX",
+    "slug": "åland-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "AL",
@@ -24,7 +42,16 @@
     "currency": "ALL",
     "coastline_km": 0,
     "population": 2363314,
-    "flag_emoji": "🇦🇱"
+    "flag_emoji": "🇦🇱",
+    "id": 3,
+    "iso_code": "AL",
+    "slug": "albania",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "DZ",
@@ -33,7 +60,16 @@
     "currency": "DZD",
     "coastline_km": 998,
     "population": 47400000,
-    "flag_emoji": "🇩🇿"
+    "flag_emoji": "🇩🇿",
+    "id": 4,
+    "iso_code": "DZ",
+    "slug": "algeria",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "AS",
@@ -42,7 +78,16 @@
     "currency": "USD",
     "coastline_km": 0,
     "population": 49710,
-    "flag_emoji": "🇦🇸"
+    "flag_emoji": "🇦🇸",
+    "id": 5,
+    "iso_code": "AS",
+    "slug": "american-samoa",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "AD",
@@ -51,7 +96,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 88406,
-    "flag_emoji": "🇦🇩"
+    "flag_emoji": "🇦🇩",
+    "id": 6,
+    "iso_code": "AD",
+    "slug": "andorra",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "AO",
@@ -60,7 +114,16 @@
     "currency": "AOA",
     "coastline_km": 1600,
     "population": 36170961,
-    "flag_emoji": "🇦🇴"
+    "flag_emoji": "🇦🇴",
+    "id": 7,
+    "iso_code": "AO",
+    "slug": "angola",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "AI",
@@ -69,7 +132,16 @@
     "currency": "XCD",
     "coastline_km": 0,
     "population": 16010,
-    "flag_emoji": "🇦🇮"
+    "flag_emoji": "🇦🇮",
+    "id": 8,
+    "iso_code": "AI",
+    "slug": "anguilla",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "AQ",
@@ -78,7 +150,16 @@
     "currency": "",
     "coastline_km": 0,
     "population": 1300,
-    "flag_emoji": "🇦🇶"
+    "flag_emoji": "🇦🇶",
+    "id": 9,
+    "iso_code": "AQ",
+    "slug": "antarctica",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "AG",
@@ -87,7 +168,16 @@
     "currency": "XCD",
     "coastline_km": 0,
     "population": 103603,
-    "flag_emoji": "🇦🇬"
+    "flag_emoji": "🇦🇬",
+    "id": 10,
+    "iso_code": "AG",
+    "slug": "antigua-and-barbuda",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "AR",
@@ -96,7 +186,16 @@
     "currency": "ARS",
     "coastline_km": 4989,
     "population": 46735004,
-    "flag_emoji": "🇦🇷"
+    "flag_emoji": "🇦🇷",
+    "id": 11,
+    "iso_code": "AR",
+    "slug": "argentina",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "AM",
@@ -105,7 +204,16 @@
     "currency": "AMD",
     "coastline_km": 0,
     "population": 3076200,
-    "flag_emoji": "🇦🇲"
+    "flag_emoji": "🇦🇲",
+    "id": 12,
+    "iso_code": "AM",
+    "slug": "armenia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "AW",
@@ -114,7 +222,16 @@
     "currency": "AWG",
     "coastline_km": 0,
     "population": 107566,
-    "flag_emoji": "🇦🇼"
+    "flag_emoji": "🇦🇼",
+    "id": 13,
+    "iso_code": "AW",
+    "slug": "aruba",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "AU",
@@ -123,7 +240,16 @@
     "currency": "AUD",
     "coastline_km": 25760,
     "population": 27536874,
-    "flag_emoji": "🇦🇺"
+    "flag_emoji": "🇦🇺",
+    "id": 14,
+    "iso_code": "AU",
+    "slug": "australia",
+    "is_landlocked": false,
+    "total_sea_ports": 252,
+    "total_airports": 0,
+    "total_dry_ports": 113,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "AT",
@@ -132,7 +258,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 9200931,
-    "flag_emoji": "🇦🇹"
+    "flag_emoji": "🇦🇹",
+    "id": 15,
+    "iso_code": "AT",
+    "slug": "austria",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "AZ",
@@ -141,7 +276,16 @@
     "currency": "AZN",
     "coastline_km": 0,
     "population": 10241722,
-    "flag_emoji": "🇦🇿"
+    "flag_emoji": "🇦🇿",
+    "id": 16,
+    "iso_code": "AZ",
+    "slug": "azerbaijan",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "BS",
@@ -150,7 +294,16 @@
     "currency": "BSD",
     "coastline_km": 3542,
     "population": 398165,
-    "flag_emoji": "🇧🇸"
+    "flag_emoji": "🇧🇸",
+    "id": 17,
+    "iso_code": "BS",
+    "slug": "bahamas",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "BH",
@@ -159,7 +312,16 @@
     "currency": "BHD",
     "coastline_km": 161,
     "population": 1594654,
-    "flag_emoji": "🇧🇭"
+    "flag_emoji": "🇧🇭",
+    "id": 18,
+    "iso_code": "BH",
+    "slug": "bahrain",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "BD",
@@ -168,7 +330,16 @@
     "currency": "BDT",
     "coastline_km": 580,
     "population": 169828911,
-    "flag_emoji": "🇧🇩"
+    "flag_emoji": "🇧🇩",
+    "id": 19,
+    "iso_code": "BD",
+    "slug": "bangladesh",
+    "is_landlocked": false,
+    "total_sea_ports": 256,
+    "total_airports": 0,
+    "total_dry_ports": 131,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "BB",
@@ -177,7 +348,16 @@
     "currency": "BBD",
     "coastline_km": 0,
     "population": 267800,
-    "flag_emoji": "🇧🇧"
+    "flag_emoji": "🇧🇧",
+    "id": 20,
+    "iso_code": "BB",
+    "slug": "barbados",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "BY",
@@ -186,7 +366,16 @@
     "currency": "BYN",
     "coastline_km": 0,
     "population": 9109280,
-    "flag_emoji": "🇧🇾"
+    "flag_emoji": "🇧🇾",
+    "id": 21,
+    "iso_code": "BY",
+    "slug": "belarus",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "BE",
@@ -195,7 +384,16 @@
     "currency": "EUR",
     "coastline_km": 66,
     "population": 11825551,
-    "flag_emoji": "🇧🇪"
+    "flag_emoji": "🇧🇪",
+    "id": 22,
+    "iso_code": "BE",
+    "slug": "belgium",
+    "is_landlocked": false,
+    "total_sea_ports": 267,
+    "total_airports": 0,
+    "total_dry_ports": 138,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "BZ",
@@ -204,7 +402,16 @@
     "currency": "BZD",
     "coastline_km": 0,
     "population": 417634,
-    "flag_emoji": "🇧🇿"
+    "flag_emoji": "🇧🇿",
+    "id": 23,
+    "iso_code": "BZ",
+    "slug": "belize",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "BJ",
@@ -213,7 +420,16 @@
     "currency": "XOF",
     "coastline_km": 0,
     "population": 13224860,
-    "flag_emoji": "🇧🇯"
+    "flag_emoji": "🇧🇯",
+    "id": 24,
+    "iso_code": "BJ",
+    "slug": "benin",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "BM",
@@ -222,7 +438,16 @@
     "currency": "BMD",
     "coastline_km": 0,
     "population": 64055,
-    "flag_emoji": "🇧🇲"
+    "flag_emoji": "🇧🇲",
+    "id": 25,
+    "iso_code": "BM",
+    "slug": "bermuda",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "BT",
@@ -231,7 +456,16 @@
     "currency": "BTN",
     "coastline_km": 0,
     "population": 784043,
-    "flag_emoji": "🇧🇹"
+    "flag_emoji": "🇧🇹",
+    "id": 26,
+    "iso_code": "BT",
+    "slug": "bhutan",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "BO",
@@ -240,7 +474,16 @@
     "currency": "BOB",
     "coastline_km": 0,
     "population": 11365333,
-    "flag_emoji": "🇧🇴"
+    "flag_emoji": "🇧🇴",
+    "id": 27,
+    "iso_code": "BO",
+    "slug": "bolivia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "BA",
@@ -249,7 +492,16 @@
     "currency": "BAM",
     "coastline_km": 0,
     "population": 3422000,
-    "flag_emoji": "🇧🇦"
+    "flag_emoji": "🇧🇦",
+    "id": 28,
+    "iso_code": "BA",
+    "slug": "bosnia-and-herzegovina",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "BW",
@@ -258,7 +510,16 @@
     "currency": "BWP",
     "coastline_km": 0,
     "population": 2359609,
-    "flag_emoji": "🇧🇼"
+    "flag_emoji": "🇧🇼",
+    "id": 29,
+    "iso_code": "BW",
+    "slug": "botswana",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "BV",
@@ -267,7 +528,16 @@
     "currency": "",
     "coastline_km": 0,
     "population": 0,
-    "flag_emoji": "🇧🇻"
+    "flag_emoji": "🇧🇻",
+    "id": 30,
+    "iso_code": "BV",
+    "slug": "bouvet-island",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "BR",
@@ -276,7 +546,16 @@
     "currency": "BRL",
     "coastline_km": 7491,
     "population": 213421037,
-    "flag_emoji": "🇧🇷"
+    "flag_emoji": "🇧🇷",
+    "id": 31,
+    "iso_code": "BR",
+    "slug": "brazil",
+    "is_landlocked": false,
+    "total_sea_ports": 269,
+    "total_airports": 0,
+    "total_dry_ports": 112,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "IO",
@@ -285,7 +564,16 @@
     "currency": "USD",
     "coastline_km": 0,
     "population": 0,
-    "flag_emoji": "🇮🇴"
+    "flag_emoji": "🇮🇴",
+    "id": 32,
+    "iso_code": "IO",
+    "slug": "british-indian-ocean-territory",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "BN",
@@ -294,7 +582,16 @@
     "currency": "BND",
     "coastline_km": 0,
     "population": 455500,
-    "flag_emoji": "🇧🇳"
+    "flag_emoji": "🇧🇳",
+    "id": 33,
+    "iso_code": "BN",
+    "slug": "brunei",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "BG",
@@ -303,7 +600,16 @@
     "currency": "BGN",
     "coastline_km": 0,
     "population": 6437360,
-    "flag_emoji": "🇧🇬"
+    "flag_emoji": "🇧🇬",
+    "id": 34,
+    "iso_code": "BG",
+    "slug": "bulgaria",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "BF",
@@ -312,7 +618,16 @@
     "currency": "XOF",
     "coastline_km": 0,
     "population": 24070553,
-    "flag_emoji": "🇧🇫"
+    "flag_emoji": "🇧🇫",
+    "id": 35,
+    "iso_code": "BF",
+    "slug": "burkina-faso",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "BI",
@@ -321,7 +636,16 @@
     "currency": "BIF",
     "coastline_km": 0,
     "population": 12332788,
-    "flag_emoji": "🇧🇮"
+    "flag_emoji": "🇧🇮",
+    "id": 36,
+    "iso_code": "BI",
+    "slug": "burundi",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "KH",
@@ -330,7 +654,16 @@
     "currency": "KHR",
     "coastline_km": 443,
     "population": 17577760,
-    "flag_emoji": "🇰🇭"
+    "flag_emoji": "🇰🇭",
+    "id": 37,
+    "iso_code": "KH",
+    "slug": "cambodia",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "CM",
@@ -339,7 +672,16 @@
     "currency": "XAF",
     "coastline_km": 0,
     "population": 29442327,
-    "flag_emoji": "🇨🇲"
+    "flag_emoji": "🇨🇲",
+    "id": 38,
+    "iso_code": "CM",
+    "slug": "cameroon",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "CA",
@@ -348,7 +690,16 @@
     "currency": "CAD",
     "coastline_km": 202080,
     "population": 41651653,
-    "flag_emoji": "🇨🇦"
+    "flag_emoji": "🇨🇦",
+    "id": 39,
+    "iso_code": "CA",
+    "slug": "canada",
+    "is_landlocked": false,
+    "total_sea_ports": 238,
+    "total_airports": 0,
+    "total_dry_ports": 127,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "CV",
@@ -357,7 +708,16 @@
     "currency": "CVE",
     "coastline_km": 0,
     "population": 491233,
-    "flag_emoji": "🇨🇻"
+    "flag_emoji": "🇨🇻",
+    "id": 40,
+    "iso_code": "CV",
+    "slug": "cape-verde",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "BQ",
@@ -366,7 +726,16 @@
     "currency": "USD",
     "coastline_km": 0,
     "population": 31980,
-    "flag_emoji": "🇧🇶"
+    "flag_emoji": "🇧🇶",
+    "id": 41,
+    "iso_code": "BQ",
+    "slug": "caribbean-netherlands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "KY",
@@ -375,7 +744,16 @@
     "currency": "KYD",
     "coastline_km": 0,
     "population": 84738,
-    "flag_emoji": "🇰🇾"
+    "flag_emoji": "🇰🇾",
+    "id": 42,
+    "iso_code": "KY",
+    "slug": "cayman-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "CF",
@@ -384,7 +762,16 @@
     "currency": "XAF",
     "coastline_km": 0,
     "population": 6470307,
-    "flag_emoji": "🇨🇫"
+    "flag_emoji": "🇨🇫",
+    "id": 43,
+    "iso_code": "CF",
+    "slug": "central-african-republic",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "CL",
@@ -393,7 +780,16 @@
     "currency": "CLP",
     "coastline_km": 6435,
     "population": 20206953,
-    "flag_emoji": "🇨🇱"
+    "flag_emoji": "🇨🇱",
+    "id": 44,
+    "iso_code": "CL",
+    "slug": "chile",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "CN",
@@ -402,7 +798,16 @@
     "currency": "CNY",
     "coastline_km": 14500,
     "population": 1408280000,
-    "flag_emoji": "🇨🇳"
+    "flag_emoji": "🇨🇳",
+    "id": 45,
+    "iso_code": "CN",
+    "slug": "china",
+    "is_landlocked": false,
+    "total_sea_ports": 223,
+    "total_airports": 0,
+    "total_dry_ports": 142,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "CX",
@@ -411,7 +816,16 @@
     "currency": "AUD",
     "coastline_km": 0,
     "population": 1692,
-    "flag_emoji": "🇨🇽"
+    "flag_emoji": "🇨🇽",
+    "id": 46,
+    "iso_code": "CX",
+    "slug": "christmas-island",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "CC",
@@ -420,7 +834,16 @@
     "currency": "AUD",
     "coastline_km": 0,
     "population": 593,
-    "flag_emoji": "🇨🇨"
+    "flag_emoji": "🇨🇨",
+    "id": 47,
+    "iso_code": "CC",
+    "slug": "cocos-keeling-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "CO",
@@ -429,7 +852,16 @@
     "currency": "COP",
     "coastline_km": 3208,
     "population": 53057212,
-    "flag_emoji": "🇨🇴"
+    "flag_emoji": "🇨🇴",
+    "id": 48,
+    "iso_code": "CO",
+    "slug": "colombia",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "KM",
@@ -438,7 +870,16 @@
     "currency": "KMF",
     "coastline_km": 0,
     "population": 919901,
-    "flag_emoji": "🇰🇲"
+    "flag_emoji": "🇰🇲",
+    "id": 49,
+    "iso_code": "KM",
+    "slug": "comoros",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "CG",
@@ -447,7 +888,16 @@
     "currency": "XAF",
     "coastline_km": 0,
     "population": 6142180,
-    "flag_emoji": "🇨🇬"
+    "flag_emoji": "🇨🇬",
+    "id": 50,
+    "iso_code": "CG",
+    "slug": "congo",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "CK",
@@ -456,7 +906,16 @@
     "currency": "CKD",
     "coastline_km": 0,
     "population": 15040,
-    "flag_emoji": "🇨🇰"
+    "flag_emoji": "🇨🇰",
+    "id": 51,
+    "iso_code": "CK",
+    "slug": "cook-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "CR",
@@ -465,7 +924,16 @@
     "currency": "CRC",
     "coastline_km": 1290,
     "population": 5309625,
-    "flag_emoji": "🇨🇷"
+    "flag_emoji": "🇨🇷",
+    "id": 52,
+    "iso_code": "CR",
+    "slug": "costa-rica",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "HR",
@@ -474,7 +942,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 3866233,
-    "flag_emoji": "🇭🇷"
+    "flag_emoji": "🇭🇷",
+    "id": 53,
+    "iso_code": "HR",
+    "slug": "croatia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "CU",
@@ -483,7 +960,16 @@
     "currency": "CUC",
     "coastline_km": 3735,
     "population": 9748007,
-    "flag_emoji": "🇨🇺"
+    "flag_emoji": "🇨🇺",
+    "id": 54,
+    "iso_code": "CU",
+    "slug": "cuba",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "CW",
@@ -492,7 +978,16 @@
     "currency": "ANG",
     "coastline_km": 0,
     "population": 156115,
-    "flag_emoji": "🇨🇼"
+    "flag_emoji": "🇨🇼",
+    "id": 55,
+    "iso_code": "CW",
+    "slug": "curaçao",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "CY",
@@ -501,7 +996,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 1442614,
-    "flag_emoji": "🇨🇾"
+    "flag_emoji": "🇨🇾",
+    "id": 56,
+    "iso_code": "CY",
+    "slug": "cyprus",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "CZ",
@@ -510,7 +1014,16 @@
     "currency": "CZK",
     "coastline_km": 0,
     "population": 10882341,
-    "flag_emoji": "🇨🇿"
+    "flag_emoji": "🇨🇿",
+    "id": 57,
+    "iso_code": "CZ",
+    "slug": "czechia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "DK",
@@ -519,7 +1032,16 @@
     "currency": "DKK",
     "coastline_km": 0,
     "population": 6011488,
-    "flag_emoji": "🇩🇰"
+    "flag_emoji": "🇩🇰",
+    "id": 58,
+    "iso_code": "DK",
+    "slug": "denmark",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "DJ",
@@ -528,7 +1050,16 @@
     "currency": "DJF",
     "coastline_km": 314,
     "population": 1066809,
-    "flag_emoji": "🇩🇯"
+    "flag_emoji": "🇩🇯",
+    "id": 59,
+    "iso_code": "DJ",
+    "slug": "djibouti",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "DM",
@@ -537,7 +1068,16 @@
     "currency": "XCD",
     "coastline_km": 0,
     "population": 67408,
-    "flag_emoji": "🇩🇲"
+    "flag_emoji": "🇩🇲",
+    "id": 60,
+    "iso_code": "DM",
+    "slug": "dominica",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "DO",
@@ -546,7 +1086,16 @@
     "currency": "DOP",
     "coastline_km": 1288,
     "population": 10771504,
-    "flag_emoji": "🇩🇴"
+    "flag_emoji": "🇩🇴",
+    "id": 61,
+    "iso_code": "DO",
+    "slug": "dominican-republic",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "CD",
@@ -555,7 +1104,16 @@
     "currency": "CDF",
     "coastline_km": 0,
     "population": 112832000,
-    "flag_emoji": "🇨🇩"
+    "flag_emoji": "🇨🇩",
+    "id": 62,
+    "iso_code": "CD",
+    "slug": "dr-congo",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "EC",
@@ -564,7 +1122,16 @@
     "currency": "USD",
     "coastline_km": 2237,
     "population": 18103660,
-    "flag_emoji": "🇪🇨"
+    "flag_emoji": "🇪🇨",
+    "id": 63,
+    "iso_code": "EC",
+    "slug": "ecuador",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "EG",
@@ -573,7 +1140,16 @@
     "currency": "EGP",
     "coastline_km": 2450,
     "population": 107271260,
-    "flag_emoji": "🇪🇬"
+    "flag_emoji": "🇪🇬",
+    "id": 64,
+    "iso_code": "EG",
+    "slug": "egypt",
+    "is_landlocked": false,
+    "total_sea_ports": 260,
+    "total_airports": 0,
+    "total_dry_ports": 112,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "SV",
@@ -582,7 +1158,16 @@
     "currency": "USD",
     "coastline_km": 307,
     "population": 6029976,
-    "flag_emoji": "🇸🇻"
+    "flag_emoji": "🇸🇻",
+    "id": 65,
+    "iso_code": "SV",
+    "slug": "el-salvador",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "GQ",
@@ -591,7 +1176,16 @@
     "currency": "XAF",
     "coastline_km": 0,
     "population": 1668768,
-    "flag_emoji": "🇬🇶"
+    "flag_emoji": "🇬🇶",
+    "id": 66,
+    "iso_code": "GQ",
+    "slug": "equatorial-guinea",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "ER",
@@ -600,7 +1194,16 @@
     "currency": "ERN",
     "coastline_km": 2234,
     "population": 3607000,
-    "flag_emoji": "🇪🇷"
+    "flag_emoji": "🇪🇷",
+    "id": 67,
+    "iso_code": "ER",
+    "slug": "eritrea",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "EE",
@@ -609,7 +1212,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 1369995,
-    "flag_emoji": "🇪🇪"
+    "flag_emoji": "🇪🇪",
+    "id": 68,
+    "iso_code": "EE",
+    "slug": "estonia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "ET",
@@ -618,7 +1230,16 @@
     "currency": "ETB",
     "coastline_km": 0,
     "population": 111652998,
-    "flag_emoji": "🇪🇹"
+    "flag_emoji": "🇪🇹",
+    "id": 69,
+    "iso_code": "ET",
+    "slug": "ethiopia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "FK",
@@ -627,7 +1248,16 @@
     "currency": "FKP",
     "coastline_km": 0,
     "population": 3662,
-    "flag_emoji": "🇫🇰"
+    "flag_emoji": "🇫🇰",
+    "id": 70,
+    "iso_code": "FK",
+    "slug": "falkland-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "FO",
@@ -636,7 +1266,16 @@
     "currency": "DKK",
     "coastline_km": 0,
     "population": 54885,
-    "flag_emoji": "🇫🇴"
+    "flag_emoji": "🇫🇴",
+    "id": 71,
+    "iso_code": "FO",
+    "slug": "faroe-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "FJ",
@@ -645,7 +1284,16 @@
     "currency": "FJD",
     "coastline_km": 1129,
     "population": 900869,
-    "flag_emoji": "🇫🇯"
+    "flag_emoji": "🇫🇯",
+    "id": 72,
+    "iso_code": "FJ",
+    "slug": "fiji",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "FI",
@@ -654,7 +1302,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 5650325,
-    "flag_emoji": "🇫🇮"
+    "flag_emoji": "🇫🇮",
+    "id": 73,
+    "iso_code": "FI",
+    "slug": "finland",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "FR",
@@ -663,7 +1320,16 @@
     "currency": "EUR",
     "coastline_km": 4853,
     "population": 66351959,
-    "flag_emoji": "🇫🇷"
+    "flag_emoji": "🇫🇷",
+    "id": 74,
+    "iso_code": "FR",
+    "slug": "france",
+    "is_landlocked": false,
+    "total_sea_ports": 255,
+    "total_airports": 0,
+    "total_dry_ports": 134,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "GF",
@@ -672,7 +1338,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 292354,
-    "flag_emoji": "🇬🇫"
+    "flag_emoji": "🇬🇫",
+    "id": 75,
+    "iso_code": "GF",
+    "slug": "french-guiana",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "TF",
@@ -681,7 +1356,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 400,
-    "flag_emoji": "🇹🇫"
+    "flag_emoji": "🇹🇫",
+    "id": 76,
+    "iso_code": "TF",
+    "slug": "french-southern-and-antarctic-lands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "GA",
@@ -690,7 +1374,16 @@
     "currency": "XAF",
     "coastline_km": 0,
     "population": 2469296,
-    "flag_emoji": "🇬🇦"
+    "flag_emoji": "🇬🇦",
+    "id": 77,
+    "iso_code": "GA",
+    "slug": "gabon",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "GM",
@@ -699,7 +1392,16 @@
     "currency": "GMD",
     "coastline_km": 0,
     "population": 2422712,
-    "flag_emoji": "🇬🇲"
+    "flag_emoji": "🇬🇲",
+    "id": 78,
+    "iso_code": "GM",
+    "slug": "gambia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "GE",
@@ -708,7 +1410,16 @@
     "currency": "GEL",
     "coastline_km": 0,
     "population": 4000921,
-    "flag_emoji": "🇬🇪"
+    "flag_emoji": "🇬🇪",
+    "id": 79,
+    "iso_code": "GE",
+    "slug": "georgia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "DE",
@@ -717,7 +1428,16 @@
     "currency": "EUR",
     "coastline_km": 2389,
     "population": 83491249,
-    "flag_emoji": "🇩🇪"
+    "flag_emoji": "🇩🇪",
+    "id": 80,
+    "iso_code": "DE",
+    "slug": "germany",
+    "is_landlocked": false,
+    "total_sea_ports": 247,
+    "total_airports": 0,
+    "total_dry_ports": 114,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "GH",
@@ -726,7 +1446,16 @@
     "currency": "GHS",
     "coastline_km": 539,
     "population": 33742380,
-    "flag_emoji": "🇬🇭"
+    "flag_emoji": "🇬🇭",
+    "id": 81,
+    "iso_code": "GH",
+    "slug": "ghana",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "GI",
@@ -735,7 +1464,16 @@
     "currency": "GIP",
     "coastline_km": 0,
     "population": 38000,
-    "flag_emoji": "🇬🇮"
+    "flag_emoji": "🇬🇮",
+    "id": 82,
+    "iso_code": "GI",
+    "slug": "gibraltar",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "GR",
@@ -744,7 +1482,16 @@
     "currency": "EUR",
     "coastline_km": 13676,
     "population": 10400720,
-    "flag_emoji": "🇬🇷"
+    "flag_emoji": "🇬🇷",
+    "id": 83,
+    "iso_code": "GR",
+    "slug": "greece",
+    "is_landlocked": false,
+    "total_sea_ports": 1,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "GL",
@@ -753,7 +1500,16 @@
     "currency": "DKK",
     "coastline_km": 0,
     "population": 56542,
-    "flag_emoji": "🇬🇱"
+    "flag_emoji": "🇬🇱",
+    "id": 84,
+    "iso_code": "GL",
+    "slug": "greenland",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "GD",
@@ -762,7 +1518,16 @@
     "currency": "XCD",
     "coastline_km": 0,
     "population": 109021,
-    "flag_emoji": "🇬🇩"
+    "flag_emoji": "🇬🇩",
+    "id": 85,
+    "iso_code": "GD",
+    "slug": "grenada",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "GP",
@@ -771,7 +1536,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 378561,
-    "flag_emoji": "🇬🇵"
+    "flag_emoji": "🇬🇵",
+    "id": 86,
+    "iso_code": "GP",
+    "slug": "guadeloupe",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "GU",
@@ -780,7 +1554,16 @@
     "currency": "USD",
     "coastline_km": 0,
     "population": 153836,
-    "flag_emoji": "🇬🇺"
+    "flag_emoji": "🇬🇺",
+    "id": 87,
+    "iso_code": "GU",
+    "slug": "guam",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "GT",
@@ -789,7 +1572,16 @@
     "currency": "GTQ",
     "coastline_km": 400,
     "population": 18079810,
-    "flag_emoji": "🇬🇹"
+    "flag_emoji": "🇬🇹",
+    "id": 88,
+    "iso_code": "GT",
+    "slug": "guatemala",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "GG",
@@ -798,7 +1590,16 @@
     "currency": "GBP",
     "coastline_km": 0,
     "population": 64781,
-    "flag_emoji": "🇬🇬"
+    "flag_emoji": "🇬🇬",
+    "id": 89,
+    "iso_code": "GG",
+    "slug": "guernsey",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "GN",
@@ -807,7 +1608,16 @@
     "currency": "GNF",
     "coastline_km": 0,
     "population": 14363931,
-    "flag_emoji": "🇬🇳"
+    "flag_emoji": "🇬🇳",
+    "id": 90,
+    "iso_code": "GN",
+    "slug": "guinea",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "GW",
@@ -816,7 +1626,16 @@
     "currency": "XOF",
     "coastline_km": 0,
     "population": 1781308,
-    "flag_emoji": "🇬🇼"
+    "flag_emoji": "🇬🇼",
+    "id": 91,
+    "iso_code": "GW",
+    "slug": "guinea-bissau",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "GY",
@@ -825,7 +1644,16 @@
     "currency": "GYD",
     "coastline_km": 459,
     "population": 772975,
-    "flag_emoji": "🇬🇾"
+    "flag_emoji": "🇬🇾",
+    "id": 92,
+    "iso_code": "GY",
+    "slug": "guyana",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "HT",
@@ -834,7 +1662,16 @@
     "currency": "HTG",
     "coastline_km": 1771,
     "population": 11867032,
-    "flag_emoji": "🇭🇹"
+    "flag_emoji": "🇭🇹",
+    "id": 93,
+    "iso_code": "HT",
+    "slug": "haiti",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "HM",
@@ -843,7 +1680,16 @@
     "currency": "",
     "coastline_km": 0,
     "population": 0,
-    "flag_emoji": "🇭🇲"
+    "flag_emoji": "🇭🇲",
+    "id": 94,
+    "iso_code": "HM",
+    "slug": "heard-island-and-mcdonald-islands",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "HN",
@@ -852,7 +1698,16 @@
     "currency": "HNL",
     "coastline_km": 820,
     "population": 9892632,
-    "flag_emoji": "🇭🇳"
+    "flag_emoji": "🇭🇳",
+    "id": 95,
+    "iso_code": "HN",
+    "slug": "honduras",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "HK",
@@ -861,7 +1716,16 @@
     "currency": "HKD",
     "coastline_km": 733,
     "population": 7527500,
-    "flag_emoji": "🇭🇰"
+    "flag_emoji": "🇭🇰",
+    "id": 96,
+    "iso_code": "HK",
+    "slug": "hong-kong",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "HU",
@@ -870,7 +1734,16 @@
     "currency": "HUF",
     "coastline_km": 0,
     "population": 9539502,
-    "flag_emoji": "🇭🇺"
+    "flag_emoji": "🇭🇺",
+    "id": 97,
+    "iso_code": "HU",
+    "slug": "hungary",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "IS",
@@ -879,7 +1752,16 @@
     "currency": "ISK",
     "coastline_km": 0,
     "population": 391810,
-    "flag_emoji": "🇮🇸"
+    "flag_emoji": "🇮🇸",
+    "id": 98,
+    "iso_code": "IS",
+    "slug": "iceland",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "IN",
@@ -888,7 +1770,16 @@
     "currency": "INR",
     "coastline_km": 7517,
     "population": 1417492000,
-    "flag_emoji": "🇮🇳"
+    "flag_emoji": "🇮🇳",
+    "id": 99,
+    "iso_code": "IN",
+    "slug": "india",
+    "is_landlocked": false,
+    "total_sea_ports": 251,
+    "total_airports": 0,
+    "total_dry_ports": 131,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "ID",
@@ -897,7 +1788,16 @@
     "currency": "IDR",
     "coastline_km": 54716,
     "population": 284438782,
-    "flag_emoji": "🇮🇩"
+    "flag_emoji": "🇮🇩",
+    "id": 100,
+    "iso_code": "ID",
+    "slug": "indonesia",
+    "is_landlocked": false,
+    "total_sea_ports": 254,
+    "total_airports": 0,
+    "total_dry_ports": 135,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "IR",
@@ -906,7 +1806,16 @@
     "currency": "IRR",
     "coastline_km": 2440,
     "population": 85961000,
-    "flag_emoji": "🇮🇷"
+    "flag_emoji": "🇮🇷",
+    "id": 101,
+    "iso_code": "IR",
+    "slug": "iran",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "IQ",
@@ -915,7 +1824,16 @@
     "currency": "IQD",
     "coastline_km": 58,
     "population": 46118793,
-    "flag_emoji": "🇮🇶"
+    "flag_emoji": "🇮🇶",
+    "id": 102,
+    "iso_code": "IQ",
+    "slug": "iraq",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "IE",
@@ -924,7 +1842,16 @@
     "currency": "EUR",
     "coastline_km": 1448,
     "population": 5458600,
-    "flag_emoji": "🇮🇪"
+    "flag_emoji": "🇮🇪",
+    "id": 103,
+    "iso_code": "IE",
+    "slug": "ireland",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "IM",
@@ -933,7 +1860,16 @@
     "currency": "GBP",
     "coastline_km": 0,
     "population": 84530,
-    "flag_emoji": "🇮🇲"
+    "flag_emoji": "🇮🇲",
+    "id": 104,
+    "iso_code": "IM",
+    "slug": "isle-of-man",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "IL",
@@ -942,7 +1878,16 @@
     "currency": "ILS",
     "coastline_km": 0,
     "population": 10134800,
-    "flag_emoji": "🇮🇱"
+    "flag_emoji": "🇮🇱",
+    "id": 105,
+    "iso_code": "IL",
+    "slug": "israel",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "IT",
@@ -951,7 +1896,16 @@
     "currency": "EUR",
     "coastline_km": 7600,
     "population": 58927633,
-    "flag_emoji": "🇮🇹"
+    "flag_emoji": "🇮🇹",
+    "id": 106,
+    "iso_code": "IT",
+    "slug": "italy",
+    "is_landlocked": false,
+    "total_sea_ports": 237,
+    "total_airports": 0,
+    "total_dry_ports": 124,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "CI",
@@ -960,7 +1914,16 @@
     "currency": "XOF",
     "coastline_km": 515,
     "population": 31719275,
-    "flag_emoji": "🇨🇮"
+    "flag_emoji": "🇨🇮",
+    "id": 107,
+    "iso_code": "CI",
+    "slug": "ivory-coast",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "JM",
@@ -969,7 +1932,16 @@
     "currency": "JMD",
     "coastline_km": 1022,
     "population": 2825544,
-    "flag_emoji": "🇯🇲"
+    "flag_emoji": "🇯🇲",
+    "id": 108,
+    "iso_code": "JM",
+    "slug": "jamaica",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "JP",
@@ -978,7 +1950,16 @@
     "currency": "JPY",
     "coastline_km": 29751,
     "population": 123210000,
-    "flag_emoji": "🇯🇵"
+    "flag_emoji": "🇯🇵",
+    "id": 109,
+    "iso_code": "JP",
+    "slug": "japan",
+    "is_landlocked": false,
+    "total_sea_ports": 211,
+    "total_airports": 0,
+    "total_dry_ports": 126,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "JE",
@@ -987,7 +1968,16 @@
     "currency": "GBP",
     "coastline_km": 0,
     "population": 103267,
-    "flag_emoji": "🇯🇪"
+    "flag_emoji": "🇯🇪",
+    "id": 110,
+    "iso_code": "JE",
+    "slug": "jersey",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "JO",
@@ -996,7 +1986,16 @@
     "currency": "JOD",
     "coastline_km": 0,
     "population": 11734000,
-    "flag_emoji": "🇯🇴"
+    "flag_emoji": "🇯🇴",
+    "id": 111,
+    "iso_code": "JO",
+    "slug": "jordan",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "KZ",
@@ -1005,7 +2004,16 @@
     "currency": "KZT",
     "coastline_km": 0,
     "population": 20426568,
-    "flag_emoji": "🇰🇿"
+    "flag_emoji": "🇰🇿",
+    "id": 112,
+    "iso_code": "KZ",
+    "slug": "kazakhstan",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "KE",
@@ -1014,7 +2022,16 @@
     "currency": "KES",
     "coastline_km": 536,
     "population": 53330978,
-    "flag_emoji": "🇰🇪"
+    "flag_emoji": "🇰🇪",
+    "id": 113,
+    "iso_code": "KE",
+    "slug": "kenya",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "KI",
@@ -1023,7 +2040,16 @@
     "currency": "AUD",
     "coastline_km": 0,
     "population": 120740,
-    "flag_emoji": "🇰🇮"
+    "flag_emoji": "🇰🇮",
+    "id": 114,
+    "iso_code": "KI",
+    "slug": "kiribati",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "KW",
@@ -1032,7 +2058,16 @@
     "currency": "KWD",
     "coastline_km": 499,
     "population": 4881254,
-    "flag_emoji": "🇰🇼"
+    "flag_emoji": "🇰🇼",
+    "id": 115,
+    "iso_code": "KW",
+    "slug": "kuwait",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "KG",
@@ -1041,7 +2076,16 @@
     "currency": "KGS",
     "coastline_km": 0,
     "population": 7281800,
-    "flag_emoji": "🇰🇬"
+    "flag_emoji": "🇰🇬",
+    "id": 116,
+    "iso_code": "KG",
+    "slug": "kyrgyzstan",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "LV",
@@ -1050,7 +2094,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 1829000,
-    "flag_emoji": "🇱🇻"
+    "flag_emoji": "🇱🇻",
+    "id": 117,
+    "iso_code": "LV",
+    "slug": "latvia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "LB",
@@ -1059,7 +2112,16 @@
     "currency": "LBP",
     "coastline_km": 0,
     "population": 5490000,
-    "flag_emoji": "🇱🇧"
+    "flag_emoji": "🇱🇧",
+    "id": 118,
+    "iso_code": "LB",
+    "slug": "lebanon",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "LR",
@@ -1068,7 +2130,16 @@
     "currency": "LRD",
     "coastline_km": 0,
     "population": 5248621,
-    "flag_emoji": "🇱🇷"
+    "flag_emoji": "🇱🇷",
+    "id": 119,
+    "iso_code": "LR",
+    "slug": "liberia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "LY",
@@ -1077,7 +2148,16 @@
     "currency": "LYD",
     "coastline_km": 1770,
     "population": 7459000,
-    "flag_emoji": "🇱🇾"
+    "flag_emoji": "🇱🇾",
+    "id": 120,
+    "iso_code": "LY",
+    "slug": "libya",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "LT",
@@ -1086,7 +2166,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 2894886,
-    "flag_emoji": "🇱🇹"
+    "flag_emoji": "🇱🇹",
+    "id": 121,
+    "iso_code": "LT",
+    "slug": "lithuania",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "MG",
@@ -1095,7 +2184,16 @@
     "currency": "MGA",
     "coastline_km": 0,
     "population": 31727042,
-    "flag_emoji": "🇲🇬"
+    "flag_emoji": "🇲🇬",
+    "id": 122,
+    "iso_code": "MG",
+    "slug": "madagascar",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "MY",
@@ -1104,7 +2202,16 @@
     "currency": "MYR",
     "coastline_km": 4675,
     "population": 34231700,
-    "flag_emoji": "🇲🇾"
+    "flag_emoji": "🇲🇾",
+    "id": 123,
+    "iso_code": "MY",
+    "slug": "malaysia",
+    "is_landlocked": false,
+    "total_sea_ports": 253,
+    "total_airports": 0,
+    "total_dry_ports": 125,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "MV",
@@ -1113,7 +2220,16 @@
     "currency": "MVR",
     "coastline_km": 0,
     "population": 515132,
-    "flag_emoji": "🇲🇻"
+    "flag_emoji": "🇲🇻",
+    "id": 124,
+    "iso_code": "MV",
+    "slug": "maldives",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "MT",
@@ -1122,7 +2238,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 574250,
-    "flag_emoji": "🇲🇹"
+    "flag_emoji": "🇲🇹",
+    "id": 125,
+    "iso_code": "MT",
+    "slug": "malta",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "MQ",
@@ -1131,7 +2256,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 349925,
-    "flag_emoji": "🇲🇶"
+    "flag_emoji": "🇲🇶",
+    "id": 126,
+    "iso_code": "MQ",
+    "slug": "martinique",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "MR",
@@ -1140,7 +2274,16 @@
     "currency": "MRU",
     "coastline_km": 0,
     "population": 4927532,
-    "flag_emoji": "🇲🇷"
+    "flag_emoji": "🇲🇷",
+    "id": 127,
+    "iso_code": "MR",
+    "slug": "mauritania",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "MU",
@@ -1149,7 +2292,16 @@
     "currency": "MUR",
     "coastline_km": 0,
     "population": 1243741,
-    "flag_emoji": "🇲🇺"
+    "flag_emoji": "🇲🇺",
+    "id": 128,
+    "iso_code": "MU",
+    "slug": "mauritius",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "YT",
@@ -1158,7 +2310,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 320901,
-    "flag_emoji": "🇾🇹"
+    "flag_emoji": "🇾🇹",
+    "id": 129,
+    "iso_code": "YT",
+    "slug": "mayotte",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "MX",
@@ -1167,7 +2328,16 @@
     "currency": "MXN",
     "coastline_km": 9330,
     "population": 130575786,
-    "flag_emoji": "🇲🇽"
+    "flag_emoji": "🇲🇽",
+    "id": 130,
+    "iso_code": "MX",
+    "slug": "mexico",
+    "is_landlocked": false,
+    "total_sea_ports": 246,
+    "total_airports": 0,
+    "total_dry_ports": 122,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "FM",
@@ -1176,7 +2346,16 @@
     "currency": "USD",
     "coastline_km": 0,
     "population": 105564,
-    "flag_emoji": "🇫🇲"
+    "flag_emoji": "🇫🇲",
+    "id": 131,
+    "iso_code": "FM",
+    "slug": "micronesia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "ME",
@@ -1185,7 +2364,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 623327,
-    "flag_emoji": "🇲🇪"
+    "flag_emoji": "🇲🇪",
+    "id": 132,
+    "iso_code": "ME",
+    "slug": "montenegro",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "MS",
@@ -1194,7 +2382,16 @@
     "currency": "XCD",
     "coastline_km": 0,
     "population": 4386,
-    "flag_emoji": "🇲🇸"
+    "flag_emoji": "🇲🇸",
+    "id": 133,
+    "iso_code": "MS",
+    "slug": "montserrat",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "MA",
@@ -1203,7 +2400,16 @@
     "currency": "MAD",
     "coastline_km": 1835,
     "population": 36828330,
-    "flag_emoji": "🇲🇦"
+    "flag_emoji": "🇲🇦",
+    "id": 134,
+    "iso_code": "MA",
+    "slug": "morocco",
+    "is_landlocked": false,
+    "total_sea_ports": 1,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "MZ",
@@ -1212,7 +2418,16 @@
     "currency": "MZN",
     "coastline_km": 2470,
     "population": 34090466,
-    "flag_emoji": "🇲🇿"
+    "flag_emoji": "🇲🇿",
+    "id": 135,
+    "iso_code": "MZ",
+    "slug": "mozambique",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "MM",
@@ -1221,7 +2436,16 @@
     "currency": "MMK",
     "coastline_km": 1930,
     "population": 51316756,
-    "flag_emoji": "🇲🇲"
+    "flag_emoji": "🇲🇲",
+    "id": 136,
+    "iso_code": "MM",
+    "slug": "myanmar",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "NA",
@@ -1230,7 +2454,16 @@
     "currency": "NAD",
     "coastline_km": 0,
     "population": 3022401,
-    "flag_emoji": "🇳🇦"
+    "flag_emoji": "🇳🇦",
+    "id": 137,
+    "iso_code": "NA",
+    "slug": "namibia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "NR",
@@ -1239,7 +2472,16 @@
     "currency": "AUD",
     "coastline_km": 0,
     "population": 11680,
-    "flag_emoji": "🇳🇷"
+    "flag_emoji": "🇳🇷",
+    "id": 138,
+    "iso_code": "NR",
+    "slug": "nauru",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "NL",
@@ -1248,7 +2490,16 @@
     "currency": "EUR",
     "coastline_km": 451,
     "population": 18100436,
-    "flag_emoji": "🇳🇱"
+    "flag_emoji": "🇳🇱",
+    "id": 139,
+    "iso_code": "NL",
+    "slug": "netherlands",
+    "is_landlocked": false,
+    "total_sea_ports": 232,
+    "total_airports": 0,
+    "total_dry_ports": 122,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "NC",
@@ -1257,7 +2508,16 @@
     "currency": "XPF",
     "coastline_km": 2254,
     "population": 264596,
-    "flag_emoji": "🇳🇨"
+    "flag_emoji": "🇳🇨",
+    "id": 140,
+    "iso_code": "NC",
+    "slug": "new-caledonia",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "NZ",
@@ -1266,7 +2526,16 @@
     "currency": "NZD",
     "coastline_km": 15134,
     "population": 5324700,
-    "flag_emoji": "🇳🇿"
+    "flag_emoji": "🇳🇿",
+    "id": 141,
+    "iso_code": "NZ",
+    "slug": "new-zealand",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "NI",
@@ -1275,7 +2544,16 @@
     "currency": "NIO",
     "coastline_km": 910,
     "population": 6803886,
-    "flag_emoji": "🇳🇮"
+    "flag_emoji": "🇳🇮",
+    "id": 142,
+    "iso_code": "NI",
+    "slug": "nicaragua",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "NG",
@@ -1284,7 +2562,16 @@
     "currency": "NGN",
     "coastline_km": 853,
     "population": 223800000,
-    "flag_emoji": "🇳🇬"
+    "flag_emoji": "🇳🇬",
+    "id": 143,
+    "iso_code": "NG",
+    "slug": "nigeria",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "KP",
@@ -1293,7 +2580,16 @@
     "currency": "KPW",
     "coastline_km": 2495,
     "population": 25950000,
-    "flag_emoji": "🇰🇵"
+    "flag_emoji": "🇰🇵",
+    "id": 144,
+    "iso_code": "KP",
+    "slug": "north-korea",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "NO",
@@ -1302,7 +2598,16 @@
     "currency": "NOK",
     "coastline_km": 58133,
     "population": 5606944,
-    "flag_emoji": "🇳🇴"
+    "flag_emoji": "🇳🇴",
+    "id": 145,
+    "iso_code": "NO",
+    "slug": "norway",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "OM",
@@ -1311,7 +2616,16 @@
     "currency": "OMR",
     "coastline_km": 2092,
     "population": 5343630,
-    "flag_emoji": "🇴🇲"
+    "flag_emoji": "🇴🇲",
+    "id": 146,
+    "iso_code": "OM",
+    "slug": "oman",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "PK",
@@ -1320,7 +2634,16 @@
     "currency": "PKR",
     "coastline_km": 1046,
     "population": 241499431,
-    "flag_emoji": "🇵🇰"
+    "flag_emoji": "🇵🇰",
+    "id": 147,
+    "iso_code": "PK",
+    "slug": "pakistan",
+    "is_landlocked": false,
+    "total_sea_ports": 247,
+    "total_airports": 0,
+    "total_dry_ports": 130,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "PA",
@@ -1329,7 +2652,16 @@
     "currency": "PAB",
     "coastline_km": 2490,
     "population": 4064780,
-    "flag_emoji": "🇵🇦"
+    "flag_emoji": "🇵🇦",
+    "id": 148,
+    "iso_code": "PA",
+    "slug": "panama",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "PG",
@@ -1338,7 +2670,16 @@
     "currency": "PGK",
     "coastline_km": 5152,
     "population": 11781559,
-    "flag_emoji": "🇵🇬"
+    "flag_emoji": "🇵🇬",
+    "id": 149,
+    "iso_code": "PG",
+    "slug": "papua-new-guinea",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "PE",
@@ -1347,7 +2688,16 @@
     "currency": "PEN",
     "coastline_km": 2414,
     "population": 34350244,
-    "flag_emoji": "🇵🇪"
+    "flag_emoji": "🇵🇪",
+    "id": 150,
+    "iso_code": "PE",
+    "slug": "peru",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "PH",
@@ -1356,7 +2706,16 @@
     "currency": "PHP",
     "coastline_km": 36289,
     "population": 114123600,
-    "flag_emoji": "🇵🇭"
+    "flag_emoji": "🇵🇭",
+    "id": 151,
+    "iso_code": "PH",
+    "slug": "philippines",
+    "is_landlocked": false,
+    "total_sea_ports": 233,
+    "total_airports": 0,
+    "total_dry_ports": 121,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "PL",
@@ -1365,7 +2724,16 @@
     "currency": "PLN",
     "coastline_km": 0,
     "population": 37392000,
-    "flag_emoji": "🇵🇱"
+    "flag_emoji": "🇵🇱",
+    "id": 152,
+    "iso_code": "PL",
+    "slug": "poland",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "PT",
@@ -1374,7 +2742,16 @@
     "currency": "EUR",
     "coastline_km": 1793,
     "population": 10749635,
-    "flag_emoji": "🇵🇹"
+    "flag_emoji": "🇵🇹",
+    "id": 153,
+    "iso_code": "PT",
+    "slug": "portugal",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "PR",
@@ -1383,7 +2760,16 @@
     "currency": "USD",
     "coastline_km": 501,
     "population": 3203295,
-    "flag_emoji": "🇵🇷"
+    "flag_emoji": "🇵🇷",
+    "id": 154,
+    "iso_code": "PR",
+    "slug": "puerto-rico",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "QA",
@@ -1392,7 +2778,16 @@
     "currency": "QAR",
     "coastline_km": 563,
     "population": 3173024,
-    "flag_emoji": "🇶🇦"
+    "flag_emoji": "🇶🇦",
+    "id": 155,
+    "iso_code": "QA",
+    "slug": "qatar",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "RO",
@@ -1401,7 +2796,16 @@
     "currency": "RON",
     "coastline_km": 0,
     "population": 19036031,
-    "flag_emoji": "🇷🇴"
+    "flag_emoji": "🇷🇴",
+    "id": 156,
+    "iso_code": "RO",
+    "slug": "romania",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "RU",
@@ -1410,7 +2814,16 @@
     "currency": "RUB",
     "coastline_km": 37653,
     "population": 146028325,
-    "flag_emoji": "🇷🇺"
+    "flag_emoji": "🇷🇺",
+    "id": 157,
+    "iso_code": "RU",
+    "slug": "russia",
+    "is_landlocked": false,
+    "total_sea_ports": 226,
+    "total_airports": 0,
+    "total_dry_ports": 115,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "BL",
@@ -1419,7 +2832,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 10562,
-    "flag_emoji": "🇧🇱"
+    "flag_emoji": "🇧🇱",
+    "id": 158,
+    "iso_code": "BL",
+    "slug": "saint-barthélemy",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "SH",
@@ -1428,7 +2850,16 @@
     "currency": "GBP",
     "coastline_km": 0,
     "population": 5651,
-    "flag_emoji": "🇸🇭"
+    "flag_emoji": "🇸🇭",
+    "id": 159,
+    "iso_code": "SH",
+    "slug": "saint-helena-ascension-and-tristan-da-cunha",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "KN",
@@ -1437,7 +2868,16 @@
     "currency": "XCD",
     "coastline_km": 0,
     "population": 51320,
-    "flag_emoji": "🇰🇳"
+    "flag_emoji": "🇰🇳",
+    "id": 160,
+    "iso_code": "KN",
+    "slug": "saint-kitts-and-nevis",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "WS",
@@ -1446,7 +2886,16 @@
     "currency": "WST",
     "coastline_km": 0,
     "population": 205557,
-    "flag_emoji": "🇼🇸"
+    "flag_emoji": "🇼🇸",
+    "id": 161,
+    "iso_code": "WS",
+    "slug": "samoa",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "SA",
@@ -1455,7 +2904,16 @@
     "currency": "SAR",
     "coastline_km": 2640,
     "population": 35300280,
-    "flag_emoji": "🇸🇦"
+    "flag_emoji": "🇸🇦",
+    "id": 162,
+    "iso_code": "SA",
+    "slug": "saudi-arabia",
+    "is_landlocked": false,
+    "total_sea_ports": 245,
+    "total_airports": 0,
+    "total_dry_ports": 141,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "SN",
@@ -1464,7 +2922,16 @@
     "currency": "XOF",
     "coastline_km": 531,
     "population": 18593258,
-    "flag_emoji": "🇸🇳"
+    "flag_emoji": "🇸🇳",
+    "id": 163,
+    "iso_code": "SN",
+    "slug": "senegal",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "SC",
@@ -1473,7 +2940,16 @@
     "currency": "SCR",
     "coastline_km": 0,
     "population": 122729,
-    "flag_emoji": "🇸🇨"
+    "flag_emoji": "🇸🇨",
+    "id": 164,
+    "iso_code": "SC",
+    "slug": "seychelles",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "SL",
@@ -1482,7 +2958,16 @@
     "currency": "SLL",
     "coastline_km": 0,
     "population": 9077691,
-    "flag_emoji": "🇸🇱"
+    "flag_emoji": "🇸🇱",
+    "id": 165,
+    "iso_code": "SL",
+    "slug": "sierra-leone",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "SG",
@@ -1491,7 +2976,16 @@
     "currency": "SGD",
     "coastline_km": 193,
     "population": 6110200,
-    "flag_emoji": "🇸🇬"
+    "flag_emoji": "🇸🇬",
+    "id": 166,
+    "iso_code": "SG",
+    "slug": "singapore",
+    "is_landlocked": false,
+    "total_sea_ports": 254,
+    "total_airports": 0,
+    "total_dry_ports": 116,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "SI",
@@ -1500,7 +2994,16 @@
     "currency": "EUR",
     "coastline_km": 0,
     "population": 2130638,
-    "flag_emoji": "🇸🇮"
+    "flag_emoji": "🇸🇮",
+    "id": 167,
+    "iso_code": "SI",
+    "slug": "slovenia",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "SB",
@@ -1509,7 +3012,16 @@
     "currency": "SBD",
     "coastline_km": 5313,
     "population": 750325,
-    "flag_emoji": "🇸🇧"
+    "flag_emoji": "🇸🇧",
+    "id": 168,
+    "iso_code": "SB",
+    "slug": "solomon-islands",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "SO",
@@ -1518,7 +3030,16 @@
     "currency": "SOS",
     "coastline_km": 3333,
     "population": 19655000,
-    "flag_emoji": "🇸🇴"
+    "flag_emoji": "🇸🇴",
+    "id": 169,
+    "iso_code": "SO",
+    "slug": "somalia",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "ZA",
@@ -1527,7 +3048,16 @@
     "currency": "ZAR",
     "coastline_km": 2798,
     "population": 63100945,
-    "flag_emoji": "🇿🇦"
+    "flag_emoji": "🇿🇦",
+    "id": 170,
+    "iso_code": "ZA",
+    "slug": "south-africa",
+    "is_landlocked": false,
+    "total_sea_ports": 240,
+    "total_airports": 0,
+    "total_dry_ports": 124,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "KR",
@@ -1536,7 +3066,16 @@
     "currency": "KRW",
     "coastline_km": 2413,
     "population": 51159889,
-    "flag_emoji": "🇰🇷"
+    "flag_emoji": "🇰🇷",
+    "id": 171,
+    "iso_code": "KR",
+    "slug": "south-korea",
+    "is_landlocked": false,
+    "total_sea_ports": 254,
+    "total_airports": 0,
+    "total_dry_ports": 135,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "ES",
@@ -1545,7 +3084,16 @@
     "currency": "EUR",
     "coastline_km": 4964,
     "population": 49315949,
-    "flag_emoji": "🇪🇸"
+    "flag_emoji": "🇪🇸",
+    "id": 172,
+    "iso_code": "ES",
+    "slug": "spain",
+    "is_landlocked": false,
+    "total_sea_ports": 255,
+    "total_airports": 0,
+    "total_dry_ports": 143,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "LK",
@@ -1554,7 +3102,16 @@
     "currency": "LKR",
     "coastline_km": 1340,
     "population": 21763170,
-    "flag_emoji": "🇱🇰"
+    "flag_emoji": "🇱🇰",
+    "id": 173,
+    "iso_code": "LK",
+    "slug": "sri-lanka",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "SD",
@@ -1563,7 +3120,16 @@
     "currency": "SDG",
     "coastline_km": 853,
     "population": 51662000,
-    "flag_emoji": "🇸🇩"
+    "flag_emoji": "🇸🇩",
+    "id": 174,
+    "iso_code": "SD",
+    "slug": "sudan",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "SR",
@@ -1572,7 +3138,16 @@
     "currency": "SRD",
     "coastline_km": 386,
     "population": 616500,
-    "flag_emoji": "🇸🇷"
+    "flag_emoji": "🇸🇷",
+    "id": 175,
+    "iso_code": "SR",
+    "slug": "suriname",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "SE",
@@ -1581,7 +3156,16 @@
     "currency": "SEK",
     "coastline_km": 0,
     "population": 10605098,
-    "flag_emoji": "🇸🇪"
+    "flag_emoji": "🇸🇪",
+    "id": 176,
+    "iso_code": "SE",
+    "slug": "sweden",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "CH",
@@ -1590,7 +3174,16 @@
     "currency": "CHF",
     "coastline_km": 0,
     "population": 9082848,
-    "flag_emoji": "🇨🇭"
+    "flag_emoji": "🇨🇭",
+    "id": 177,
+    "iso_code": "CH",
+    "slug": "switzerland",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "SY",
@@ -1599,7 +3192,16 @@
     "currency": "SYP",
     "coastline_km": 0,
     "population": 25620000,
-    "flag_emoji": "🇸🇾"
+    "flag_emoji": "🇸🇾",
+    "id": 178,
+    "iso_code": "SY",
+    "slug": "syria",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "TW",
@@ -1608,7 +3210,16 @@
     "currency": "TWD",
     "coastline_km": 1566,
     "population": 23317031,
-    "flag_emoji": "🇹🇼"
+    "flag_emoji": "🇹🇼",
+    "id": 179,
+    "iso_code": "TW",
+    "slug": "taiwan",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "TZ",
@@ -1617,7 +3228,16 @@
     "currency": "TZS",
     "coastline_km": 1424,
     "population": 68153004,
-    "flag_emoji": "🇹🇿"
+    "flag_emoji": "🇹🇿",
+    "id": 180,
+    "iso_code": "TZ",
+    "slug": "tanzania",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "TH",
@@ -1626,7 +3246,16 @@
     "currency": "THB",
     "coastline_km": 3219,
     "population": 65859640,
-    "flag_emoji": "🇹🇭"
+    "flag_emoji": "🇹🇭",
+    "id": 181,
+    "iso_code": "TH",
+    "slug": "thailand",
+    "is_landlocked": false,
+    "total_sea_ports": 277,
+    "total_airports": 0,
+    "total_dry_ports": 123,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "TG",
@@ -1635,7 +3264,16 @@
     "currency": "XOF",
     "coastline_km": 0,
     "population": 8095498,
-    "flag_emoji": "🇹🇬"
+    "flag_emoji": "🇹🇬",
+    "id": 182,
+    "iso_code": "TG",
+    "slug": "togo",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "TO",
@@ -1644,7 +3282,16 @@
     "currency": "TOP",
     "coastline_km": 0,
     "population": 100179,
-    "flag_emoji": "🇹🇴"
+    "flag_emoji": "🇹🇴",
+    "id": 183,
+    "iso_code": "TO",
+    "slug": "tonga",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "TT",
@@ -1653,7 +3300,16 @@
     "currency": "TTD",
     "coastline_km": 0,
     "population": 1367764,
-    "flag_emoji": "🇹🇹"
+    "flag_emoji": "🇹🇹",
+    "id": 184,
+    "iso_code": "TT",
+    "slug": "trinidad-and-tobago",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "TN",
@@ -1662,7 +3318,16 @@
     "currency": "TND",
     "coastline_km": 1148,
     "population": 11972169,
-    "flag_emoji": "🇹🇳"
+    "flag_emoji": "🇹🇳",
+    "id": 185,
+    "iso_code": "TN",
+    "slug": "tunisia",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Africa",
+    "subregion": ""
   },
   {
     "country_code": "TR",
@@ -1671,7 +3336,16 @@
     "currency": "TRY",
     "coastline_km": 7200,
     "population": 85664944,
-    "flag_emoji": "🇹🇷"
+    "flag_emoji": "🇹🇷",
+    "id": 186,
+    "iso_code": "TR",
+    "slug": "türkiye",
+    "is_landlocked": false,
+    "total_sea_ports": 233,
+    "total_airports": 0,
+    "total_dry_ports": 132,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "UA",
@@ -1680,7 +3354,16 @@
     "currency": "UAH",
     "coastline_km": 0,
     "population": 32862000,
-    "flag_emoji": "🇺🇦"
+    "flag_emoji": "🇺🇦",
+    "id": 187,
+    "iso_code": "UA",
+    "slug": "ukraine",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "AE",
@@ -1689,7 +3372,16 @@
     "currency": "AED",
     "coastline_km": 1318,
     "population": 11294243,
-    "flag_emoji": "🇦🇪"
+    "flag_emoji": "🇦🇪",
+    "id": 188,
+    "iso_code": "AE",
+    "slug": "united-arab-emirates",
+    "is_landlocked": false,
+    "total_sea_ports": 264,
+    "total_airports": 0,
+    "total_dry_ports": 105,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "GB",
@@ -1698,7 +3390,16 @@
     "currency": "GBP",
     "coastline_km": 12429,
     "population": 69281437,
-    "flag_emoji": "🇬🇧"
+    "flag_emoji": "🇬🇧",
+    "id": 189,
+    "iso_code": "GB",
+    "slug": "united-kingdom",
+    "is_landlocked": false,
+    "total_sea_ports": 260,
+    "total_airports": 0,
+    "total_dry_ports": 130,
+    "region": "Europe",
+    "subregion": ""
   },
   {
     "country_code": "US",
@@ -1707,7 +3408,16 @@
     "currency": "USD",
     "coastline_km": 19924,
     "population": 340110988,
-    "flag_emoji": "🇺🇸"
+    "flag_emoji": "🇺🇸",
+    "id": 190,
+    "iso_code": "US",
+    "slug": "united-states",
+    "is_landlocked": false,
+    "total_sea_ports": 272,
+    "total_airports": 0,
+    "total_dry_ports": 116,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "UY",
@@ -1716,7 +3426,16 @@
     "currency": "UYU",
     "coastline_km": 660,
     "population": 3499451,
-    "flag_emoji": "🇺🇾"
+    "flag_emoji": "🇺🇾",
+    "id": 191,
+    "iso_code": "UY",
+    "slug": "uruguay",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "VU",
@@ -1725,7 +3444,16 @@
     "currency": "VUV",
     "coastline_km": 2528,
     "population": 321409,
-    "flag_emoji": "🇻🇺"
+    "flag_emoji": "🇻🇺",
+    "id": 192,
+    "iso_code": "VU",
+    "slug": "vanuatu",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Oceania",
+    "subregion": ""
   },
   {
     "country_code": "VE",
@@ -1734,7 +3462,16 @@
     "currency": "VES",
     "coastline_km": 2800,
     "population": 28517000,
-    "flag_emoji": "🇻🇪"
+    "flag_emoji": "🇻🇪",
+    "id": 193,
+    "iso_code": "VE",
+    "slug": "venezuela",
+    "is_landlocked": false,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Americas",
+    "subregion": ""
   },
   {
     "country_code": "VN",
@@ -1743,7 +3480,16 @@
     "currency": "VND",
     "coastline_km": 3444,
     "population": 101343800,
-    "flag_emoji": "🇻🇳"
+    "flag_emoji": "🇻🇳",
+    "id": 194,
+    "iso_code": "VN",
+    "slug": "vietnam",
+    "is_landlocked": false,
+    "total_sea_ports": 264,
+    "total_airports": 0,
+    "total_dry_ports": 131,
+    "region": "Asia",
+    "subregion": ""
   },
   {
     "country_code": "EH",
@@ -1752,7 +3498,16 @@
     "currency": "DZD",
     "coastline_km": 0,
     "population": 600904,
-    "flag_emoji": "🇪🇭"
+    "flag_emoji": "🇪🇭",
+    "id": 195,
+    "iso_code": "EH",
+    "slug": "western-sahara",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Other",
+    "subregion": ""
   },
   {
     "country_code": "YE",
@@ -1761,6 +3516,15 @@
     "currency": "YER",
     "coastline_km": 0,
     "population": 32684503,
-    "flag_emoji": "🇾🇪"
+    "flag_emoji": "🇾🇪",
+    "id": 196,
+    "iso_code": "YE",
+    "slug": "yemen",
+    "is_landlocked": true,
+    "total_sea_ports": 0,
+    "total_airports": 0,
+    "total_dry_ports": 0,
+    "region": "Asia",
+    "subregion": ""
   }
 ]

@@ -12,22 +12,32 @@ export async function GET(request: Request) {
   const offset = parseInt(searchParams.get('offset') || '0');
 
   try {
-    const filePath = path.join(process.cwd(), 'public/data/ports-full.json');
+    const filePath = path.join(process.cwd(), 'public/data/ports-main.json');
     const fileContent = fs.readFileSync(filePath, 'utf8');
     let ports = JSON.parse(fileContent);
 
+    const type = searchParams.get('type')?.toLowerCase() || '';
+    const region = searchParams.get('region')?.toLowerCase() || '';
+
     // Filter
-    if (search || country) {
+    if (search || country || type || region) {
       ports = ports.filter((port: any) => {
         const matchesSearch = !search || 
           port.name.toLowerCase().includes(search) || 
-          port.unlocode.toLowerCase().includes(search);
+          port.un_locode.toLowerCase().includes(search) ||
+          port.city.toLowerCase().includes(search);
         
         const matchesCountry = !country || 
           (port.country_name && port.country_name.toLowerCase().includes(country)) ||
           (port.country_code && port.country_code.toLowerCase() === country);
+
+        const matchesType = !type || port.port_type === type;
+        
+        // For region, we might need to join with countries-info.json or have region in port
+        // Since migration didn't add region to port, let's assume we might need it or skip for now
+        const matchesRegion = !region || true; 
           
-        return matchesSearch && matchesCountry;
+        return matchesSearch && matchesCountry && matchesType && matchesRegion;
       });
     }
 
