@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Search, MapPin, Globe, Anchor, Plane, Train, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Port, Country } from '@/utils/data-utils';

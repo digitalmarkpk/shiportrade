@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, ChevronRight, Anchor, Globe } from 'lucide-react';
 import { Country, Region } from '@/utils/data-utils';
 import Image from 'next/image';

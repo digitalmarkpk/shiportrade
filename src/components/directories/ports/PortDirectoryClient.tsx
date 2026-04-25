@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { Country, Port, Region } from '@/utils/data-utils';
 import CountrySidebar from './CountrySidebar';
 import PortTable from './PortTable';

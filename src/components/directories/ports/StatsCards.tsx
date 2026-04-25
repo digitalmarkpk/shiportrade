@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Globe, Anchor, Plane, Train } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
