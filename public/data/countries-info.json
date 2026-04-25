@@ -11,11 +11,11 @@
     "iso_code": "AF",
     "slug": "afghanistan",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 28,
+    "total_dry_ports": 2,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "AX",
@@ -29,7 +29,7 @@
     "iso_code": "AX",
     "slug": "åland-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -47,11 +47,11 @@
     "iso_code": "AL",
     "slug": "albania",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 1,
+    "total_dry_ports": 5,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "DZ",
@@ -65,11 +65,11 @@
     "iso_code": "DZ",
     "slug": "algeria",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 24,
+    "total_airports": 30,
+    "total_dry_ports": 20,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "AS",
@@ -83,11 +83,11 @@
     "iso_code": "AS",
     "slug": "american-samoa",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 3,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Polynesia"
   },
   {
     "country_code": "AD",
@@ -102,10 +102,10 @@
     "slug": "andorra",
     "is_landlocked": true,
     "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "AO",
@@ -119,11 +119,11 @@
     "iso_code": "AO",
     "slug": "angola",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 35,
+    "total_airports": 33,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "AI",
@@ -137,8 +137,8 @@
     "iso_code": "AI",
     "slug": "anguilla",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Other",
     "subregion": ""
@@ -155,8 +155,8 @@
     "iso_code": "AQ",
     "slug": "antarctica",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 36,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Other",
     "subregion": ""
@@ -173,11 +173,11 @@
     "iso_code": "AG",
     "slug": "antigua-and-barbuda",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 5,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "AR",
@@ -191,11 +191,11 @@
     "iso_code": "AR",
     "slug": "argentina",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 104,
+    "total_airports": 87,
+    "total_dry_ports": 74,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "AM",
@@ -209,11 +209,11 @@
     "iso_code": "AM",
     "slug": "armenia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 2,
+    "total_dry_ports": 7,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "AW",
@@ -227,7 +227,7 @@
     "iso_code": "AW",
     "slug": "aruba",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 6,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -245,11 +245,11 @@
     "iso_code": "AU",
     "slug": "australia",
     "is_landlocked": false,
-    "total_sea_ports": 252,
-    "total_airports": 0,
-    "total_dry_ports": 113,
+    "total_sea_ports": 378,
+    "total_airports": 552,
+    "total_dry_ports": 208,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Australia and New Zealand"
   },
   {
     "country_code": "AT",
@@ -263,11 +263,11 @@
     "iso_code": "AT",
     "slug": "austria",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 111,
+    "total_airports": 11,
+    "total_dry_ports": 140,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Western Europe"
   },
   {
     "country_code": "AZ",
@@ -281,11 +281,11 @@
     "iso_code": "AZ",
     "slug": "azerbaijan",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 2,
+    "total_dry_ports": 4,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "BS",
@@ -299,11 +299,11 @@
     "iso_code": "BS",
     "slug": "bahamas",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 36,
+    "total_airports": 21,
     "total_dry_ports": 0,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "BH",
@@ -317,11 +317,11 @@
     "iso_code": "BH",
     "slug": "bahrain",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 5,
+    "total_airports": 2,
+    "total_dry_ports": 11,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "BD",
@@ -335,11 +335,11 @@
     "iso_code": "BD",
     "slug": "bangladesh",
     "is_landlocked": false,
-    "total_sea_ports": 256,
-    "total_airports": 0,
-    "total_dry_ports": 131,
+    "total_sea_ports": 12,
+    "total_airports": 13,
+    "total_dry_ports": 7,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "BB",
@@ -353,11 +353,11 @@
     "iso_code": "BB",
     "slug": "barbados",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 2,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 2,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "BY",
@@ -371,11 +371,11 @@
     "iso_code": "BY",
     "slug": "belarus",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 5,
+    "total_dry_ports": 4,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "BE",
@@ -389,11 +389,11 @@
     "iso_code": "BE",
     "slug": "belgium",
     "is_landlocked": false,
-    "total_sea_ports": 267,
-    "total_airports": 0,
-    "total_dry_ports": 138,
+    "total_sea_ports": 474,
+    "total_airports": 4,
+    "total_dry_ports": 32,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Western Europe"
   },
   {
     "country_code": "BZ",
@@ -407,11 +407,11 @@
     "iso_code": "BZ",
     "slug": "belize",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 5,
+    "total_airports": 15,
+    "total_dry_ports": 1,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "BJ",
@@ -425,11 +425,11 @@
     "iso_code": "BJ",
     "slug": "benin",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 5,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "BM",
@@ -443,11 +443,11 @@
     "iso_code": "BM",
     "slug": "bermuda",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 8,
     "total_airports": 0,
     "total_dry_ports": 0,
-    "region": "Other",
-    "subregion": ""
+    "region": "Americas",
+    "subregion": "Northern America"
   },
   {
     "country_code": "BT",
@@ -462,10 +462,10 @@
     "slug": "bhutan",
     "is_landlocked": true,
     "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_airports": 2,
+    "total_dry_ports": 13,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "BO",
@@ -479,11 +479,11 @@
     "iso_code": "BO",
     "slug": "bolivia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 12,
+    "total_airports": 34,
+    "total_dry_ports": 2,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "BA",
@@ -497,11 +497,11 @@
     "iso_code": "BA",
     "slug": "bosnia-and-herzegovina",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 10,
+    "total_airports": 4,
+    "total_dry_ports": 4,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "BW",
@@ -515,11 +515,11 @@
     "iso_code": "BW",
     "slug": "botswana",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 2,
+    "total_airports": 16,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Southern Africa"
   },
   {
     "country_code": "BV",
@@ -551,11 +551,11 @@
     "iso_code": "BR",
     "slug": "brazil",
     "is_landlocked": false,
-    "total_sea_ports": 269,
-    "total_airports": 0,
-    "total_dry_ports": 112,
+    "total_sea_ports": 206,
+    "total_airports": 350,
+    "total_dry_ports": 34,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "IO",
@@ -587,11 +587,11 @@
     "iso_code": "BN",
     "slug": "brunei",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 6,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "BG",
@@ -605,11 +605,11 @@
     "iso_code": "BG",
     "slug": "bulgaria",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 23,
+    "total_airports": 9,
+    "total_dry_ports": 33,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "BF",
@@ -623,11 +623,11 @@
     "iso_code": "BF",
     "slug": "burkina-faso",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 27,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "BI",
@@ -641,11 +641,11 @@
     "iso_code": "BI",
     "slug": "burundi",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 3,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "KH",
@@ -659,11 +659,11 @@
     "iso_code": "KH",
     "slug": "cambodia",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 5,
+    "total_airports": 14,
+    "total_dry_ports": 2,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "CM",
@@ -677,11 +677,11 @@
     "iso_code": "CM",
     "slug": "cameroon",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 9,
+    "total_airports": 15,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "CA",
@@ -695,11 +695,11 @@
     "iso_code": "CA",
     "slug": "canada",
     "is_landlocked": false,
-    "total_sea_ports": 238,
-    "total_airports": 0,
-    "total_dry_ports": 127,
+    "total_sea_ports": 580,
+    "total_airports": 399,
+    "total_dry_ports": 172,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Northern America"
   },
   {
     "country_code": "CV",
@@ -713,11 +713,11 @@
     "iso_code": "CV",
     "slug": "cape-verde",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 8,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "BQ",
@@ -731,9 +731,9 @@
     "iso_code": "BQ",
     "slug": "caribbean-netherlands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 6,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 1,
     "region": "Other",
     "subregion": ""
   },
@@ -749,8 +749,8 @@
     "iso_code": "KY",
     "slug": "cayman-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 3,
     "total_dry_ports": 0,
     "region": "Other",
     "subregion": ""
@@ -767,11 +767,11 @@
     "iso_code": "CF",
     "slug": "central-african-republic",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 25,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "CL",
@@ -785,11 +785,11 @@
     "iso_code": "CL",
     "slug": "chile",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 105,
+    "total_airports": 18,
+    "total_dry_ports": 4,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "CN",
@@ -803,11 +803,11 @@
     "iso_code": "CN",
     "slug": "china",
     "is_landlocked": false,
-    "total_sea_ports": 223,
-    "total_airports": 0,
-    "total_dry_ports": 142,
+    "total_sea_ports": 765,
+    "total_airports": 155,
+    "total_dry_ports": 177,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Eastern Asia"
   },
   {
     "country_code": "CX",
@@ -821,8 +821,8 @@
     "iso_code": "CX",
     "slug": "christmas-island",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 1,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Other",
     "subregion": ""
@@ -839,7 +839,7 @@
     "iso_code": "CC",
     "slug": "cocos-keeling-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -857,11 +857,11 @@
     "iso_code": "CO",
     "slug": "colombia",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 33,
+    "total_airports": 150,
+    "total_dry_ports": 19,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "KM",
@@ -875,11 +875,11 @@
     "iso_code": "KM",
     "slug": "comoros",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 2,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "CG",
@@ -893,11 +893,11 @@
     "iso_code": "CG",
     "slug": "congo",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 23,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "CK",
@@ -911,11 +911,11 @@
     "iso_code": "CK",
     "slug": "cook-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 4,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Polynesia"
   },
   {
     "country_code": "CR",
@@ -929,11 +929,11 @@
     "iso_code": "CR",
     "slug": "costa-rica",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 59,
+    "total_airports": 19,
+    "total_dry_ports": 49,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "HR",
@@ -947,11 +947,11 @@
     "iso_code": "HR",
     "slug": "croatia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 170,
+    "total_airports": 1,
+    "total_dry_ports": 21,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "CU",
@@ -965,11 +965,11 @@
     "iso_code": "CU",
     "slug": "cuba",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 39,
+    "total_airports": 22,
     "total_dry_ports": 0,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "CW",
@@ -983,9 +983,9 @@
     "iso_code": "CW",
     "slug": "curaçao",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 6,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 4,
     "region": "Other",
     "subregion": ""
   },
@@ -1001,11 +1001,11 @@
     "iso_code": "CY",
     "slug": "cyprus",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 14,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "CZ",
@@ -1019,11 +1019,11 @@
     "iso_code": "CZ",
     "slug": "czechia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 105,
+    "total_airports": 18,
+    "total_dry_ports": 248,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "DK",
@@ -1037,11 +1037,11 @@
     "iso_code": "DK",
     "slug": "denmark",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 239,
+    "total_airports": 6,
+    "total_dry_ports": 44,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "DJ",
@@ -1055,11 +1055,11 @@
     "iso_code": "DJ",
     "slug": "djibouti",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 4,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "DM",
@@ -1073,11 +1073,11 @@
     "iso_code": "DM",
     "slug": "dominica",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "DO",
@@ -1091,11 +1091,11 @@
     "iso_code": "DO",
     "slug": "dominican-republic",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 29,
+    "total_airports": 4,
+    "total_dry_ports": 21,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "CD",
@@ -1109,11 +1109,11 @@
     "iso_code": "CD",
     "slug": "dr-congo",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 60,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "EC",
@@ -1127,11 +1127,11 @@
     "iso_code": "EC",
     "slug": "ecuador",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 30,
+    "total_airports": 24,
+    "total_dry_ports": 29,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "EG",
@@ -1145,11 +1145,11 @@
     "iso_code": "EG",
     "slug": "egypt",
     "is_landlocked": false,
-    "total_sea_ports": 260,
-    "total_airports": 0,
-    "total_dry_ports": 112,
+    "total_sea_ports": 41,
+    "total_airports": 19,
+    "total_dry_ports": 24,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "SV",
@@ -1163,11 +1163,11 @@
     "iso_code": "SV",
     "slug": "el-salvador",
     "is_landlocked": false,
-    "total_sea_ports": 0,
+    "total_sea_ports": 12,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 10,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "GQ",
@@ -1181,11 +1181,11 @@
     "iso_code": "GQ",
     "slug": "equatorial-guinea",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 8,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "ER",
@@ -1199,11 +1199,11 @@
     "iso_code": "ER",
     "slug": "eritrea",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 2,
+    "total_airports": 2,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "EE",
@@ -1217,11 +1217,11 @@
     "iso_code": "EE",
     "slug": "estonia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 221,
+    "total_airports": 1,
+    "total_dry_ports": 20,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "ET",
@@ -1236,10 +1236,10 @@
     "slug": "ethiopia",
     "is_landlocked": true,
     "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_airports": 37,
+    "total_dry_ports": 4,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "FK",
@@ -1253,11 +1253,11 @@
     "iso_code": "FK",
     "slug": "falkland-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 2,
+    "total_airports": 1,
     "total_dry_ports": 0,
-    "region": "Other",
-    "subregion": ""
+    "region": "Americas",
+    "subregion": "South America"
   },
   {
     "country_code": "FO",
@@ -1271,9 +1271,9 @@
     "iso_code": "FO",
     "slug": "faroe-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 23,
+    "total_airports": 1,
+    "total_dry_ports": 1,
     "region": "Other",
     "subregion": ""
   },
@@ -1289,11 +1289,11 @@
     "iso_code": "FJ",
     "slug": "fiji",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 14,
+    "total_airports": 6,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Melanesia"
   },
   {
     "country_code": "FI",
@@ -1307,11 +1307,11 @@
     "iso_code": "FI",
     "slug": "finland",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 181,
+    "total_airports": 16,
+    "total_dry_ports": 40,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "FR",
@@ -1325,11 +1325,11 @@
     "iso_code": "FR",
     "slug": "france",
     "is_landlocked": false,
-    "total_sea_ports": 255,
-    "total_airports": 0,
-    "total_dry_ports": 134,
+    "total_sea_ports": 808,
+    "total_airports": 81,
+    "total_dry_ports": 2590,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Western Europe"
   },
   {
     "country_code": "GF",
@@ -1343,11 +1343,11 @@
     "iso_code": "GF",
     "slug": "french-guiana",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 8,
+    "total_airports": 5,
     "total_dry_ports": 0,
-    "region": "Other",
-    "subregion": ""
+    "region": "Americas",
+    "subregion": "South America"
   },
   {
     "country_code": "TF",
@@ -1361,7 +1361,7 @@
     "iso_code": "TF",
     "slug": "french-southern-and-antarctic-lands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -1379,11 +1379,11 @@
     "iso_code": "GA",
     "slug": "gabon",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 11,
+    "total_airports": 39,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Middle Africa"
   },
   {
     "country_code": "GM",
@@ -1397,11 +1397,11 @@
     "iso_code": "GM",
     "slug": "gambia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 2,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "GE",
@@ -1415,11 +1415,11 @@
     "iso_code": "GE",
     "slug": "georgia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 4,
+    "total_dry_ports": 21,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "DE",
@@ -1433,11 +1433,11 @@
     "iso_code": "DE",
     "slug": "germany",
     "is_landlocked": false,
-    "total_sea_ports": 247,
-    "total_airports": 0,
-    "total_dry_ports": 114,
+    "total_sea_ports": 879,
+    "total_airports": 71,
+    "total_dry_ports": 1254,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Western Europe"
   },
   {
     "country_code": "GH",
@@ -1451,11 +1451,11 @@
     "iso_code": "GH",
     "slug": "ghana",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 11,
+    "total_airports": 4,
+    "total_dry_ports": 12,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "GI",
@@ -1469,9 +1469,9 @@
     "iso_code": "GI",
     "slug": "gibraltar",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 1,
     "region": "Other",
     "subregion": ""
   },
@@ -1487,11 +1487,11 @@
     "iso_code": "GR",
     "slug": "greece",
     "is_landlocked": false,
-    "total_sea_ports": 1,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 350,
+    "total_airports": 14,
+    "total_dry_ports": 44,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "GL",
@@ -1505,11 +1505,11 @@
     "iso_code": "GL",
     "slug": "greenland",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 30,
+    "total_airports": 10,
     "total_dry_ports": 0,
-    "region": "Other",
-    "subregion": ""
+    "region": "Americas",
+    "subregion": "Northern America"
   },
   {
     "country_code": "GD",
@@ -1523,11 +1523,11 @@
     "iso_code": "GD",
     "slug": "grenada",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 2,
     "total_dry_ports": 0,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "GP",
@@ -1541,9 +1541,9 @@
     "iso_code": "GP",
     "slug": "guadeloupe",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 15,
+    "total_airports": 4,
+    "total_dry_ports": 3,
     "region": "Other",
     "subregion": ""
   },
@@ -1559,11 +1559,11 @@
     "iso_code": "GU",
     "slug": "guam",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 1,
+    "total_dry_ports": 1,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Micronesia"
   },
   {
     "country_code": "GT",
@@ -1577,11 +1577,11 @@
     "iso_code": "GT",
     "slug": "guatemala",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 12,
+    "total_airports": 19,
+    "total_dry_ports": 17,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "GG",
@@ -1595,7 +1595,7 @@
     "iso_code": "GG",
     "slug": "guernsey",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 3,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -1613,11 +1613,11 @@
     "iso_code": "GN",
     "slug": "guinea",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 12,
+    "total_airports": 11,
+    "total_dry_ports": 2,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "GW",
@@ -1631,11 +1631,11 @@
     "iso_code": "GW",
     "slug": "guinea-bissau",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 7,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "GY",
@@ -1649,11 +1649,11 @@
     "iso_code": "GY",
     "slug": "guyana",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 28,
+    "total_dry_ports": 4,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "HT",
@@ -1667,11 +1667,11 @@
     "iso_code": "HT",
     "slug": "haiti",
     "is_landlocked": false,
-    "total_sea_ports": 0,
+    "total_sea_ports": 14,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 3,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "HM",
@@ -1685,7 +1685,7 @@
     "iso_code": "HM",
     "slug": "heard-island-and-mcdonald-islands",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 2,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -1703,11 +1703,11 @@
     "iso_code": "HN",
     "slug": "honduras",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 14,
+    "total_airports": 28,
+    "total_dry_ports": 25,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "HK",
@@ -1721,11 +1721,11 @@
     "iso_code": "HK",
     "slug": "hong-kong",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
-    "region": "Other",
-    "subregion": ""
+    "total_sea_ports": 13,
+    "total_airports": 2,
+    "total_dry_ports": 4,
+    "region": "Asia",
+    "subregion": "Eastern Asia"
   },
   {
     "country_code": "HU",
@@ -1739,11 +1739,11 @@
     "iso_code": "HU",
     "slug": "hungary",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 61,
+    "total_airports": 1,
+    "total_dry_ports": 107,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "IS",
@@ -1757,11 +1757,11 @@
     "iso_code": "IS",
     "slug": "iceland",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 80,
+    "total_airports": 12,
     "total_dry_ports": 0,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "IN",
@@ -1775,11 +1775,11 @@
     "iso_code": "IN",
     "slug": "india",
     "is_landlocked": false,
-    "total_sea_ports": 251,
-    "total_airports": 0,
-    "total_dry_ports": 131,
+    "total_sea_ports": 280,
+    "total_airports": 114,
+    "total_dry_ports": 399,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "ID",
@@ -1793,11 +1793,11 @@
     "iso_code": "ID",
     "slug": "indonesia",
     "is_landlocked": false,
-    "total_sea_ports": 254,
-    "total_airports": 0,
-    "total_dry_ports": 135,
+    "total_sea_ports": 297,
+    "total_airports": 131,
+    "total_dry_ports": 42,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "IR",
@@ -1811,11 +1811,11 @@
     "iso_code": "IR",
     "slug": "iran",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 43,
+    "total_airports": 57,
+    "total_dry_ports": 11,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "IQ",
@@ -1829,11 +1829,11 @@
     "iso_code": "IQ",
     "slug": "iraq",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 22,
+    "total_airports": 8,
+    "total_dry_ports": 3,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "IE",
@@ -1847,11 +1847,11 @@
     "iso_code": "IE",
     "slug": "ireland",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 131,
+    "total_airports": 12,
+    "total_dry_ports": 28,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "IM",
@@ -1865,9 +1865,9 @@
     "iso_code": "IM",
     "slug": "isle-of-man",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 1,
+    "total_dry_ports": 1,
     "region": "Other",
     "subregion": ""
   },
@@ -1883,11 +1883,11 @@
     "iso_code": "IL",
     "slug": "israel",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 22,
+    "total_airports": 12,
+    "total_dry_ports": 43,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "IT",
@@ -1901,11 +1901,11 @@
     "iso_code": "IT",
     "slug": "italy",
     "is_landlocked": false,
-    "total_sea_ports": 237,
-    "total_airports": 0,
-    "total_dry_ports": 124,
+    "total_sea_ports": 325,
+    "total_airports": 40,
+    "total_dry_ports": 917,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "CI",
@@ -1919,11 +1919,11 @@
     "iso_code": "CI",
     "slug": "ivory-coast",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 13,
+    "total_airports": 33,
+    "total_dry_ports": 2,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "JM",
@@ -1937,11 +1937,11 @@
     "iso_code": "JM",
     "slug": "jamaica",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 20,
+    "total_airports": 3,
+    "total_dry_ports": 6,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "JP",
@@ -1955,11 +1955,11 @@
     "iso_code": "JP",
     "slug": "japan",
     "is_landlocked": false,
-    "total_sea_ports": 211,
-    "total_airports": 0,
-    "total_dry_ports": 126,
+    "total_sea_ports": 1562,
+    "total_airports": 56,
+    "total_dry_ports": 266,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Eastern Asia"
   },
   {
     "country_code": "JE",
@@ -1973,9 +1973,9 @@
     "iso_code": "JE",
     "slug": "jersey",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 1,
+    "total_dry_ports": 2,
     "region": "Other",
     "subregion": ""
   },
@@ -1991,11 +1991,11 @@
     "iso_code": "JO",
     "slug": "jordan",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 5,
+    "total_dry_ports": 2,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "KZ",
@@ -2009,11 +2009,11 @@
     "iso_code": "KZ",
     "slug": "kazakhstan",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 26,
+    "total_dry_ports": 6,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Central Asia"
   },
   {
     "country_code": "KE",
@@ -2027,11 +2027,11 @@
     "iso_code": "KE",
     "slug": "kenya",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 34,
+    "total_dry_ports": 3,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "KI",
@@ -2045,11 +2045,11 @@
     "iso_code": "KI",
     "slug": "kiribati",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 10,
+    "total_airports": 20,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Micronesia"
   },
   {
     "country_code": "KW",
@@ -2063,11 +2063,11 @@
     "iso_code": "KW",
     "slug": "kuwait",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 13,
+    "total_airports": 1,
+    "total_dry_ports": 4,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "KG",
@@ -2082,10 +2082,10 @@
     "slug": "kyrgyzstan",
     "is_landlocked": true,
     "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_airports": 3,
     "total_dry_ports": 0,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Central Asia"
   },
   {
     "country_code": "LV",
@@ -2099,11 +2099,11 @@
     "iso_code": "LV",
     "slug": "latvia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 10,
+    "total_airports": 2,
+    "total_dry_ports": 10,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "LB",
@@ -2117,11 +2117,11 @@
     "iso_code": "LB",
     "slug": "lebanon",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 16,
+    "total_airports": 1,
+    "total_dry_ports": 6,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "LR",
@@ -2135,11 +2135,11 @@
     "iso_code": "LR",
     "slug": "liberia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 16,
+    "total_airports": 10,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "LY",
@@ -2153,11 +2153,11 @@
     "iso_code": "LY",
     "slug": "libya",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 28,
+    "total_airports": 12,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "LT",
@@ -2171,11 +2171,11 @@
     "iso_code": "LT",
     "slug": "lithuania",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 5,
+    "total_airports": 6,
+    "total_dry_ports": 15,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "MG",
@@ -2189,11 +2189,11 @@
     "iso_code": "MG",
     "slug": "madagascar",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 31,
+    "total_airports": 42,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "MY",
@@ -2207,11 +2207,11 @@
     "iso_code": "MY",
     "slug": "malaysia",
     "is_landlocked": false,
-    "total_sea_ports": 253,
-    "total_airports": 0,
-    "total_dry_ports": 125,
+    "total_sea_ports": 177,
+    "total_airports": 29,
+    "total_dry_ports": 28,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "MV",
@@ -2225,11 +2225,11 @@
     "iso_code": "MV",
     "slug": "maldives",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 17,
+    "total_airports": 4,
+    "total_dry_ports": 1,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "MT",
@@ -2243,11 +2243,11 @@
     "iso_code": "MT",
     "slug": "malta",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 19,
+    "total_airports": 2,
+    "total_dry_ports": 11,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "MQ",
@@ -2261,8 +2261,8 @@
     "iso_code": "MQ",
     "slug": "martinique",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 8,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Other",
     "subregion": ""
@@ -2279,11 +2279,11 @@
     "iso_code": "MR",
     "slug": "mauritania",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 20,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "MU",
@@ -2297,11 +2297,11 @@
     "iso_code": "MU",
     "slug": "mauritius",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 2,
+    "total_dry_ports": 3,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "YT",
@@ -2315,9 +2315,9 @@
     "iso_code": "YT",
     "slug": "mayotte",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 4,
     "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_dry_ports": 2,
     "region": "Other",
     "subregion": ""
   },
@@ -2333,11 +2333,11 @@
     "iso_code": "MX",
     "slug": "mexico",
     "is_landlocked": false,
-    "total_sea_ports": 246,
-    "total_airports": 0,
-    "total_dry_ports": 122,
+    "total_sea_ports": 110,
+    "total_airports": 71,
+    "total_dry_ports": 103,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "FM",
@@ -2351,11 +2351,11 @@
     "iso_code": "FM",
     "slug": "micronesia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 15,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Micronesia"
   },
   {
     "country_code": "ME",
@@ -2369,11 +2369,11 @@
     "iso_code": "ME",
     "slug": "montenegro",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 11,
+    "total_airports": 3,
     "total_dry_ports": 0,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "MS",
@@ -2387,8 +2387,8 @@
     "iso_code": "MS",
     "slug": "montserrat",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 2,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Other",
     "subregion": ""
@@ -2405,11 +2405,11 @@
     "iso_code": "MA",
     "slug": "morocco",
     "is_landlocked": false,
-    "total_sea_ports": 1,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 30,
+    "total_airports": 12,
+    "total_dry_ports": 13,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "MZ",
@@ -2423,11 +2423,11 @@
     "iso_code": "MZ",
     "slug": "mozambique",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 22,
+    "total_airports": 23,
+    "total_dry_ports": 2,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "MM",
@@ -2441,11 +2441,11 @@
     "iso_code": "MM",
     "slug": "myanmar",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 24,
+    "total_airports": 33,
+    "total_dry_ports": 3,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "NA",
@@ -2459,11 +2459,11 @@
     "iso_code": "NA",
     "slug": "namibia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 28,
+    "total_dry_ports": 4,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Southern Africa"
   },
   {
     "country_code": "NR",
@@ -2477,11 +2477,11 @@
     "iso_code": "NR",
     "slug": "nauru",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Micronesia"
   },
   {
     "country_code": "NL",
@@ -2495,11 +2495,11 @@
     "iso_code": "NL",
     "slug": "netherlands",
     "is_landlocked": false,
-    "total_sea_ports": 232,
-    "total_airports": 0,
-    "total_dry_ports": 122,
+    "total_sea_ports": 531,
+    "total_airports": 8,
+    "total_dry_ports": 144,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Western Europe"
   },
   {
     "country_code": "NC",
@@ -2513,11 +2513,11 @@
     "iso_code": "NC",
     "slug": "new-caledonia",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 16,
+    "total_airports": 11,
+    "total_dry_ports": 1,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Melanesia"
   },
   {
     "country_code": "NZ",
@@ -2531,11 +2531,11 @@
     "iso_code": "NZ",
     "slug": "new-zealand",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 48,
+    "total_airports": 45,
+    "total_dry_ports": 12,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Australia and New Zealand"
   },
   {
     "country_code": "NI",
@@ -2549,11 +2549,11 @@
     "iso_code": "NI",
     "slug": "nicaragua",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 14,
+    "total_airports": 7,
+    "total_dry_ports": 17,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "NG",
@@ -2567,11 +2567,11 @@
     "iso_code": "NG",
     "slug": "nigeria",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 41,
+    "total_airports": 20,
+    "total_dry_ports": 41,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "KP",
@@ -2585,11 +2585,11 @@
     "iso_code": "KP",
     "slug": "north-korea",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 14,
+    "total_airports": 1,
+    "total_dry_ports": 1,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Eastern Asia"
   },
   {
     "country_code": "NO",
@@ -2603,11 +2603,11 @@
     "iso_code": "NO",
     "slug": "norway",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 741,
+    "total_airports": 11,
+    "total_dry_ports": 41,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "OM",
@@ -2621,11 +2621,11 @@
     "iso_code": "OM",
     "slug": "oman",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 17,
+    "total_airports": 7,
+    "total_dry_ports": 2,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "PK",
@@ -2639,11 +2639,11 @@
     "iso_code": "PK",
     "slug": "pakistan",
     "is_landlocked": false,
-    "total_sea_ports": 247,
-    "total_airports": 0,
-    "total_dry_ports": 130,
+    "total_sea_ports": 12,
+    "total_airports": 59,
+    "total_dry_ports": 5,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "PA",
@@ -2657,11 +2657,11 @@
     "iso_code": "PA",
     "slug": "panama",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 38,
+    "total_airports": 32,
+    "total_dry_ports": 15,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Central America"
   },
   {
     "country_code": "PG",
@@ -2675,11 +2675,11 @@
     "iso_code": "PG",
     "slug": "papua-new-guinea",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 80,
+    "total_airports": 365,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Melanesia"
   },
   {
     "country_code": "PE",
@@ -2693,11 +2693,11 @@
     "iso_code": "PE",
     "slug": "peru",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 43,
+    "total_airports": 29,
+    "total_dry_ports": 12,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "PH",
@@ -2711,11 +2711,11 @@
     "iso_code": "PH",
     "slug": "philippines",
     "is_landlocked": false,
-    "total_sea_ports": 233,
-    "total_airports": 0,
-    "total_dry_ports": 121,
+    "total_sea_ports": 377,
+    "total_airports": 33,
+    "total_dry_ports": 23,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "PL",
@@ -2729,11 +2729,11 @@
     "iso_code": "PL",
     "slug": "poland",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 79,
+    "total_airports": 21,
+    "total_dry_ports": 164,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "PT",
@@ -2747,11 +2747,11 @@
     "iso_code": "PT",
     "slug": "portugal",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 123,
+    "total_airports": 14,
+    "total_dry_ports": 87,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "PR",
@@ -2765,9 +2765,9 @@
     "iso_code": "PR",
     "slug": "puerto-rico",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 13,
+    "total_airports": 6,
+    "total_dry_ports": 3,
     "region": "Other",
     "subregion": ""
   },
@@ -2783,11 +2783,11 @@
     "iso_code": "QA",
     "slug": "qatar",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 11,
+    "total_airports": 1,
+    "total_dry_ports": 1,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "RO",
@@ -2801,11 +2801,11 @@
     "iso_code": "RO",
     "slug": "romania",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 58,
+    "total_airports": 19,
+    "total_dry_ports": 78,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "RU",
@@ -2819,11 +2819,11 @@
     "iso_code": "RU",
     "slug": "russia",
     "is_landlocked": false,
-    "total_sea_ports": 226,
-    "total_airports": 0,
-    "total_dry_ports": 115,
+    "total_sea_ports": 259,
+    "total_airports": 107,
+    "total_dry_ports": 63,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "BL",
@@ -2837,7 +2837,7 @@
     "iso_code": "BL",
     "slug": "saint-barthélemy",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -2855,7 +2855,7 @@
     "iso_code": "SH",
     "slug": "saint-helena-ascension-and-tristan-da-cunha",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 5,
     "total_airports": 0,
     "total_dry_ports": 0,
     "region": "Other",
@@ -2873,11 +2873,11 @@
     "iso_code": "KN",
     "slug": "saint-kitts-and-nevis",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 1,
     "total_dry_ports": 0,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "WS",
@@ -2891,11 +2891,11 @@
     "iso_code": "WS",
     "slug": "samoa",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 2,
+    "total_airports": 3,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Polynesia"
   },
   {
     "country_code": "SA",
@@ -2909,11 +2909,11 @@
     "iso_code": "SA",
     "slug": "saudi-arabia",
     "is_landlocked": false,
-    "total_sea_ports": 245,
-    "total_airports": 0,
-    "total_dry_ports": 141,
+    "total_sea_ports": 38,
+    "total_airports": 28,
+    "total_dry_ports": 3,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "SN",
@@ -2927,11 +2927,11 @@
     "iso_code": "SN",
     "slug": "senegal",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 11,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "SC",
@@ -2945,11 +2945,11 @@
     "iso_code": "SC",
     "slug": "seychelles",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 6,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "SL",
@@ -2963,11 +2963,11 @@
     "iso_code": "SL",
     "slug": "sierra-leone",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 6,
+    "total_airports": 8,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "SG",
@@ -2981,11 +2981,11 @@
     "iso_code": "SG",
     "slug": "singapore",
     "is_landlocked": false,
-    "total_sea_ports": 254,
-    "total_airports": 0,
-    "total_dry_ports": 116,
+    "total_sea_ports": 15,
+    "total_airports": 2,
+    "total_dry_ports": 3,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "SI",
@@ -2999,11 +2999,11 @@
     "iso_code": "SI",
     "slug": "slovenia",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 36,
+    "total_airports": 2,
+    "total_dry_ports": 42,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "SB",
@@ -3017,11 +3017,11 @@
     "iso_code": "SB",
     "slug": "solomon-islands",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 19,
+    "total_airports": 33,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Melanesia"
   },
   {
     "country_code": "SO",
@@ -3035,11 +3035,11 @@
     "iso_code": "SO",
     "slug": "somalia",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 7,
+    "total_airports": 18,
     "total_dry_ports": 0,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "ZA",
@@ -3053,11 +3053,11 @@
     "iso_code": "ZA",
     "slug": "south-africa",
     "is_landlocked": false,
-    "total_sea_ports": 240,
-    "total_airports": 0,
-    "total_dry_ports": 124,
+    "total_sea_ports": 60,
+    "total_airports": 77,
+    "total_dry_ports": 205,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Southern Africa"
   },
   {
     "country_code": "KR",
@@ -3071,11 +3071,11 @@
     "iso_code": "KR",
     "slug": "south-korea",
     "is_landlocked": false,
-    "total_sea_ports": 254,
-    "total_airports": 0,
-    "total_dry_ports": 135,
+    "total_sea_ports": 76,
+    "total_airports": 21,
+    "total_dry_ports": 20,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Eastern Asia"
   },
   {
     "country_code": "ES",
@@ -3089,11 +3089,11 @@
     "iso_code": "ES",
     "slug": "spain",
     "is_landlocked": false,
-    "total_sea_ports": 255,
-    "total_airports": 0,
-    "total_dry_ports": 143,
+    "total_sea_ports": 432,
+    "total_airports": 21,
+    "total_dry_ports": 677,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Southern Europe"
   },
   {
     "country_code": "LK",
@@ -3107,11 +3107,11 @@
     "iso_code": "LK",
     "slug": "sri-lanka",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 21,
+    "total_airports": 14,
+    "total_dry_ports": 36,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Southern Asia"
   },
   {
     "country_code": "SD",
@@ -3125,11 +3125,11 @@
     "iso_code": "SD",
     "slug": "sudan",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 23,
+    "total_dry_ports": 1,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "SR",
@@ -3143,11 +3143,11 @@
     "iso_code": "SR",
     "slug": "suriname",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 8,
+    "total_airports": 11,
+    "total_dry_ports": 1,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "SE",
@@ -3161,11 +3161,11 @@
     "iso_code": "SE",
     "slug": "sweden",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 317,
+    "total_airports": 20,
+    "total_dry_ports": 81,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "CH",
@@ -3179,11 +3179,11 @@
     "iso_code": "CH",
     "slug": "switzerland",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 68,
+    "total_airports": 12,
+    "total_dry_ports": 195,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Western Europe"
   },
   {
     "country_code": "SY",
@@ -3197,11 +3197,11 @@
     "iso_code": "SY",
     "slug": "syria",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 8,
+    "total_airports": 7,
     "total_dry_ports": 0,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "TW",
@@ -3215,11 +3215,11 @@
     "iso_code": "TW",
     "slug": "taiwan",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 23,
+    "total_airports": 14,
+    "total_dry_ports": 3,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Eastern Asia"
   },
   {
     "country_code": "TZ",
@@ -3233,11 +3233,11 @@
     "iso_code": "TZ",
     "slug": "tanzania",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 20,
+    "total_airports": 22,
+    "total_dry_ports": 4,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Eastern Africa"
   },
   {
     "country_code": "TH",
@@ -3251,11 +3251,11 @@
     "iso_code": "TH",
     "slug": "thailand",
     "is_landlocked": false,
-    "total_sea_ports": 277,
-    "total_airports": 0,
-    "total_dry_ports": 123,
+    "total_sea_ports": 67,
+    "total_airports": 39,
+    "total_dry_ports": 2,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "TG",
@@ -3269,11 +3269,11 @@
     "iso_code": "TG",
     "slug": "togo",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 3,
+    "total_airports": 1,
+    "total_dry_ports": 2,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Western Africa"
   },
   {
     "country_code": "TO",
@@ -3287,11 +3287,11 @@
     "iso_code": "TO",
     "slug": "tonga",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 4,
     "total_dry_ports": 0,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Polynesia"
   },
   {
     "country_code": "TT",
@@ -3305,11 +3305,11 @@
     "iso_code": "TT",
     "slug": "trinidad-and-tobago",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 18,
+    "total_airports": 1,
+    "total_dry_ports": 9,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Caribbean"
   },
   {
     "country_code": "TN",
@@ -3323,11 +3323,11 @@
     "iso_code": "TN",
     "slug": "tunisia",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 25,
+    "total_airports": 7,
+    "total_dry_ports": 15,
     "region": "Africa",
-    "subregion": ""
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "TR",
@@ -3341,11 +3341,11 @@
     "iso_code": "TR",
     "slug": "türkiye",
     "is_landlocked": false,
-    "total_sea_ports": 233,
-    "total_airports": 0,
-    "total_dry_ports": 132,
+    "total_sea_ports": 142,
+    "total_airports": 39,
+    "total_dry_ports": 41,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "UA",
@@ -3359,11 +3359,11 @@
     "iso_code": "UA",
     "slug": "ukraine",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 18,
+    "total_airports": 27,
+    "total_dry_ports": 51,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Eastern Europe"
   },
   {
     "country_code": "AE",
@@ -3377,11 +3377,11 @@
     "iso_code": "AE",
     "slug": "united-arab-emirates",
     "is_landlocked": false,
-    "total_sea_ports": 264,
-    "total_airports": 0,
-    "total_dry_ports": 105,
+    "total_sea_ports": 44,
+    "total_airports": 4,
+    "total_dry_ports": 6,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   },
   {
     "country_code": "GB",
@@ -3395,11 +3395,11 @@
     "iso_code": "GB",
     "slug": "united-kingdom",
     "is_landlocked": false,
-    "total_sea_ports": 260,
-    "total_airports": 0,
-    "total_dry_ports": 130,
+    "total_sea_ports": 1350,
+    "total_airports": 91,
+    "total_dry_ports": 460,
     "region": "Europe",
-    "subregion": ""
+    "subregion": "Northern Europe"
   },
   {
     "country_code": "US",
@@ -3413,11 +3413,11 @@
     "iso_code": "US",
     "slug": "united-states",
     "is_landlocked": false,
-    "total_sea_ports": 272,
-    "total_airports": 0,
-    "total_dry_ports": 116,
+    "total_sea_ports": 1762,
+    "total_airports": 1888,
+    "total_dry_ports": 2587,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "Northern America"
   },
   {
     "country_code": "UY",
@@ -3431,11 +3431,11 @@
     "iso_code": "UY",
     "slug": "uruguay",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 15,
+    "total_airports": 7,
+    "total_dry_ports": 3,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "VU",
@@ -3449,11 +3449,11 @@
     "iso_code": "VU",
     "slug": "vanuatu",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 4,
+    "total_airports": 31,
+    "total_dry_ports": 1,
     "region": "Oceania",
-    "subregion": ""
+    "subregion": "Melanesia"
   },
   {
     "country_code": "VE",
@@ -3467,11 +3467,11 @@
     "iso_code": "VE",
     "slug": "venezuela",
     "is_landlocked": false,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 63,
+    "total_airports": 45,
+    "total_dry_ports": 27,
     "region": "Americas",
-    "subregion": ""
+    "subregion": "South America"
   },
   {
     "country_code": "VN",
@@ -3485,11 +3485,11 @@
     "iso_code": "VN",
     "slug": "vietnam",
     "is_landlocked": false,
-    "total_sea_ports": 264,
-    "total_airports": 0,
-    "total_dry_ports": 131,
+    "total_sea_ports": 132,
+    "total_airports": 14,
+    "total_dry_ports": 23,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "South-Eastern Asia"
   },
   {
     "country_code": "EH",
@@ -3503,11 +3503,11 @@
     "iso_code": "EH",
     "slug": "western-sahara",
     "is_landlocked": true,
-    "total_sea_ports": 0,
+    "total_sea_ports": 1,
     "total_airports": 0,
     "total_dry_ports": 0,
-    "region": "Other",
-    "subregion": ""
+    "region": "Africa",
+    "subregion": "Northern Africa"
   },
   {
     "country_code": "YE",
@@ -3521,10 +3521,10 @@
     "iso_code": "YE",
     "slug": "yemen",
     "is_landlocked": true,
-    "total_sea_ports": 0,
-    "total_airports": 0,
-    "total_dry_ports": 0,
+    "total_sea_ports": 17,
+    "total_airports": 21,
+    "total_dry_ports": 2,
     "region": "Asia",
-    "subregion": ""
+    "subregion": "Western Asia"
   }
 ]
