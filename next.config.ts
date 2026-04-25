@@ -254,6 +254,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/tools/ocean-freight/port-code-finder',
+        destination: '/directories/ports',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -14,7 +14,7 @@ export async function GET() {
   // Add country pages
   countries.forEach((country) => {
     urls.push({
-      loc: `${baseUrl}/directories/ports/${country.slug}`,
+      loc: `${baseUrl}/directories/ports/country/${country.slug}`,
       lastmod: new Date().toISOString(),
       priority: '0.8'
     });
