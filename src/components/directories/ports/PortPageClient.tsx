@@ -27,7 +27,7 @@ import { Button } from '@/components/ui/button';
 import dynamic from 'next/dynamic';
 import { Port } from '@/utils/data-utils';
 
-const PortMap = dynamic(() => import('@/components/directories/ports/PortMap'), { ssr: false });
+const PortMap = dynamic(() => import('@/components/GlobalPortsMap'), { ssr: false });
 
 interface PortPageClientProps {
   port: Port;

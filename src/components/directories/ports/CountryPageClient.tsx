@@ -27,7 +27,7 @@ import dynamic from 'next/dynamic';
 import { Country, Port } from '@/utils/data-utils';
 import PortTable from './PortTable';
 
-const PortMap = dynamic(() => import('./PortMap'), { ssr: false });
+const PortMap = dynamic(() => import('@/components/GlobalPortsMap'), { ssr: false });
 
 interface CountryPageClientProps {
   country: Country;
