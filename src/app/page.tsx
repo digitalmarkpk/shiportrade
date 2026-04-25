@@ -1104,10 +1104,10 @@ export default function HomePage() {
                   <p className="text-muted-foreground">Live view of major shipping hubs worldwide</p>
                 </div>
                 <Button asChild variant="outline">
-                  <Link href="/directories/ports">
-                    Explore 1,500 Ports →
-                  </Link>
-                </Button>
+                    <Link href="/directories/ports">
+                      View All Ports →
+                    </Link>
+                  </Button>
               </div>
               {/* FIXED: Map marker logic and alignment */}
               <div className="relative w-full h-[520px] rounded-xl overflow-hidden border border-slate-200 shadow-inner">

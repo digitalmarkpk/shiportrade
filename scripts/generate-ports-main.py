@@ -9,7 +9,7 @@ def generate_ports_main():
         "CN SHA": {"name": "Shanghai", "teu": 51510000, "lat": 31.2222, "lon": 121.4892, "depth": 16.0, "type": "Container Terminal", "website": "https://www.portshanghai.com.cn"},
         "SG SIN": {"name": "Singapore", "teu": 41120000, "lat": 1.2902, "lon": 103.8519, "depth": 18.0, "type": "Container Terminal", "website": "https://www.globalpsa.com"},
         "CN NGB": {"name": "Ningbo-Zhoushan", "teu": 39300000, "lat": 29.8683, "lon": 121.5440, "depth": 17.5, "type": "Container Terminal", "website": "http://www.nbport.com.cn"},
-        "CN SZX": {"name": "Shenzhen", "teu": 33380000, "lat": 22.5431, "lon": 114.0579, "depth": 16.0, "type": "Container Terminal", "website": "http://www.szport.net"},
+        "CN SNZ": {"name": "Shenzhen", "teu": 33380000, "lat": 22.5431, "lon": 114.0579, "depth": 16.0, "type": "Container Terminal", "website": "http://www.szport.net"},
         "CN TAO": {"name": "Qingdao", "teu": 30870000, "lat": 36.0671, "lon": 120.3826, "depth": 17.0, "type": "Container Terminal", "website": "http://www.qingdao-port.com"},
         "CN CAN": {"name": "Guangzhou", "teu": 26070000, "lat": 23.1291, "lon": 113.2644, "depth": 15.5, "type": "Container Terminal", "website": "http://www.gzport.com"},
         "KR BUS": {"name": "Busan", "teu": 24400000, "lat": 35.1796, "lon": 129.0756, "depth": 16.0, "type": "Container Terminal", "website": "https://www.busanpa.com"},
