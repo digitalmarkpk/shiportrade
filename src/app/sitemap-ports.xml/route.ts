@@ -1,34 +1,32 @@
 import { NextResponse } from 'next/server';
-import portsData from '../../../public/data/ports-main.json';
-import countriesData from '../../../public/data/countries-info.json';
-import { slugify } from '@/utils/slugify';
+import { getCountries, getPorts } from '@/utils/data-utils';
 
 export async function GET() {
   const baseUrl = 'https://shiportrade.com';
   
+  const countries = await getCountries();
+  const ports = await getPorts();
+  
   const urls = [
-    { loc: `${baseUrl}/directories/ports`, lastmod: new Date().toISOString() },
+    { loc: `${baseUrl}/directories/ports`, lastmod: new Date().toISOString(), priority: '1.0' },
   ];
 
   // Add country pages
-  countriesData.forEach((country) => {
+  countries.forEach((country) => {
     urls.push({
-      loc: `${baseUrl}/directories/ports/country/${slugify(country.name)}`,
+      loc: `${baseUrl}/directories/ports/${country.slug}`,
       lastmod: new Date().toISOString(),
+      priority: '0.8'
     });
   });
 
   // Add port pages
-  portsData.forEach((port) => {
-    const country = countriesData.find(c => c.country_code === port.country_code);
-    if (country) {
-      const countrySlug = slugify(country.name);
-      const portSlug = `${slugify(port.name.replace('Port of ', ''))}-${port.unlocode.toLowerCase()}`;
-      urls.push({
-        loc: `${baseUrl}/directories/ports/${countrySlug}/${portSlug}`,
-        lastmod: new Date().toISOString(),
-      });
-    }
+  ports.forEach((port) => {
+    urls.push({
+      loc: `${baseUrl}/directories/ports/${port.country_slug}/${port.slug}`,
+      lastmod: new Date().toISOString(),
+      priority: '0.6'
+    });
   });
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -40,7 +38,7 @@ export async function GET() {
     <loc>${url.loc}</loc>
     <lastmod>${url.lastmod}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${url.loc.endsWith('/ports') ? '1.0' : url.loc.includes('/country/') ? '0.8' : '0.6'}</priority>
+    <priority>${url.priority}</priority>
   </url>`
     )
     .join('')}

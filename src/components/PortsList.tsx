@@ -13,6 +13,7 @@ interface Port {
   id: number;
   un_locode: string;
   name: string;
+  slug: string;
   city: string;
   port_type: string;
 }
@@ -99,7 +100,7 @@ export default function PortsList({ ports, countrySlug }: PortsListProps) {
                 {port.port_type.replace('_', ' ')}
               </div>
               <Link 
-                href={`/directories/ports/${port.un_locode}`}
+                href={`/directories/ports/${countrySlug}/${port.slug}`}
                 className="text-xs font-bold text-blue-600 hover:text-blue-700 flex items-center"
               >
                 View Details <ChevronRight className="w-3 h-3 ml-1" />

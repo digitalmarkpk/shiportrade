@@ -903,11 +903,32 @@ export default function HomePage() {
   const [breakingNews, setBreakingNews] = useState<NewsItem[]>([]);
   const [isTickerPaused, setIsTickerPaused] = useState(false);
 
-  // FIXED: Fetch ports data
+  // FIXED: Fetch ports data with slug mapping
   useEffect(() => {
-    fetch('/data/ports-main.json')
-    .then(r => r.json())
-    .then(data => setPorts(data.filter((p: any) => p.annual_teu > 500000).slice(0, 50)))
+    Promise.all([
+      fetch('/data/ports-main.json').then(r => r.json()),
+      fetch('/data/countries-info.json').then(r => r.json())
+    ])
+    .then(([portsData, countriesData]) => {
+      const countryMap = new Map(countriesData.map((c: any) => [c.country_code, c]));
+      const processedPorts = portsData
+        .filter((p: any) => p.latitude && p.longitude)
+        .map((p: any) => {
+          const country = countryMap.get(p.country_code);
+          const countrySlug = country?.slug || slugify(country?.name || '');
+          const un_locode = p.un_locode || p.unlocode || '';
+          const portSlug = p.slug || `${slugify(p.name?.replace('Port of ', '') || '')}-${un_locode.toLowerCase()}`;
+          return {
+            ...p,
+            un_locode,
+            country_slug: countrySlug,
+            slug: portSlug
+          };
+        })
+        .filter((p: any) => p.annual_teu > 500000)
+        .slice(0, 50);
+      setPorts(processedPorts);
+    })
     .catch(() => setPorts([]));
   }, []);
 
@@ -1116,9 +1137,7 @@ export default function HomePage() {
                   height="100%"
                   maxMarkers={50}
                   onSelect={(port) => {
-                    const countrySlug = slugify(port.country_name);
-                    const portSlug = `${slugify(port.name.replace('Port of ', ''))}-${port.unlocode.toLowerCase()}`;
-                    router.push(`/directories/ports/${countrySlug}/${portSlug}`);
+                    router.push(`/directories/ports/${port.country_slug}/${port.slug}`);
                   }}
                 />
               </div>

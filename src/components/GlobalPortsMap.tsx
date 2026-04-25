@@ -25,6 +25,8 @@ interface Port {
   un_locode: string;
   name: string;
   country_name?: string;
+  country_slug?: string;
+  slug: string;
   city?: string;
   latitude: number;
   longitude: number;
@@ -125,7 +127,7 @@ export default function GlobalPortsMap({
                 <div className="flex items-center justify-between border-t border-slate-100 pt-2">
                   <span className="text-[11px] font-mono text-slate-400">{p.un_locode}</span>
                   <a 
-                    href={`/directories/ports/${p.un_locode}`}
+                    href={`/directories/ports/${p.country_slug}/${p.slug}`}
                     className="text-[11px] font-bold text-blue-600 hover:text-blue-700"
                   >
                     View Details →
