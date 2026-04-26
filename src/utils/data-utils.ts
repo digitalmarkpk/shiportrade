@@ -57,6 +57,22 @@ export interface Port {
   major_imports: string[];
 }
 
+export interface MinimalPort {
+  unlocode: string;
+  name: string;
+  slug: string;
+  country_code: string;
+  country_name: string;
+  country_slug: string;
+  port_type: string;
+  annual_teu: number;
+  max_depth_m: number;
+  latitude: number;
+  longitude: number;
+  timezone: string;
+  harbor_size?: string;
+}
+
 export interface Region {
   name: string;
   slug: string;

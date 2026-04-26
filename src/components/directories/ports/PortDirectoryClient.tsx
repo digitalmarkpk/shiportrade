@@ -36,9 +36,15 @@ interface PortDirectoryClientProps {
   countries: Country[];
   ports: Port[];
   regions: Region[];
+  stats?: {
+    countries: number;
+    seaPorts: number;
+    airports: number;
+    dryPorts: number;
+  };
 }
 
-export default function PortDirectoryClient({ countries, ports, regions }: PortDirectoryClientProps) {
+export default function PortDirectoryClient({ countries, ports, regions, stats: initialStats }: PortDirectoryClientProps) {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
   
   const countryPorts = useMemo(() => {
@@ -48,7 +54,7 @@ export default function PortDirectoryClient({ countries, ports, regions }: PortD
 
   const topPorts = useMemo(() => {
     return [...ports]
-      .sort((a, b) => b.annual_teu - a.annual_teu)
+      .sort((a, b) => (b.annual_teu || 0) - (a.annual_teu || 0))
       .slice(0, 10);
   }, [ports]);
 
@@ -59,13 +65,14 @@ export default function PortDirectoryClient({ countries, ports, regions }: PortD
   }, [countries]);
 
   const stats = useMemo(() => {
+    if (initialStats) return initialStats;
     return {
       countries: countries.length,
-      seaPorts: ports.filter(p => p.port_type === 'Sea Port').length,
-      airports: ports.filter(p => p.port_type === 'Airport').length,
-      dryPorts: ports.filter(p => ['Dry Port', 'Container Terminal', 'Rail Terminal'].includes(p.port_type)).length
+      seaPorts: (ports || []).filter(p => p.port_type === 'sea_port').length,
+      airports: (ports || []).filter(p => p.port_type === 'airport').length,
+      dryPorts: (ports || []).filter(p => ['dry_port', 'container_terminal', 'rail_terminal'].includes(p.port_type)).length
     };
-  }, [countries, ports]);
+  }, [countries, ports, initialStats]);
 
   return (
     <div className="min-h-screen bg-[#f8fafc]">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { getCountries, getPorts, getRegions } from '@/utils/data-utils';
+import { getCountries, getPorts, getRegions, MinimalPort } from '@/utils/data-utils';
 import PortDirectoryClient from '@/components/directories/ports/PortDirectoryClient';
 
 export const metadata: Metadata = {
@@ -15,17 +15,46 @@ export const metadata: Metadata = {
 };
 
 export default async function PortsHubPage() {
-  const [countries, ports, regions] = await Promise.all([
+  const [countries, allPorts, regions] = await Promise.all([
     getCountries(),
     getPorts(),
     getRegions()
   ]);
 
+  // Pre-calculate stats on server to avoid passing huge ports array
+  const stats = {
+    countries: countries.length,
+    seaPorts: allPorts.filter(p => p.port_type === 'sea_port').length,
+    airports: allPorts.filter(p => p.port_type === 'airport').length,
+    dryPorts: allPorts.filter(p => ['dry_port', 'container_terminal', 'rail_terminal'].includes(p.port_type)).length
+  };
+
+  // Strip down and limit ports for the initial view (top 1000 by TEU)
+  const topPorts: MinimalPort[] = allPorts
+    .sort((a, b) => (b.annual_teu || 0) - (a.annual_teu || 0))
+    .slice(0, 1000)
+    .map(p => ({
+      unlocode: p.unlocode,
+      name: p.name,
+      slug: p.slug,
+      country_code: p.country_code,
+      country_name: p.country_name,
+      country_slug: p.country_slug,
+      port_type: p.port_type,
+      annual_teu: p.annual_teu,
+      max_depth_m: p.max_depth_m,
+      latitude: p.latitude,
+      longitude: p.longitude,
+      timezone: p.timezone,
+      harbor_size: p.harbor_size
+    }));
+
   return (
     <PortDirectoryClient 
       countries={countries} 
-      ports={ports} 
+      ports={topPorts as any} 
       regions={regions} 
+      stats={stats}
     />
   );
 }
