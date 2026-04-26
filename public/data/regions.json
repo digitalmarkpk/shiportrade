@@ -2,8 +2,8 @@
   {
     "name": "Asia",
     "slug": "asia",
-    "countries_count": 41,
-    "ports_count": 6553
+    "countries_count": 42,
+    "ports_count": 6572
   },
   {
     "name": "Europe",
@@ -14,14 +14,14 @@
   {
     "name": "Americas",
     "slug": "americas",
-    "countries_count": 32,
-    "ports_count": 9966
+    "countries_count": 36,
+    "ports_count": 10030
   },
   {
     "name": "Africa",
     "slug": "africa",
-    "countries_count": 42,
-    "ports_count": 1671
+    "countries_count": 43,
+    "ports_count": 1672
   },
   {
     "name": "Oceania",

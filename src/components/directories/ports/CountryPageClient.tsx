@@ -57,25 +57,30 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
 
   const portTypes = ['All', ...Array.from(new Set((ports || []).map(p => p.port_type)))];
 
+  const formatPortType = (type: string) => {
+    if (type === 'All') return 'All Types';
+    return type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#f8fafc]">
       {/* Hero Section */}
-      <div className="bg-slate-900 pt-32 pb-48 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[120px] rounded-full -mr-64 -mt-64" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      <div className="bg-white border-b border-slate-100 pt-32 pb-48 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-500/5 blur-[120px] rounded-full -mr-64 -mt-64" />
+        <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
         
         <div className="container mx-auto px-4 relative z-10">
           <nav className="flex items-center space-x-2 text-sm text-slate-400 mb-12">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <Link href="/directories/ports" className="hover:text-white transition-colors">Ports</Link>
+            <Link href="/directories/ports" className="hover:text-blue-600 transition-colors">Ports</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-blue-400 font-bold">{country.name}</span>
+            <span className="text-blue-600 font-bold">{country.name}</span>
           </nav>
 
           <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-8">
             <div className="flex flex-col md:flex-row items-center md:items-center gap-8">
-              <div className="relative w-32 h-20 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+              <div className="relative w-32 h-20 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                 <Image 
                   src={country.flag_url} 
                   alt={country.name} 
@@ -85,23 +90,23 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
                 />
               </div>
               <div className="text-center md:text-left">
-                <h1 className="text-5xl md:text-6xl font-black text-white mb-4 tracking-tight">
-                  {country.name} <span className="text-blue-500">Ports</span>
+                <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight">
+                  {country.name} <span className="text-blue-600">Ports</span>
                 </h1>
-                <p className="text-xl text-slate-400 font-medium">
+                <p className="text-xl text-slate-500 font-medium">
                   Exploring {country.total_sea_ports} major commercial maritime hubs
                 </p>
               </div>
             </div>
             
             <div className="flex gap-4">
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[24px] text-center min-w-[140px]">
-                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Sea Ports</div>
-                <div className="text-3xl font-black text-white">{country.total_sea_ports}</div>
+              <div className="bg-blue-50/50 backdrop-blur-md border border-blue-100 p-6 rounded-[24px] text-center min-w-[140px]">
+                <div className="text-[10px] font-black text-blue-600/50 uppercase tracking-widest mb-1">Sea Ports</div>
+                <div className="text-3xl font-black text-slate-900">{country.total_sea_ports}</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-[24px] text-center min-w-[140px]">
-                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Airports</div>
-                <div className="text-3xl font-black text-white">{country.total_airports}</div>
+              <div className="bg-emerald-50/50 backdrop-blur-md border border-emerald-100 p-6 rounded-[24px] text-center min-w-[140px]">
+                <div className="text-[10px] font-black text-emerald-600/50 uppercase tracking-widest mb-1">Airports</div>
+                <div className="text-3xl font-black text-slate-900">{country.total_airports}</div>
               </div>
             </div>
           </div>
@@ -203,7 +208,7 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
                       value={portTypeFilter}
                       onChange={(e) => setPortTypeFilter(e.target.value)}
                     >
-                      {portTypes.map(type => <option key={type} value={type}>{type}</option>)}
+                      {portTypes.map(type => <option key={type} value={type}>{formatPortType(type)}</option>)}
                     </select>
                   </div>
                   <div className="relative">
@@ -242,16 +247,15 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
                 </div>
               </Card>
 
-              <Card className="bg-slate-900 rounded-[32px] p-8 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/20 blur-[60px] rounded-full -mr-16 -mt-16" />
+              <Card className="bg-blue-600 rounded-[32px] p-8 relative overflow-hidden shadow-xl shadow-blue-600/20">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 blur-[60px] rounded-full -mr-16 -mt-16" />
                 <div className="relative z-10">
                   <h3 className="text-xl font-black text-white mb-4">Infrastructure Data</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                  <p className="text-blue-100 text-sm leading-relaxed mb-6">
                     Our database for {country.name} is updated monthly with official records from maritime authorities and UN/LOCODE registers.
                   </p>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl h-12 font-bold gap-2">
-                    Request Full Report
-                    <ExternalLink className="w-4 h-4" />
+                  <Button className="w-full bg-white text-blue-600 hover:bg-blue-50 rounded-xl font-bold py-6">
+                    Download Report
                   </Button>
                 </div>
               </Card>

@@ -46,10 +46,21 @@ interface PortDirectoryClientProps {
 
 export default function PortDirectoryClient({ countries, ports, regions, stats: initialStats }: PortDirectoryClientProps) {
   const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
+  const [portTypeFilter, setPortTypeFilter] = useState<string>('All');
   
   const countryPorts = useMemo(() => {
     if (!selectedCountry) return [];
-    return ports.filter(p => p.country_code === selectedCountry.iso_alpha2);
+    return ports.filter(p => {
+      const matchesCountry = p.country_code === selectedCountry.iso_alpha2;
+      const matchesType = portTypeFilter === 'All' || p.port_type === portTypeFilter;
+      return matchesCountry && matchesType;
+    });
+  }, [selectedCountry, ports, portTypeFilter]);
+
+  const portTypes = useMemo(() => {
+    if (!selectedCountry) return ['All'];
+    const types = Array.from(new Set(ports.filter(p => p.country_code === selectedCountry.iso_alpha2).map(p => p.port_type)));
+    return ['All', ...types];
   }, [selectedCountry, ports]);
 
   const topPorts = useMemo(() => {
@@ -66,32 +77,38 @@ export default function PortDirectoryClient({ countries, ports, regions, stats: 
 
   const stats = useMemo(() => {
     if (initialStats) return initialStats;
+    const allPorts = ports || [];
     return {
       countries: countries.length,
-      seaPorts: (ports || []).filter(p => p.port_type === 'sea_port').length,
-      airports: (ports || []).filter(p => p.port_type === 'airport').length,
-      dryPorts: (ports || []).filter(p => ['dry_port', 'container_terminal', 'rail_terminal'].includes(p.port_type)).length
+      seaPorts: allPorts.filter(p => p.port_type === 'sea_port').length,
+      airports: allPorts.filter(p => p.port_type === 'airport').length,
+      dryPorts: allPorts.filter(p => ['dry_port', 'container_terminal', 'rail_terminal'].includes(p.port_type)).length
     };
   }, [countries, ports, initialStats]);
+
+  const formatPortType = (type: string) => {
+    if (type === 'All') return 'All Types';
+    return type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  };
 
   return (
     <div className="min-h-screen bg-[#f8fafc]">
       {/* Header & Hero */}
-      <div className="bg-slate-900 pt-24 pb-48 relative overflow-hidden">
+      <div className="bg-white border-b border-slate-100 pt-24 pb-48 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[120px] rounded-full -mr-64 -mt-64" />
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-emerald-600/5 blur-[100px] rounded-full -ml-32 -mb-32" />
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-500/5 blur-[120px] rounded-full -mr-64 -mt-64" />
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-emerald-500/5 blur-[100px] rounded-full -ml-32 -mb-32" />
+        <div className="absolute inset-0 opacity-[0.015]" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <Badge className="bg-blue-500/10 text-blue-400 border-blue-500/20 px-4 py-1.5 rounded-full mb-6 font-bold tracking-wider uppercase text-[10px]">
+            <Badge className="bg-blue-50 text-blue-600 border-blue-100 px-4 py-1.5 rounded-full mb-6 font-bold tracking-wider uppercase text-[10px]">
               Global Infrastructure Database 2024
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-[1.1]">
-              World Sea Ports <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Directory</span>
+            <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-6 tracking-tight leading-[1.1]">
+              World Sea Ports <span className="text-blue-600">Directory</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-medium">
               Access technical specifications, infrastructure details, and operational data for over 8,000 major commercial ports worldwide.
             </p>
           </div>
@@ -256,10 +273,28 @@ export default function PortDirectoryClient({ countries, ports, regions, stats: 
                 {/* Country Map Section */}
                 <div className="mb-10">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-                      <MapIcon className="w-5 h-5 text-blue-600" />
-                      Infrastructure Map
-                    </h3>
+                    <div className="flex items-center gap-4">
+                      <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                        <MapIcon className="w-5 h-5 text-blue-600" />
+                        Infrastructure Map
+                      </h3>
+                      <div className="hidden md:flex items-center gap-2">
+                        {portTypes.map(type => (
+                          <button
+                            key={type}
+                            onClick={() => setPortTypeFilter(type)}
+                            className={cn(
+                              "text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full border transition-all",
+                              portTypeFilter === type 
+                                ? "bg-blue-600 border-blue-600 text-white" 
+                                : "bg-white border-slate-200 text-slate-400 hover:border-blue-400 hover:text-blue-400"
+                            )}
+                          >
+                            {formatPortType(type)}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                     <Badge variant="outline" className="bg-white border-slate-200 text-slate-500 font-bold px-3">
                       {countryPorts.length} Ports Mapped
                     </Badge>
@@ -297,7 +332,7 @@ export default function PortDirectoryClient({ countries, ports, regions, stats: 
             </div>
             <div className="flex gap-2">
               <Button variant="outline" className="rounded-full h-12 px-6 font-bold border-slate-200 hover:bg-slate-50">Global Stats</Button>
-              <Button className="rounded-full h-12 px-6 font-bold bg-slate-900 text-white hover:bg-slate-800">Full Directory</Button>
+              <Button className="rounded-full h-12 px-6 font-bold bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-600/20">Full Directory</Button>
             </div>
           </div>
 

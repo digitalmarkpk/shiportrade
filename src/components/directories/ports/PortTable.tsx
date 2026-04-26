@@ -13,6 +13,10 @@ interface PortTableProps {
 }
 
 export default function PortTable({ ports, countrySlug }: PortTableProps) {
+  const formatPortType = (type: string) => {
+    return type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+  };
+
   if (ports.length === 0) {
     return (
       <div className="py-20 text-center bg-white rounded-xl border border-slate-100 shadow-sm">
@@ -66,7 +70,7 @@ export default function PortTable({ ports, countrySlug }: PortTableProps) {
                 </td>
                 <td className="px-6 py-4">
                   <div className="text-xs font-medium text-slate-600">
-                    {port.port_type}
+                    {formatPortType(port.port_type)}
                   </div>
                 </td>
                 <td className="px-6 py-4 text-right">

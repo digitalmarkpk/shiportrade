@@ -93,7 +93,7 @@ def prepare_data():
             "subregion": country['subregion'],
             "latitude": p['latitude'],
             "longitude": p['longitude'],
-            "port_type": p.get('port_type', 'Sea Port').replace('_', ' ').title(),
+            "port_type": p.get('port_type', 'sea_port'),
             "annual_teu": p.get('annual_teu', 0),
             "max_depth_m": p.get('max_depth_m', 0),
             "timezone": p.get('timezone', "UTC"),

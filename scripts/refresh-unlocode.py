@@ -17,8 +17,10 @@ def refresh_unlocode_data():
     """
     print("Starting comprehensive UN/LOCODE data refresh...")
     
-    # 1. Load Country Info
+    # 1. Load Country Info and Ports Full for enrichment
     countries_path = 'public/data/countries-info.json'
+    ports_full_path = 'public/data/ports-full.json'
+    
     if not os.path.exists(countries_path):
         print(f"Error: {countries_path} not found.")
         return
@@ -26,6 +28,17 @@ def refresh_unlocode_data():
         countries_source = json.load(f)
     
     country_map = {c['country_code']: c for c in countries_source}
+    
+    ports_full_map = {}
+    if os.path.exists(ports_full_path):
+        with open(ports_full_path, 'r', encoding='utf-8') as f:
+            ports_full_source = json.load(f)
+            for p in ports_full_source:
+                code = p.get('unlocode') or p.get('un_locode')
+                if code:
+                    ports_full_map[code] = p
+            print(f"Loaded {len(ports_full_map)} ports from ports-full.json for enrichment.")
+    
     print(f"Loaded {len(country_map)} countries.")
 
     # 2. Fetch UN/LOCODE Data
@@ -121,7 +134,7 @@ def refresh_unlocode_data():
 
     print(f"Found {len(real_ports)} valid ports in UN/LOCODE list.")
 
-    # 4. Enrich with known top ports data (TEU, Depth, etc.)
+    # 4. Enrich with known top ports data and ports-full.json
     top_ports_data = {
         "SGSIN": {"annual_teu": 37200000, "max_depth_m": 16.0, "website": "https://www.jp.com.sg/"},
         "CNSHA": {"annual_teu": 43500000, "max_depth_m": 15.0, "website": "https://www.portshanghai.com.cn/"},
@@ -148,20 +161,33 @@ def refresh_unlocode_data():
     enriched_count = 0
     for port in real_ports:
         code = port['unlocode']
+        
+        # Priority 1: Manual top ports data
         if code in top_ports_data:
             data = top_ports_data[code]
             port['annual_teu'] = data['annual_teu']
             port['max_depth_m'] = data['max_depth_m']
             port['details']['website'] = data['website']
             enriched_count += 1
-        elif code.upper() in top_ports_data: # Handle case sensitivity
-            data = top_ports_data[code.upper()]
-            port['annual_teu'] = data['annual_teu']
-            port['max_depth_m'] = data['max_depth_m']
-            port['details']['website'] = data['website']
+            continue
+
+        # Priority 2: ports-full.json data
+        if code in ports_full_map:
+            full_data = ports_full_map[code]
+            # Use coordinates if current are 0
+            if port['latitude'] == 0 or port['longitude'] == 0:
+                port['latitude'] = full_data.get('latitude', port['latitude'])
+                port['longitude'] = full_data.get('longitude', port['longitude'])
+            
+            # Use other fields
+            port['annual_teu'] = full_data.get('annual_teu', port['annual_teu'])
+            port['max_depth_m'] = full_data.get('max_depth_m', port['max_depth_m'])
+            if 'details' in full_data:
+                port['details'].update(full_data['details'])
+            
             enriched_count += 1
 
-    print(f"Enriched {enriched_count} top ports with TEU and depth data.")
+    print(f"Enriched {enriched_count} ports with additional data.")
 
     # 5. Save to ports-main.json
     output_path = 'public/data/ports-main.json'

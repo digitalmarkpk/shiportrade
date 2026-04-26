@@ -48,7 +48,6 @@ export default async function CountryPortsPage({ params }: Props) {
   // We sort by annual_teu and take top 1000 for extremely large countries like US
   const ports: MinimalPort[] = (allPorts || [])
     .sort((a, b) => (b.annual_teu || 0) - (a.annual_teu || 0))
-    .slice(0, 1000)
     .map(p => ({
       unlocode: p.unlocode,
       name: p.name,

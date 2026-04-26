@@ -131,7 +131,7 @@ export default function SearchBox({ ports, countries, className }: SearchBoxProp
                     ) : (
                       <>
                         <MapPin className="w-3 h-3" />
-                        {result.item.country_name} • {result.item.port_type}
+                        {result.item.country_name} • {result.item.port_type.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
                       </>
                     )}
                   </div>
