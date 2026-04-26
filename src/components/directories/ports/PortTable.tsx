@@ -38,7 +38,7 @@ export default function PortTable({ ports, countrySlug }: PortTableProps) {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">
-            {ports.map((port) => (
+            {(ports || []).map((port) => (
               <tr key={port.unlocode} className="hover:bg-slate-50/50 transition-colors group">
                 <td className="px-6 py-4">
                   <Link 

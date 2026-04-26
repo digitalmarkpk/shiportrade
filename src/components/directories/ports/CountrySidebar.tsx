@@ -45,7 +45,7 @@ export default function CountrySidebar({
       </div>
       
       <div className="flex-1 overflow-y-auto custom-scrollbar">
-        {regions.map((region) => {
+        {(regions || []).map((region) => {
           const isOpen = openRegions.includes(region.slug);
           const regionCountries = countriesByRegion(region.name);
           
@@ -73,7 +73,7 @@ export default function CountrySidebar({
               
               {isOpen && (
                 <div className="py-1 bg-white">
-                  {regionCountries.map((country) => (
+                  {(regionCountries || []).map((country) => (
                     <button
                       key={country.iso_alpha2}
                       onClick={() => onSelectCountry(country)}

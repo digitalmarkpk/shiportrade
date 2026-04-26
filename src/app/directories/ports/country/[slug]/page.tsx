@@ -49,9 +49,9 @@ export default async function CountryPortsPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": `Ports in ${country.name}`,
-    "description": `List of ${ports.length} major commercial ports in ${country.name}`,
-    "numberOfItems": ports.length,
-    "itemListElement": ports.slice(0, 10).map((p, index) => ({
+    "description": `List of ${ports?.length || 0} major commercial ports in ${country.name}`,
+    "numberOfItems": ports?.length || 0,
+    "itemListElement": (ports || []).slice(0, 10).map((p, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "url": `https://shiportrade.com/directories/ports/${p.country_slug}/${p.slug}`,

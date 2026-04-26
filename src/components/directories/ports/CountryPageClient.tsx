@@ -55,7 +55,7 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
     });
   }, [ports, searchQuery, portTypeFilter, teuRange]);
 
-  const portTypes = ['All', ...Array.from(new Set(ports.map(p => p.port_type)))];
+  const portTypes = ['All', ...Array.from(new Set((ports || []).map(p => p.port_type)))];
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -148,7 +148,7 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
                     <TrendingUp className="w-4 h-4" /> Major Exports
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {country.major_exports.map(item => (
+                    {(country.major_exports || []).map(item => (
                       <Badge key={item} variant="secondary" className="bg-white text-emerald-700 border-emerald-100 px-3 py-1 font-semibold">
                         {item}
                       </Badge>
@@ -160,7 +160,7 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
                     <BarChart3 className="w-4 h-4" /> Major Imports
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {country.major_imports.map(item => (
+                    {(country.major_imports || []).map(item => (
                       <Badge key={item} variant="secondary" className="bg-white text-blue-700 border-blue-100 px-3 py-1 font-semibold">
                         {item}
                       </Badge>

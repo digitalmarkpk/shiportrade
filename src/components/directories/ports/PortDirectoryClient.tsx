@@ -225,7 +225,7 @@ export default function PortDirectoryClient({ countries, ports, regions }: PortD
                       <TrendingUp className="w-4 h-4" /> Major Exports
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedCountry.major_exports.map(item => (
+                      {(selectedCountry.major_exports || []).map(item => (
                         <Badge key={item} variant="secondary" className="bg-white/80 text-emerald-700 border-emerald-100 px-3 py-1 font-semibold">
                           {item}
                         </Badge>
@@ -237,7 +237,7 @@ export default function PortDirectoryClient({ countries, ports, regions }: PortD
                       <BarChart3 className="w-4 h-4" /> Major Imports
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {selectedCountry.major_imports.map(item => (
+                      {(selectedCountry.major_imports || []).map(item => (
                         <Badge key={item} variant="secondary" className="bg-white/80 text-blue-700 border-blue-100 px-3 py-1 font-semibold">
                           {item}
                         </Badge>

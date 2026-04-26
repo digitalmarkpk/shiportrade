@@ -64,18 +64,38 @@ def migrate():
     # 1. Update Countries
     country_map = {}
     for i, c in enumerate(countries):
-        cc = c['country_code']
-        # Add new fields
+        cc = c.get('country_code', c.get('iso_alpha2', ''))
+        if not cc: continue
+
+        # Standardize fields to match Country interface
         c['id'] = i + 1
-        c['iso_code'] = cc
+        c['iso_alpha2'] = cc
+        c['iso_alpha3'] = c.get('iso_alpha3', c.get('iso_code', cc))
         c['slug'] = slugify(c['name'])
         c['is_landlocked'] = c.get('coastline_km', 0) == 0
         c['total_sea_ports'] = 0
         c['total_airports'] = 0
         c['total_dry_ports'] = 0
         
-        c['region'] = country_to_region.get(cc, "Other")
-        c['subregion'] = country_to_subregion.get(cc, "")
+        c['region'] = country_to_region.get(cc, c.get('region', "Other"))
+        c['subregion'] = country_to_subregion.get(cc, c.get('subregion', ""))
+        
+        # Ensure array fields exist
+        if 'major_exports' not in c or c['major_exports'] is None:
+            c['major_exports'] = []
+        if 'major_imports' not in c or c['major_imports'] is None:
+            c['major_imports'] = []
+        if 'languages' not in c or c['languages'] is None:
+            c['languages'] = []
+            
+        # Ensure other expected fields
+        c['flag_url'] = c.get('flag_url', f"https://flagcdn.com/w160/{cc.lower()}.png")
+        c['capital'] = c.get('capital', "")
+        c['currency'] = c.get('currency', "")
+        c['currency_name'] = c.get('currency_name', "")
+        c['phone_code'] = c.get('phone_code', "")
+        c['population'] = c.get('population', 0)
+        c['gdp_usd'] = c.get('gdp_usd', 0)
 
         country_map[cc] = c
 
@@ -94,7 +114,7 @@ def migrate():
     }
 
     for p in all_ports_raw:
-        cc = p.get('country_code')
+        cc = p.get('country_code', p.get('iso_alpha2', ''))
         if not cc:
             print(f"Skipping port {p.get('name')} - missing country code")
             continue
@@ -105,20 +125,28 @@ def migrate():
             new_country = {
                 "id": len(country_map) + 1,
                 "country_code": cc,
-                "iso_code": cc,
+                "iso_alpha2": cc,
+                "iso_alpha3": cc,
                 "name": country_name,
                 "slug": slugify(country_name),
                 "capital": "",
                 "currency": "",
+                "currency_name": "",
+                "phone_code": "",
+                "languages": [],
                 "coastline_km": 0,
                 "population": 0,
+                "gdp_usd": 0,
                 "flag_emoji": "",
+                "flag_url": f"https://flagcdn.com/w160/{cc.lower()}.png",
                 "is_landlocked": True,
                 "total_sea_ports": 0,
                 "total_airports": 0,
                 "total_dry_ports": 0,
                 "region": country_to_region.get(cc, "Other"),
-                "subregion": country_to_subregion.get(cc, "")
+                "subregion": country_to_subregion.get(cc, ""),
+                "major_exports": [],
+                "major_imports": []
             }
             country_map[cc] = new_country
             print(f"Added missing country: {country_name} ({cc})")
@@ -141,14 +169,17 @@ def migrate():
         unlocode = p.get('un_locode', p.get('unlocode', ''))
         port_entry = p.copy() # Start with all existing fields
         
-        # Update/Standardize fields
+        # Update/Standardize fields to match Port interface
         port_entry.update({
             "id": port_id_counter,
+            "unlocode": unlocode,
             "un_locode": unlocode,
             "name": p['name'],
             "slug": f"{slugify(p['name'])}-{unlocode.lower()}",
             "country_id": country['id'],
             "country_code": cc,
+            "iso_alpha2": cc,
+            "iso_alpha3": country.get('iso_alpha3', cc),
             "country_name": country['name'],
             "country_slug": country['slug'],
             "region": country['region'],
@@ -160,7 +191,19 @@ def migrate():
             "is_active": True,
             "annual_teu": p.get('annual_teu', 0),
             "max_depth_m": p.get('max_depth_m', 0),
-            "timezone": p.get('timezone', "UTC")
+            "timezone": p.get('timezone', "UTC"),
+            "website": p.get('website', ""),
+            "harbor_size": p.get('harbor_size', "N/A"),
+            "has_airport": p.get('has_airport', False),
+            "nearby_ports": p.get('nearby_ports', []),
+            "currency": country.get('currency', ""),
+            "currency_name": country.get('currency_name', ""),
+            "phone_code": country.get('phone_code', ""),
+            "languages": country.get('languages', []),
+            "population": country.get('population', 0),
+            "gdp_usd": country.get('gdp_usd', 0),
+            "major_exports": country.get('major_exports', []),
+            "major_imports": country.get('major_imports', [])
         })
         
         # Use existing details if available, otherwise use placeholders
