@@ -286,7 +286,7 @@ export function MarketplaceSubcategoryPage({ category, subcategory, seoContent }
       <section className="py-6 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-2">
-            {category.subcategories.map((sub) => (
+            {(category.subcategories || []).map((sub) => (
               <Link 
                 key={sub.slug} 
                 href={`/marketplace/${category.slug}/${sub.slug}`}
@@ -315,7 +315,7 @@ export function MarketplaceSubcategoryPage({ category, subcategory, seoContent }
               ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" 
               : "space-y-4"
             }>
-              {sortedListings.map((listing, index) => (
+              {(sortedListings || []).map((listing, index) => (
                 <motion.div
                   key={listing.id}
                   initial={{ opacity: 0, y: 20 }}

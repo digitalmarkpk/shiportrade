@@ -39,9 +39,10 @@ export default function PortsList({ ports, countrySlug }: PortsListProps) {
   };
 
   const filteredPorts = useMemo(() => {
-    if (!search) return ports;
+    const safePorts = Array.isArray(ports) ? ports : [];
+    if (!search) return safePorts;
     const query = search.toLowerCase();
-    return ports.filter(p => 
+    return safePorts.filter(p => 
       p.name.toLowerCase().includes(query) || 
       p.un_locode.toLowerCase().includes(query) ||
       (p.city && p.city.toLowerCase().includes(query))

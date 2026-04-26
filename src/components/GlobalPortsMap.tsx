@@ -62,7 +62,7 @@ function MapController({ selectedPort, ports, center, zoom }: {
     } else if (ports.length === 1) {
       map.setView([ports[0].latitude, ports[0].longitude], 12);
     } else if (ports.length > 1) {
-      const bounds = L.latLngBounds(ports.map(p => [p.latitude, p.longitude]));
+      const bounds = L.latLngBounds((ports || []).map(p => [p.latitude, p.longitude]));
       map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
     }
   }, [selectedPort, ports, map, center, zoom]);
@@ -99,8 +99,8 @@ export default function GlobalPortsMap({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" 
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' 
         />
-        <MapController selectedPort={selectedPort} ports={ports} center={center} zoom={zoom} />
-        {ports.slice(0, maxMarkers).map(p => (
+        <MapController selectedPort={selectedPort} ports={ports || []} center={center} zoom={zoom} />
+        {(ports || []).slice(0, maxMarkers).map(p => (
           <Marker 
             key={p.un_locode} 
             position={[p.latitude, p.longitude]} 

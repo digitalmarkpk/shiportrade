@@ -910,9 +910,12 @@ export default function HomePage() {
       fetch('/data/countries-info.json').then(r => r.json())
     ])
     .then(([portsData, countriesData]) => {
-      const countryMap = new Map(countriesData.map((c: any) => [c.country_code, c]));
-      const processedPorts = portsData
-        .filter((p: any) => p.latitude && p.longitude)
+      const countries = Array.isArray(countriesData) ? countriesData : [];
+      const portsRaw = Array.isArray(portsData) ? portsData : [];
+      
+      const countryMap = new Map(countries.map((c: any) => [c.country_code, c]));
+      const processedPorts = portsRaw
+        .filter((p: any) => p && p.latitude && p.longitude)
         .map((p: any) => {
           const country = countryMap.get(p.country_code);
           const countrySlug = country?.slug || slugify(country?.name || '');

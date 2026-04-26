@@ -66,8 +66,8 @@ export async function generateMetadata({
       "container carrier",
       line.country,
       line.headquarters,
-      ...line.routes,
-      ...line.services.slice(0, 3)
+      ...(line.routes || []),
+      ...(line.services?.slice(0, 3) || [])
     ],
     openGraph: {
       title: `${line.name} (${line.shortName}) | Shipping Line Profile`,
@@ -370,7 +370,7 @@ export default async function ShippingLineDetailPage({
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {line.services.map((service) => (
+                  {(line.services || []).map((service) => (
                     <div 
                       key={service}
                       className="flex items-center gap-2 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
@@ -396,7 +396,7 @@ export default async function ShippingLineDetailPage({
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {line.routes.map((route) => (
+                  {(line.routes || []).map((route) => (
                     <Badge key={route} variant="secondary" className="py-2 px-4">
                       <Globe className="h-3 w-3 mr-2" />
                       {route}
@@ -419,7 +419,7 @@ export default async function ShippingLineDetailPage({
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 gap-3">
-                  {line.specialties.map((specialty, idx) => (
+                  {(line.specialties || []).map((specialty, idx) => (
                     <div 
                       key={idx}
                       className="flex items-center gap-3 p-4 rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/20"
@@ -559,7 +559,7 @@ export default async function ShippingLineDetailPage({
                   <CardTitle className="text-lg">Related Carriers</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  {relatedLines.map((related) => {
+                  {(relatedLines || []).map((related) => {
                     const relatedFlag = countryFlags[related.country] || "🌍";
                     return (
                       <Link 

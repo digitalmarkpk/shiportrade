@@ -299,7 +299,7 @@ export default async function FreightForwarderDetailPage({
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {forwarder.tradeLanes.map((lane) => (
+                    {(forwarder.tradeLanes || []).map((lane) => (
                       <Badge key={lane} variant="secondary" className="py-2 px-4">
                         <Globe className="h-3 w-3 mr-2" />
                         {lane}
@@ -324,7 +324,7 @@ export default async function FreightForwarderDetailPage({
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 gap-3">
-                    {forwarder.specializations.map((spec, idx) => (
+                    {(forwarder.specializations || []).map((spec, idx) => (
                       <div
                         key={idx}
                         className="flex items-center gap-3 p-4 rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/20"
@@ -354,7 +354,7 @@ export default async function FreightForwarderDetailPage({
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {forwarder.certifications.map((cert) => (
+                    {(forwarder.certifications || []).map((cert) => (
                       <Badge key={cert} variant="outline" className="py-1.5 px-3">
                         <Award className="h-3 w-3 mr-1" />
                         {cert}

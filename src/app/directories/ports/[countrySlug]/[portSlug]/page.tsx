@@ -35,10 +35,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const ports = await getPorts();
-  return ports.map((p) => ({
-    countrySlug: p.country_slug,
-    portSlug: p.slug,
-  }));
+  // Only pre-render major ports to stay within Vercel limits
+  // Pre-render top 1000 ports by annual_teu
+  return ports
+    .sort((a, b) => b.annual_teu - a.annual_teu)
+    .slice(0, 1000)
+    .map((p) => ({
+      countrySlug: p.country_slug,
+      portSlug: p.slug,
+    }));
 }
 
 export default async function PortDetailPage({ params }: Props) {

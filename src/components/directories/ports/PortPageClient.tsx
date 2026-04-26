@@ -43,9 +43,9 @@ export default function PortPageClient({ port, nearbyPorts, otherCountryPorts }:
   // Generate a detailed description
   const description = `${prefix}${port.name}, identified by the UN/LOCODE ${port.unlocode}, is a premier ${port.port_type.toLowerCase()} situated in ${port.country_name}. This facility plays an indispensable role in the ${port.region} ${isAirport ? 'aviation' : 'logistics'} infrastructure, serving as a critical gateway for international trade and logistics. With its strategic geographic position at coordinates ${port.latitude.toFixed(4)}°N, ${port.longitude.toFixed(4)}°E, it provides essential connectivity between global ${isAirport ? 'air routes' : 'shipping lanes'} and the domestic markets of ${port.country_name}.
 
-The ${isAirport ? 'airport' : 'port'}'s technical capabilities are impressive${!isAirport ? `, featuring a maximum draft of ${port.max_depth_m} meters, which allows it to accommodate ${port.max_depth_m > 13 ? 'the world\'s largest container ships and deep-draft bulk carriers' : 'a wide range of modern commercial vessels'}` : ''}. Its annual throughput of approximately ${(port.annual_teu / 1e6).toFixed(1)} million ${isAirport ? 'passengers/cargo units' : 'TEU'} underscores its status as a high-capacity hub within the ${port.subregion}. The facility is equipped with advanced cargo handling technology and specialized terminals for ${port.major_exports.slice(0, 3).join(', ')} and ${port.major_imports.slice(0, 2).join(', ')}, ensuring efficient turnaround times for global carriers.
+The ${isAirport ? 'airport' : 'port'}'s technical capabilities are impressive${!isAirport ? `, featuring a maximum draft of ${port.max_depth_m} meters, which allows it to accommodate ${port.max_depth_m > 13 ? 'the world\'s largest container ships and deep-draft bulk carriers' : 'a wide range of modern commercial vessels'}` : ''}. Its annual throughput of approximately ${(port.annual_teu / 1e6).toFixed(1)} million ${isAirport ? 'passengers/cargo units' : 'TEU'} underscores its status as a high-capacity hub within the ${port.subregion}. The facility is equipped with advanced cargo handling technology and specialized terminals for ${(port.major_exports || []).slice(0, 3).join(', ')} and ${(port.major_imports || []).slice(0, 2).join(', ')}, ensuring efficient turnaround times for global carriers.
 
-Beyond its physical infrastructure, ${prefix}${port.name} is a key economic driver for ${port.city}, supporting thousands of jobs and facilitating seamless supply chain operations. It operates in the ${port.timezone} timezone and is complemented by its proximity to other major hubs like ${nearbyPorts.slice(0, 2).map(p => p.name).join(' and ')}, further strengthening the regional ${isAirport ? 'aviation' : 'maritime'} network. For businesses looking to optimize their global logistics, ${port.name} offers a reliable and sophisticated platform for ${isAirport ? 'air' : 'maritime'} commerce.`;
+Beyond its physical infrastructure, ${prefix}${port.name} is a key economic driver for ${port.city || 'the region'}, supporting thousands of jobs and facilitating seamless supply chain operations. It operates in the ${port.timezone} timezone and is complemented by its proximity to other major hubs like ${(nearbyPorts || []).slice(0, 2).map(p => p.name).join(' and ')}, further strengthening the regional ${isAirport ? 'aviation' : 'maritime'} network. For businesses looking to optimize their global logistics, ${port.name} offers a reliable and sophisticated platform for ${isAirport ? 'air' : 'maritime'} commerce.`;
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -229,7 +229,7 @@ Beyond its physical infrastructure, ${prefix}${port.name} is a key economic driv
                   <Navigation className="w-5 h-5 text-blue-600" /> Nearby Maritime Hubs
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {nearbyPorts.map(np => (
+                  {(nearbyPorts || []).map(np => (
                     <Link 
                       key={np.unlocode} 
                       href={`/directories/ports/${np.country_slug}/${np.slug}`}
@@ -295,11 +295,11 @@ Beyond its physical infrastructure, ${prefix}${port.name} is a key economic driv
                 </Link>
               </div>
               <div className="space-y-4">
-                {otherCountryPorts.map(p => (
+                {(otherCountryPorts || []).map(p => (
                   <Link 
                     key={p.unlocode} 
                     href={`/directories/ports/${p.country_slug}/${p.slug}`}
-                    className="flex items-center gap-4 group"
+                    className="group flex items-center gap-4 p-4 rounded-2xl border border-slate-50 hover:border-blue-100 hover:bg-blue-50/30 transition-all"
                   >
                     <div className="w-10 h-10 rounded-xl bg-slate-50 flex-shrink-0 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
                       <Anchor className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
