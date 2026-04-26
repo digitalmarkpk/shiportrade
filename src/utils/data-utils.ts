@@ -61,9 +61,9 @@ export interface MinimalPort {
   unlocode: string;
   name: string;
   slug: string;
-  country_code: string;
-  country_name: string;
-  country_slug: string;
+  country_code?: string;
+  country_name?: string;
+  country_slug?: string;
   port_type: string;
   annual_teu: number;
   max_depth_m: number;

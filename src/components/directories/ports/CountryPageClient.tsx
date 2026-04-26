@@ -31,13 +31,45 @@ const PortMap = dynamic(() => import('@/components/GlobalPortsMap'), { ssr: fals
 
 interface CountryPageClientProps {
   country: Country;
-  ports: Port[];
+  initialPorts: Port[];
+  totalPortsCount: number;
 }
 
-export default function CountryPageClient({ country, ports }: CountryPageClientProps) {
+export default function CountryPageClient({ country, initialPorts, totalPortsCount }: CountryPageClientProps) {
+  const [ports, setPorts] = useState<Port[]>(initialPorts);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const [hasLoadedAll, setHasLoadedAll] = useState(initialPorts.length >= totalPortsCount);
   const [searchQuery, setSearchQuery] = useState('');
   const [portTypeFilter, setPortTypeFilter] = useState<string>('All');
   const [teuRange, setTeuRange] = useState<string>('All');
+
+  const loadAllPorts = async () => {
+    if (isLoadingMore || hasLoadedAll) return;
+    
+    setIsLoadingMore(true);
+    try {
+      // Use the API to fetch all ports for this country
+      // We use a high limit to get everything in one go, or we could paginate
+      const response = await fetch(`/api/ports?country=${country.iso_alpha2.toLowerCase()}&limit=10000`);
+      const data = await response.json();
+      
+      if (data.ports && Array.isArray(data.ports)) {
+        // Merge and deduplicate
+        const allFetchedPorts = data.ports.map((p: any) => ({
+          ...p,
+          // Ensure field name consistency if API uses unlocode or un_locode
+          unlocode: p.unlocode || p.un_locode
+        }));
+        
+        setPorts(allFetchedPorts);
+        setHasLoadedAll(true);
+      }
+    } catch (error) {
+      console.error('Error loading more ports:', error);
+    } finally {
+      setIsLoadingMore(false);
+    }
+  };
 
   const filteredPorts = useMemo(() => {
     return ports.filter(port => {
@@ -229,6 +261,31 @@ export default function CountryPageClient({ country, ports }: CountryPageClientP
 
               <div className="p-0">
                 <PortTable ports={filteredPorts} countrySlug={country.slug} />
+
+                {!hasLoadedAll && (
+                  <div className="mt-8 text-center p-8 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                    <p className="text-slate-500 mb-4 font-medium">
+                      Showing top {initialPorts.length} of {totalPortsCount} ports sorted by annual TEU.
+                    </p>
+                    <Button 
+                      onClick={loadAllPorts} 
+                      disabled={isLoadingMore}
+                      className="rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold px-8"
+                    >
+                      {isLoadingMore ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                          Loading all ports...
+                        </>
+                      ) : (
+                        <>
+                          Load All {totalPortsCount} Ports
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                )}
               </div>
             </Card>
           </div>

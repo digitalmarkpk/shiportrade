@@ -24,8 +24,9 @@ export async function GET(request: Request) {
       ports = ports.filter((port: any) => {
         const matchesSearch = !search || 
           port.name.toLowerCase().includes(search) || 
-          port.un_locode.toLowerCase().includes(search) ||
-          port.city.toLowerCase().includes(search);
+          (port.unlocode && port.unlocode.toLowerCase().includes(search)) ||
+          (port.un_locode && port.un_locode.toLowerCase().includes(search)) ||
+          (port.city && port.city.toLowerCase().includes(search));
         
         const matchesCountry = !country || 
           (port.country_name && port.country_name.toLowerCase().includes(country)) ||
@@ -42,7 +43,17 @@ export async function GET(request: Request) {
     }
 
     const total = ports.length;
-    const paginatedPorts = ports.slice(offset, offset + limit);
+    const paginatedPorts = ports.slice(offset, offset + limit).map((p: any) => ({
+      unlocode: p.unlocode || p.un_locode,
+      name: p.name,
+      slug: p.slug,
+      port_type: p.port_type,
+      annual_teu: p.annual_teu || 0,
+      max_depth_m: p.max_depth_m || 0,
+      latitude: p.latitude || 0,
+      longitude: p.longitude || 0,
+      timezone: p.timezone || '',
+    }));
 
     return NextResponse.json(
       { 

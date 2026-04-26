@@ -29,8 +29,12 @@ export default async function PortsHubPage() {
     dryPorts: allPorts.filter(p => ['dry_port', 'container_terminal', 'rail_terminal'].includes(p.port_type)).length
   };
 
-  // Strip down and include all ports as MinimalPort to ensure all country ports are available
-  const minimalPorts: MinimalPort[] = allPorts.map(p => ({
+  // Strip down and include top ports as MinimalPort to ensure the page size stays within limits
+  // For the main hub, we only show top 1000 ports to keep the payload manageable
+  const minimalPorts = allPorts
+    .sort((a, b) => (b.annual_teu || 0) - (a.annual_teu || 0))
+    .slice(0, 1000)
+    .map(p => ({
     unlocode: p.unlocode,
     name: p.name,
     slug: p.slug,
@@ -43,7 +47,6 @@ export default async function PortsHubPage() {
     latitude: p.latitude || 0,
     longitude: p.longitude || 0,
     timezone: p.timezone || '',
-    harbor_size: p.harbor_size || 'Small'
   }));
 
   return (

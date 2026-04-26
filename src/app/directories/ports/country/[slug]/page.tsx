@@ -43,25 +43,24 @@ export default async function CountryPortsPage({ params }: Props) {
   if (!country) notFound();
   
   const allPorts = await getPortsByCountryCode(country.iso_alpha2);
+  const totalPortsCount = allPorts?.length || 0;
   
   // Strip down port data to minimize payload size and avoid Vercel oversized ISR page error
-  // We sort by annual_teu and take top 1000 for extremely large countries like US
-  const ports: MinimalPort[] = (allPorts || [])
+  // We sort by annual_teu and take top 100 for large countries
+  // The rest will be loaded on the client side if needed
+  const ports = (allPorts || [])
     .sort((a, b) => (b.annual_teu || 0) - (a.annual_teu || 0))
+    .slice(0, 100)
     .map(p => ({
       unlocode: p.unlocode,
       name: p.name,
       slug: p.slug,
-      country_code: p.country_code,
-      country_name: p.country_name,
-      country_slug: p.country_slug,
       port_type: p.port_type,
-      annual_teu: p.annual_teu,
-      max_depth_m: p.max_depth_m,
-      latitude: p.latitude,
-      longitude: p.longitude,
-      timezone: p.timezone,
-      harbor_size: p.harbor_size
+      annual_teu: p.annual_teu || 0,
+      max_depth_m: p.max_depth_m || 0,
+      latitude: p.latitude || 0,
+      longitude: p.longitude || 0,
+      timezone: p.timezone || '',
     }));
   
   // JSON-LD for Country / ItemList of ports
@@ -69,12 +68,12 @@ export default async function CountryPortsPage({ params }: Props) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": `Ports in ${country.name}`,
-    "description": `List of ${allPorts?.length || 0} major commercial ports in ${country.name}`,
-    "numberOfItems": allPorts?.length || 0,
+    "description": `List of ${totalPortsCount} major commercial ports in ${country.name}`,
+    "numberOfItems": totalPortsCount,
     "itemListElement": ports.slice(0, 10).map((p, index) => ({
       "@type": "ListItem",
       "position": index + 1,
-      "url": `https://shiportrade.com/directories/ports/${p.country_slug}/${p.slug}`,
+      "url": `https://shiportrade.com/directories/ports/${country.slug}/${p.slug}`,
       "name": p.name
     }))
   };
@@ -87,7 +86,8 @@ export default async function CountryPortsPage({ params }: Props) {
       />
       <CountryPageClient 
         country={country} 
-        ports={ports as any} 
+        initialPorts={ports as any} 
+        totalPortsCount={totalPortsCount}
       />
     </>
   );
