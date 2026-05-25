@@ -8,9 +8,13 @@ module.exports = {
     additionalPaths: async (config) => {
       const result = [];
       
-      // Ye data aapki tools.ts file se liya gaya hy
-      const modules = [
-        { slug: "international-trade", tools: ["landed-cost-calculator", "profit-margin-calculator", "incoterms-guide", "currency-converter", "transfer-pricing-model", "commodity-hedging", "tariff-comparison", "anti-dumping-checker", "fta-eligibility", "supplier-risk", "freight-procurement", "logistics-roi", "lc-confirmation-pricing", "factoring-cost", "fx-hedging", "credit-risk-scorer", "freight-transit-calculator", "freight-contract", "lc-discrepancy-analyzer", "supply-chain-visibility", "unit-converter"] },
+      // =====================================================
+      // WORKING TOOLS ONLY (Filtered based on Audit)
+      // Total: ~148 Tools
+      // =====================================================
+      
+      const workingModules = [
+        { slug: "international-trade", tools: ["landed-cost-calculator", "profit-margin-calculator", "incoterms-guide", "currency-converter", "transfer-pricing-model", "commodity-hedging", "tariff-comparison", "anti-dumping-checker", "supplier-risk", "freight-procurement", "logistics-roi", "lc-confirmation-pricing", "factoring-cost", "fx-hedging", "credit-risk-scorer", "freight-transit-calculator", "freight-contract", "lc-discrepancy-analyzer", "supply-chain-visibility", "unit-converter"] },
         { slug: "ocean-freight", tools: ["cbm-calculator", "fcl-loadability", "container-validator", "vgm-calculator", "tank-density", "reefer-settings", "oog-calculator", "freight-rate-benchmark", "baf-estimator", "demurrage-calculator", "transit-time", "container-tracking", "container-leasing", "port-code-finder", "container-guide", "cargo-consolidation", "carrier-selection", "port-congestion", "rate-forecast", "freight-index", "port-performance", "terminal-selector", "carrier-performance", "container-availability", "container-utilization", "shipment-tracking", "container-loading"] },
         { slug: "air-freight", tools: ["volumetric-weight", "chargeable-weight", "uld-loadability", "fuel-surcharge", "iata-zone-rates"] },
         { slug: "road-rail", tools: ["ldm-calculator", "axle-load", "fuel-cost-km", "freight-class", "truck-pallet", "route-optimizer", "rail-gauge", "modal-shift", "intermodal-simulation", "drayage", "last-mile", "transport-mode-selector", "multimodal-planner", "transport-analytics"] },
@@ -24,22 +28,9 @@ module.exports = {
         { slug: "financial-payment", tools: ["payment-terms-calculator", "break-even-analyzer", "roi-calculator", "currency-exchange-calculator"] },
         { slug: "logistics-planning", tools: ["freight-rate-calculator", "lead-time-calculator", "route-planning", "logistics-benchmarking"] },
         { slug: "inventory-management", tools: ["inventory-optimization", "inventory-turnover-calculator", "reorder-point-calculator", "container-load-calculator"] },
-        { slug: "trade-finance", tools: ["lc-application", "letter-of-credit", "bank-guarantee", "forfaiting-calculator"] },
-        { slug: "supply-chain-analytics", tools: ["supply-chain-dashboard", "kpi-tracker", "trend-analysis", "benchmark-report"] },
-        { slug: "quality-control", tools: ["inspection-checklist", "quality-metrics", "defect-tracker"] },
-        { slug: "packaging-labeling", tools: ["packaging-optimizer", "label-generator", "barcode-generator"] },
-        { slug: "last-mile-delivery", tools: ["delivery-scheduler", "zone-planner", "courier-comparison"] },
-        { slug: "dangerous-goods", tools: ["un-number-search", "hazmat-classifier", "dg-documentation"] },
-        { slug: "cold-chain", tools: ["temp-monitor", "cold-chain-validator", "pharma-shipping"] },
-        { slug: "customs-brokerage", tools: ["customs-entry", "duty-deferral", "bond-calculator"] },
-        { slug: "freight-forwarding", tools: ["booking-manager", "consolidation-planner", "forwarder-directory"] },
-        { slug: "trade-compliance-advanced", tools: ["export-control", "dual-use-checker", "compliance-audit"] },
-        { slug: "vessel-operations", tools: ["vessel-schedule", "berth-planner", "vessel-performance"] },
-        { slug: "port-operations", tools: ["terminal-operations", "berth-availability", "port-charges"] },
-        { slug: "documents", tools: ["commercial-invoice", "pro-forma-invoice", "packing-list", "certificate-of-origin", "shipping-instructions", "bill-of-lading", "lc-application", "insurance-certificate", "shippers-letter-of-instruction", "export-declaration", "inspection-certificate", "dangerous-goods-declaration", "letter-of-credit"] }
       ];
   
-      const documentCategories = [
+      const workingDocs = [
         { slug: "trade-documents", docs: ["commercial-invoice", "pro-forma-invoice", "packing-list", "purchase-order", "sales-contract", "quotation", "indent", "purchase-agreement"] },
         { slug: "shipping-documents", docs: ["bill-of-lading", "air-waybill", "sea-waybill", "multimodal-transport", "truck-waybill", "rail-waybill", "delivery-order", "shipping-instructions", "shippers-letter-of-instruction", "booking-confirmation", "booking-request", "cargo-manifest"] },
         { slug: "customs-documents", docs: ["certificate-of-origin", "export-declaration", "import-declaration", "customs-invoice", "customs-bond", "duty-exemption", "re-export-certificate", "transit-document", "ata-carnet", "t1-document"] },
@@ -55,7 +46,7 @@ module.exports = {
       ];
   
       // Tools Loop
-      modules.forEach(mod => {
+      workingModules.forEach(mod => {
         result.push({ loc: `/tools/${mod.slug}`, changefreq: 'weekly', priority: 0.8 });
         mod.tools.forEach(toolSlug => {
           result.push({ loc: `/tools/${mod.slug}/${toolSlug}`, changefreq: 'weekly', priority: 0.7 });
@@ -63,7 +54,7 @@ module.exports = {
       });
   
       // Documents Loop
-      documentCategories.forEach(cat => {
+      workingDocs.forEach(cat => {
         cat.docs.forEach(docSlug => {
           result.push({ loc: `/documents/${cat.slug}/${docSlug}`, changefreq: 'monthly', priority: 0.6 });
         });
