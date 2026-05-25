@@ -39,7 +39,8 @@ import {
   Info,
   Award,
   Briefcase,
-} from "lucide-react";
+  Construction,
+} from "lucide-react"; // Added Construction icon
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -47,6 +48,31 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { toolCategories, documentCategories, moduleDocumentMap, modulesMetadata } from "@/lib/constants/tools";
 import { getModuleContentBySlug } from "@/lib/constants/moduleContent";
+
+// =====================================================
+// COMING SOON CONFIGURATION (Based on Audit Report)
+// =====================================================
+
+// Ye modules abhi "Under Development" hain (0% working)
+const COMING_SOON_MODULES = [
+  "trade-finance",
+  "supply-chain-analytics",
+  "quality-control",
+  "packaging-labeling",
+  "last-mile-delivery",
+  "dangerous-goods",
+  "cold-chain",
+  "customs-brokerage",
+  "freight-forwarding",
+  "trade-compliance-advanced",
+  "vessel-operations",
+  "port-operations"
+];
+
+// Specific tools jo working modules mein missing hain
+const COMING_SOON_TOOLS = [
+  "fta-eligibility", // International Trade
+];
 
 const iconMap: Record<string, React.ElementType> = {
   Globe,
@@ -144,6 +170,7 @@ export default function ModuleOrToolPage() {
   if (toolSlug) {
     const tool = category.tools.find(t => t.slug === toolSlug);
 
+    // Case 1: Tool does not exist in catalog at all
     if (!tool) {
       return (
         <div className="min-h-screen bg-background flex items-center justify-center">
@@ -163,7 +190,59 @@ export default function ModuleOrToolPage() {
       );
     }
 
-    // Show tool page
+    // Case 2: Tool exists but is "Coming Soon" (Not Implemented)
+    const isComingSoon = COMING_SOON_MODULES.includes(moduleSlug) || COMING_SOON_TOOLS.includes(toolSlug);
+
+    if (isComingSoon) {
+      return (
+        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 flex items-center justify-center p-4">
+          <Card className="max-w-lg w-full text-center shadow-xl border-t-4 border-amber-400 dark:border-amber-600">
+            <CardHeader className="pt-8">
+              <div className="mx-auto bg-amber-100 dark:bg-amber-900/50 w-20 h-20 rounded-full flex items-center justify-center mb-6 ring-4 ring-amber-100 dark:ring-amber-900">
+                <Construction className="h-10 w-10 text-amber-600 dark:text-amber-400" />
+              </div>
+              <Badge className="mx-auto mb-4 bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 hover:bg-amber-100">
+                Coming Soon
+              </Badge>
+              <CardTitle className="text-3xl font-bold">{tool.name}</CardTitle>
+              <CardDescription className="text-base pt-2 text-muted-foreground">
+                This tool is currently under active development.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="pb-8">
+              <p className="text-muted-foreground mb-8 leading-relaxed">
+                We are working hard to bring you this feature. It will be available in the next update. Stay tuned!
+              </p>
+              
+              <div className="bg-muted/50 rounded-lg p-4 mb-8 text-left">
+                <h3 className="font-semibold mb-2 flex items-center gap-2 text-sm uppercase tracking-wide text-muted-foreground">
+                  <Info className="h-4 w-4" /> Expected Features
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {tool.description}
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button asChild variant="outline" className="border-amber-300 dark:border-amber-700 hover:bg-amber-50 dark:hover:bg-amber-950">
+                  <Link href={`/tools/${moduleSlug}`}>
+                    <ArrowRight className="h-4 w-4 mr-2 rotate-180" />
+                    Back to {category.name}
+                  </Link>
+                </Button>
+                <Button asChild className="bg-amber-500 hover:bg-amber-600 text-white">
+                  <Link href="/contact">
+                    Notify Me When Ready
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      );
+    }
+
+    // Case 3: Tool is Working (Show Normal Page)
     return (
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-8">
@@ -229,7 +308,7 @@ export default function ModuleOrToolPage() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-muted/50 to-transparent border-b">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute top:0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-blue-500/10 to-transparent rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 py-12 relative">
           <motion.div 
@@ -422,7 +501,11 @@ export default function ModuleOrToolPage() {
           {/* Tools Tab */}
           <TabsContent value="tools">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {category.tools.map((tool, index) => (
+              {category.tools.map((tool, index) => {
+                // Check if tool is coming soon for the badge
+                const isToolComingSoon = COMING_SOON_MODULES.includes(moduleSlug) || COMING_SOON_TOOLS.includes(tool.slug);
+                
+                return (
                 <motion.div
                   key={tool.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -433,7 +516,17 @@ export default function ModuleOrToolPage() {
                     href={`/tools/${category.slug}/${tool.slug}`}
                     className="block h-full"
                   >
-                    <Card className="h-full cursor-pointer border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 group">
+                    <Card className="h-full cursor-pointer border border-slate-200 dark:border-slate-700 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 group relative">
+                      
+                      {/* Coming Soon Overlay Badge */}
+                      {isToolComingSoon && (
+                        <div className="absolute top-2 right-2 z-10">
+                           <Badge variant="outline" className="bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-700 text-[10px] px-2 py-0.5">
+                            Coming Soon
+                          </Badge>
+                        </div>
+                      )}
+
                       <CardHeader className="pb-2">
                         <div className="flex items-start justify-between mb-2">
                           <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform`}>
@@ -462,7 +555,7 @@ export default function ModuleOrToolPage() {
                     </Card>
                   </Link>
                 </motion.div>
-              ))}
+              )})}
             </div>
           </TabsContent>
 
