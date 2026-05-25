@@ -37,6 +37,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { modulesMetadata } from "@/lib/constants/tools";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 // Module icon mapping
 const moduleIconMap: Record<string, React.ElementType> = {
@@ -281,9 +282,9 @@ const modulesData = modulesMetadata.map(m => {
 
 // Stats Data
 const platformStats = [
-  { label: "Learning Modules", value: "27", icon: BookOpen },
-  { label: "Smart Calculators", value: "150+", icon: Calculator },
-  { label: "Document Templates", value: "120+", icon: FileText },
+  { label: "Learning Modules", value: String(PLATFORM_STATS.modules), icon: BookOpen },
+  { label: "Smart Calculators", value: String(PLATFORM_STATS.tools), icon: Calculator },
+  { label: "Document Templates", value: String(PLATFORM_STATS.documents), icon: FileText },
   { label: "Active Learners", value: "75K+", icon: Users },
 ];
 

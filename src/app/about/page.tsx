@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Ship, Users, Globe, Target, Zap, Award, Heart, TrendingUp } from "lucide-react";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 export const metadata: Metadata = {
   title: "About Us | Shiportrade.com",
@@ -31,10 +32,10 @@ export default function AboutPage() {
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 max-w-4xl mx-auto">
         {[
-          { label: "Smart Calculators", value: "150+" },
-          { label: "Document Generators", value: "120+" },
+          { label: "Smart Calculators", value: String(PLATFORM_STATS.tools) },
+          { label: "Document Generators", value: String(PLATFORM_STATS.documents) },
+          { label: "Modules", value: String(PLATFORM_STATS.modules) },
           { label: "Countries Supported", value: "180+" },
-          { label: "Trade Professionals", value: "75K+" },
         ].map((stat) => (
           <Card key={stat.label} className="text-center">
             <CardContent className="pt-6">

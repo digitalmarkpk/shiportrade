@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { useState } from "react";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 const passwordRequirements = [
   { text: "At least 8 characters", test: (p: string) => p.length >= 8 },
@@ -44,7 +45,7 @@ export default function RegisterPage() {
             </motion.div>
             <CardTitle className="text-2xl font-bold">Create your account</CardTitle>
             <CardDescription className="text-base">
-              Start using 82+ tools and 72+ document generators for free
+              Start using {PLATFORM_STATS.tools} tools and {PLATFORM_STATS.documents} document generators for free
             </CardDescription>
           </CardHeader>
           

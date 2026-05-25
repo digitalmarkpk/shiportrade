@@ -11,6 +11,7 @@ import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
 import Script from "next/script"; // <--- 1. Script import kiya
 // Removed old import: import { GoogleAnalytics } ...
 import { Suspense } from "react";
+import { META_PLATFORM_DESCRIPTION } from "@/lib/constants/platform-stats";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Shiportrade.com - Global Supply Chain Intelligence Hub",
-  description: "The ultimate platform for global logistics, trade finance, and supply chain management. 82+ calculators, 72+ document generators, and comprehensive trade intelligence.",
+  description: META_PLATFORM_DESCRIPTION,
   keywords: ["logistics", "freight", "supply chain", "trade finance", "CBM calculator", "HS code", "landed cost", "shipping documents", "Incoterms"],
   authors: [{ name: "Shiportrade Team" }],
   

@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { HelpCircle, Search, BookOpen, MessageCircle, FileText, Calculator, Ship, Plane, Truck, Shield, Warehouse, ShoppingBag } from "lucide-react";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 export const metadata: Metadata = {
   title: "Help Center | Shiportrade.com",
@@ -24,7 +25,7 @@ export default function HelpPage() {
   const faqs = [
     {
       q: "Are the calculators free to use?",
-      a: "Yes! All 150+ calculators on Shiportrade.com are completely free to use. No registration, no credit card, no limits.",
+      a: `Yes! All ${PLATFORM_STATS.tools} calculators on Shiportrade.com are completely free to use. No registration, no credit card, no limits.`,
     },
     {
       q: "How accurate are the calculations?",

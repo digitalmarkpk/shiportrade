@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import ModulesPageClient from "./page-client";
+import { META_MODULES_DESCRIPTION, PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 export const metadata: Metadata = {
   title: "Global Trade & Logistics Modules | Complete Learning Center | Shiportrade.com",
-  description: "Master international trade, ocean freight, air freight, customs compliance, warehousing, and 22+ specialized logistics modules. 150+ calculators, 120+ document templates, and expert educational resources for supply chain professionals.",
+  description: META_MODULES_DESCRIPTION,
   keywords: [
     // Module-specific keywords
     "logistics modules",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Shiportrade.com Education Team" }],
   openGraph: {
     title: "Global Trade & Logistics Modules | Shiportrade Academy",
-    description: "Master 27 specialized logistics modules with 150+ calculators, 120+ document templates, and expert resources.",
+    description: META_MODULES_DESCRIPTION,
     url: "https://www.shiportrade.com/modules",
     siteName: "Shiportrade",
     type: "website",
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Global Trade & Logistics Modules | Shiportrade Academy",
-    description: "Master 27 specialized logistics modules with expert resources.",
+    description: `Master ${PLATFORM_STATS.modules} specialized logistics modules with expert resources.`,
   },
 };
 

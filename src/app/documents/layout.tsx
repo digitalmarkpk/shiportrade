@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import { META_DOCUMENTS_DESCRIPTION, PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 export const metadata: Metadata = {
   title: {
     default: "Trade Document Generators | Shiportrade.com",
     template: "%s | Shiportrade Documents"
   },
-  description: "72+ free professional document generators for international trade. Create commercial invoices, bills of lading, packing lists, certificates of origin, and more. Export to PDF, DOCX, or XLSX.",
+  description: META_DOCUMENTS_DESCRIPTION,
   keywords: [
     "commercial invoice generator",
     "bill of lading template",
@@ -42,20 +43,20 @@ export const metadata: Metadata = {
     url: "https://shiportrade.com/documents",
     siteName: "Shiportrade.com",
     title: "Trade Document Generators | Shiportrade.com",
-    description: "72+ free professional document generators for international trade. Create compliant documents in minutes with real-time preview and multiple export formats.",
+    description: META_DOCUMENTS_DESCRIPTION,
     images: [
       {
         url: "/og-documents.png",
         width: 1200,
         height: 630,
-        alt: "Shiportrade Documents - 72+ Trade Document Generators",
+        alt: `Shiportrade Documents - ${PLATFORM_STATS.documents} Trade Document Generators`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Trade Document Generators | Shiportrade.com",
-    description: "72+ free professional document generators for international trade. Create compliant documents in minutes.",
+    description: META_DOCUMENTS_DESCRIPTION,
     images: ["/og-documents.png"],
     creator: "@shiportrade",
   },
@@ -79,7 +80,7 @@ export default function DocumentsLayout({
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "Shiportrade Document Generators",
-            "description": "72+ free professional document generators for international trade. Export to PDF, DOCX, or XLSX.",
+            "description": META_DOCUMENTS_DESCRIPTION,
             "url": "https://shiportrade.com/documents",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web Browser",

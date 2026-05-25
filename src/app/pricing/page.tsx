@@ -25,6 +25,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 const plans = [
   {
@@ -35,7 +36,7 @@ const plans = [
     icon: Users,
     gradient: "icon-ocean",
     features: [
-      { name: "Access to all 82+ calculators", included: true },
+      { name: `Access to all ${PLATFORM_STATS.tools} calculators`, included: true },
       { name: "Basic document generators", included: true },
       { name: "Limited calculations per day", included: true, detail: "20/day" },
       { name: "Standard support", included: true },
@@ -57,7 +58,7 @@ const plans = [
     features: [
       { name: "Everything in Free, plus:", included: true, isHeader: true },
       { name: "Unlimited calculations", included: true },
-      { name: "All 72+ document templates", included: true },
+      { name: `All ${PLATFORM_STATS.documents} document templates`, included: true },
       { name: "Save & organize calculations", included: true },
       { name: "Custom company branding", included: true },
       { name: "Export to DOCX, XLSX", included: true },

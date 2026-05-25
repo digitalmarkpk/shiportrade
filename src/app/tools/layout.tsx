@@ -1,11 +1,12 @@
 import { Metadata } from "next";
+import { META_TOOLS_DESCRIPTION, PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 export const metadata: Metadata = {
   title: {
     default: "Trade & Logistics Tools | Shiportrade.com",
     template: "%s | Shiportrade Tools"
   },
-  description: "82+ free professional calculators and tools for international trade, ocean freight, air cargo, customs compliance, warehousing, and e-commerce. Accurate, reliable, and trusted by 50,000+ logistics professionals worldwide.",
+  description: META_TOOLS_DESCRIPTION,
   keywords: [
     "trade calculator",
     "freight calculator",
@@ -43,20 +44,20 @@ export const metadata: Metadata = {
     url: "https://shiportrade.com/tools",
     siteName: "Shiportrade.com",
     title: "Trade & Logistics Tools Hub | Shiportrade.com",
-    description: "82+ free professional calculators for every aspect of global trade and supply chain management. Accurate, reliable, and trusted by thousands.",
+    description: META_TOOLS_DESCRIPTION,
     images: [
       {
         url: "/og-tools.png",
         width: 1200,
         height: 630,
-        alt: "Shiportrade Tools Hub - 82+ Trade Calculators",
+        alt: `Shiportrade Tools Hub - ${PLATFORM_STATS.tools} Trade Calculators`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Trade & Logistics Tools Hub | Shiportrade.com",
-    description: "82+ free professional calculators for every aspect of global trade and supply chain management.",
+    description: META_TOOLS_DESCRIPTION,
     images: ["/og-tools.png"],
     creator: "@shiportrade",
   },
@@ -80,7 +81,7 @@ export default function ToolsLayout({
             "@context": "https://schema.org",
             "@type": "WebApplication",
             "name": "Shiportrade Tools Hub",
-            "description": "82+ free professional calculators for international trade, ocean freight, air cargo, customs compliance, and logistics.",
+            "description": META_TOOLS_DESCRIPTION,
             "url": "https://shiportrade.com/tools",
             "applicationCategory": "BusinessApplication",
             "operatingSystem": "Web Browser",

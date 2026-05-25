@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 // Custom TikTok Icon
 const TikTokIcon = ({ className }: { className?: string }) => (
@@ -187,8 +188,8 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
-              The ultimate Global Supply Chain Intelligence Hub. 150+ calculators, 120+ document generators, 
-              and comprehensive trade intelligence across 12 industry modules.
+              The ultimate Global Supply Chain Intelligence Hub. {PLATFORM_STATS.tools} calculators, {PLATFORM_STATS.documents} document generators, 
+              and comprehensive trade intelligence across {PLATFORM_STATS.modules} industry modules.
             </p>
             
             {/* Social Links */}
@@ -235,7 +236,7 @@ export function Footer() {
                   href="/tools"
                   className="text-sm text-[var(--ocean)] font-medium hover:underline inline-flex items-center gap-1"
                 >
-                  View All 150+ <ArrowRight className="h-3 w-3" />
+                  View All {PLATFORM_STATS.tools} <ArrowRight className="h-3 w-3" />
                 </Link>
               </li>
             </ul>
@@ -263,7 +264,7 @@ export function Footer() {
                   href="/documents"
                   className="text-sm text-[var(--logistics)] font-medium hover:underline inline-flex items-center gap-1"
                 >
-                  View All 120+ <ArrowRight className="h-3 w-3" />
+                  View All {PLATFORM_STATS.documents} <ArrowRight className="h-3 w-3" />
                 </Link>
               </li>
             </ul>
@@ -288,10 +289,10 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/tools"
+                  href="/modules"
                   className="text-sm text-[var(--accent-purple)] font-medium hover:underline inline-flex items-center gap-1"
                 >
-                  All 12 Modules <ArrowRight className="h-3 w-3" />
+                  All {PLATFORM_STATS.modules} Modules <ArrowRight className="h-3 w-3" />
                 </Link>
               </li>
             </ul>

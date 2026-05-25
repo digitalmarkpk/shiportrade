@@ -1,4 +1,4 @@
-// Document Field Configurations for all 120+ documents
+// Document field configurations — count: platform-stats.ts (documentCategories)
 // Each document has specific fields organized by sections
 
 export interface DocumentField {

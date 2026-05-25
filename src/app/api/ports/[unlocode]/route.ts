@@ -4,9 +4,10 @@ import path from 'path';
 
 export async function GET(
   request: Request,
-  { params }: { params: { unlocode: string } }
+  { params }: { params: Promise<{ unlocode: string }> }
 ) {
-  const unlocode = params.unlocode.toUpperCase();
+  const { unlocode: unlocodeParam } = await params;
+  const unlocode = unlocodeParam.toUpperCase();
 
   try {
     const filePath = path.join(process.cwd(), 'public/data/ports-main.json');

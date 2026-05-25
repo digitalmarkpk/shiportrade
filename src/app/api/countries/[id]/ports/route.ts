@@ -6,9 +6,10 @@ export const dynamic = 'force-dynamic';
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const countryId = parseInt(params.id);
+  const { id } = await params;
+  const countryId = parseInt(id);
 
   try {
     const filePath = path.join(process.cwd(), 'public/data/ports-main.json');

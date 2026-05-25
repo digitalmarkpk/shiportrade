@@ -1,14 +1,11 @@
 "use client";
 
-import { useState, useEffect, useSyncExternalStore } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Ship,
   Search,
-  Sun,
-  Moon,
   Menu,
   ChevronDown,
   ChevronRight,
@@ -80,6 +77,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { currencies, popularCurrencies, regionalCurrencies } from "@/lib/constants/currencies";
 import { modulesMetadata, toolCategories, featuredTools, documentCategories } from "@/lib/constants/tools";
+import { PLATFORM_STATS } from "@/lib/constants/platform-stats";
 
 // Icon mapping for modules
 const moduleIconMap: Record<string, LucideIcon> = {
@@ -252,17 +250,10 @@ const popularModules = [
 ].filter(Boolean);
 
 export function Header() {
-  const { theme, setTheme } = useTheme();
   const [selectedCurrency, setSelectedCurrency] = useState("USD");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
-  const mounted = useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false
-  );
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -284,10 +275,6 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <motion.header
@@ -418,7 +405,7 @@ export function Header() {
                   className="flex items-center justify-center text-sm font-semibold text-cyan-600 hover:underline gap-1 py-2 rounded-lg hover:bg-cyan-50 dark:hover:bg-cyan-950 transition-colors"
                 >
                   <Grid3x3 className="h-4 w-4" />
-                  View All 27 Modules
+                  View All {PLATFORM_STATS.modules} Modules
                   <ChevronRight className="h-4 w-4" />
                 </Link>
               </DropdownMenuContent>
@@ -506,7 +493,7 @@ export function Header() {
                   className="flex items-center justify-center text-sm font-semibold text-[var(--ocean)] hover:underline gap-1 py-2 rounded-lg hover:bg-[var(--ocean)]/5 transition-colors"
                 >
                   <Zap className="h-4 w-4" />
-                  View All 150+ Tools
+                  View All {PLATFORM_STATS.tools} Tools
                   <ChevronDown className="h-3 w-3 rotate-[-90deg]" />
                 </Link>
               </DropdownMenuContent>
@@ -591,7 +578,7 @@ export function Header() {
                   className="flex items-center justify-center text-sm font-semibold text-[var(--logistics)] hover:underline gap-1 py-2 rounded-lg hover:bg-[var(--logistics)]/5 transition-colors"
                 >
                   <Zap className="h-4 w-4" />
-                  View All 120+ Documents
+                  View All {PLATFORM_STATS.documents} Documents
                   <ChevronDown className="h-3 w-3 rotate-[-90deg]" />
                 </Link>
               </DropdownMenuContent>
@@ -962,37 +949,6 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Theme Toggle */}
-            {mounted && (
-              <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                <Button variant="ghost" size="icon" onClick={toggleTheme} className="h-10 w-10 rounded-xl text-gray-700 hover:text-amber-600 hover:bg-amber-50 dark:text-gray-200 dark:hover:text-amber-400 dark:hover:bg-amber-950">
-                  <AnimatePresence mode="wait" initial={false}>
-                    {theme === "dark" ? (
-                      <motion.div
-                        key="sun"
-                        initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
-                        animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                        exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Sun className="h-5 w-5 text-[var(--accent-amber)]" />
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="moon"
-                        initial={{ rotate: 90, opacity: 0, scale: 0.5 }}
-                        animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                        exit={{ rotate: -90, opacity: 0, scale: 0.5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Moon className="h-5 w-5" />
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </Button>
-              </motion.div>
-            )}
-
             {/* User Menu */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -1072,9 +1028,9 @@ export function Header() {
                         </div>
                       </Link>
                       {[
-                        { icon: Layers, label: "Modules", href: "/modules", color: "bg-gradient-to-br from-cyan-500 to-blue-500", desc: "27 categories" },
-                        { icon: Calculator, label: "Tools", href: "/tools", color: "icon-ocean", desc: "190+ calculators" },
-                        { icon: FileText, label: "Documents", href: "/documents", color: "icon-logistics", desc: "120+ templates" },
+                        { icon: Layers, label: "Modules", href: "/modules", color: "bg-gradient-to-br from-cyan-500 to-blue-500", desc: `${PLATFORM_STATS.modules} categories` },
+                        { icon: Calculator, label: "Tools", href: "/tools", color: "icon-ocean", desc: `${PLATFORM_STATS.tools} calculators` },
+                        { icon: FileText, label: "Documents", href: "/documents", color: "icon-logistics", desc: `${PLATFORM_STATS.documents} templates` },
                         { icon: Globe, label: "Directories", href: "/directories/ports", color: "icon-air", desc: "Global ports" },
                       ].map((item) => {
                         const Icon = item.icon;
@@ -1129,17 +1085,17 @@ export function Header() {
             <CommandItem onSelect={() => { setIsSearchOpen(false); window.location.href = "/modules"; }}>
               <Layers className="mr-3 h-4 w-4 text-cyan-500" />
               All Modules
-              <span className="ml-2 text-xs text-muted-foreground">27 learning paths</span>
+              <span className="ml-2 text-xs text-muted-foreground">{PLATFORM_STATS.modules} learning paths</span>
             </CommandItem>
             <CommandItem onSelect={() => { setIsSearchOpen(false); window.location.href = "/tools"; }}>
               <Grid3x3 className="mr-3 h-4 w-4 text-cyan-500" />
               All Tools
-              <span className="ml-2 text-xs text-muted-foreground">150+ calculators</span>
+              <span className="ml-2 text-xs text-muted-foreground">{PLATFORM_STATS.tools} calculators</span>
             </CommandItem>
             <CommandItem onSelect={() => { setIsSearchOpen(false); window.location.href = "/documents"; }}>
               <FileText className="mr-3 h-4 w-4 text-emerald-500" />
               All Documents
-              <span className="ml-2 text-xs text-muted-foreground">120+ templates</span>
+              <span className="ml-2 text-xs text-muted-foreground">{PLATFORM_STATS.documents} templates</span>
             </CommandItem>
           </CommandGroup>
           

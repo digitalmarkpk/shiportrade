@@ -1,5 +1,5 @@
 // Shiportrade.com - Complete Tool Categories
-// 27 Modules with 150+ Tools, 120+ Documents, 70+ Glossary Terms
+// 27 Modules — counts exported via platform-stats.ts (tools, documents, modules)
 
 export interface ToolCategory {
   id: string;
@@ -607,7 +607,8 @@ export function getCategoryBySlug(slug: string): ToolCategory | undefined {
 }
 
 export const totalToolsCount = toolCategories.reduce((sum, cat) => sum + cat.tools.length, 0);
-export const totalCategoriesCount = toolCategories.length - 1; // Exclude documents category
+/** Tool/module categories in catalog (includes Documents module). */
+export const totalModulesCount = toolCategories.length;
 
 // =====================================================
 // MODULE METADATA - SINGLE SOURCE OF TRUTH
