@@ -14072,3 +14072,151 @@ Each trade category has comprehensive educational content including:
 - API endpoints working correctly (200 status)
 - No build errors
 
+---
+## Project Status Update — 25 May 2026
+
+### Executive Summary
+Shiportrade.com is a production-ready Next.js 16 supply chain intelligence platform. The catalog and routing layer are complete; the main gap is **marketing copy** on several pages still advertising older counts (82+ tools / 72+ documents) while the platform catalog and tools hub already reflect **190 tools** and **120 documents**.
+
+### Repository Snapshot
+| Item | Value |
+|------|-------|
+| Branch | `main` |
+| Latest commit | `de58a33` — homepage edit (27 Apr 2026) |
+| Package version | `0.2.0` |
+| Source files (`.ts` / `.tsx` in `src/`) | 658 |
+| Lines of code (`src/`) | ~376,500 |
+| Untracked | `shiportrade/` (local folder, not committed) |
+
+### Platform Catalog (Source of Truth: `src/lib/constants/tools.ts`)
+| Category | Count | Target | Status |
+|----------|-------|--------|--------|
+| Modules | **27** | 27 | Met |
+| Tools / Calculators | **190** | 150+ | Exceeded |
+| Document categories | **12** | 12 | Met |
+| Document templates | **120** | 120+ | Met |
+| Glossary terms | **74** | 70+ | Exceeded |
+
+### Tools by Module (190 total)
+| Module | Tools |
+|--------|-------|
+| International Trade & E-Commerce | 21 |
+| Ocean Freight & Container Logistics | 27 |
+| Air Freight | 5 |
+| Road, Rail & Multimodal | 14 |
+| Customs & Compliance | 8 |
+| Warehousing & Inventory Science | 18 |
+| E-Commerce & Digital Trade | 13 |
+| Insurance & Actuarial Risk | 10 |
+| Sustainability & ESG | 5 |
+| Project Cargo & Engineering | 4 |
+| Blockchain & Digital Supply Chain | 2 |
+| Financial & Payment Tools | 4 |
+| Logistics Planning | 4 |
+| Inventory Management | 4 |
+| Trade Finance | 4 |
+| Supply Chain Analytics | 4 |
+| Quality Control | 3 |
+| Packaging & Labeling | 3 |
+| Last Mile Delivery | 3 |
+| Dangerous Goods | 3 |
+| Cold Chain Management | 3 |
+| Customs Brokerage | 3 |
+| Freight Forwarding | 3 |
+| Trade Compliance Advanced | 3 |
+| Vessel Operations | 3 |
+| Port Operations | 3 |
+| Trade Document Generators | 13 |
+
+### Document Categories (120 total)
+| Category | Documents |
+|----------|-----------|
+| Trade Documents | 8 |
+| Shipping Documents | 12 |
+| Customs Documents | 10 |
+| Finance Documents | 11 |
+| Insurance Documents | 6 |
+| Inspection Documents | 7 |
+| Dangerous Goods Documents | 6 |
+| Phytosanitary Documents | 5 |
+| Food & Agricultural Documents | 8 |
+| Other Documents | 24 |
+| Logistics Documents | 11 |
+| Legal Documents | 12 |
+
+### Codebase & Routing
+| Asset | Count |
+|-------|-------|
+| App Router pages (`src/app/**/page.tsx`) | **281** |
+| Tool route pages (`src/app/tools/**`) | **202** |
+| Tool React components (`src/components/tools/`) | **182** |
+| Total React components (`src/components/`) | **299** |
+| API routes (`src/app/api/**/route.ts`) | **14** |
+| HS codes in reference data | **387** |
+
+### Major Feature Areas (page counts)
+| Area | Pages |
+|------|-------|
+| Tools | 202 |
+| Documents | 25 |
+| Directories | 11 |
+| Trade / Market data | 10 |
+| Trade Intelligence | 6 |
+| Marketplace | 5 |
+| Knowledge base | 2 |
+| News | 2 |
+| Community | 1 |
+
+### Directory & Reference Data
+| Dataset | Count | Source |
+|---------|-------|--------|
+| Ports (UN/LOCODE database) | **36,930** | `public/data/ports-main.json` |
+| Countries (ports directory) | **196** | `public/data/countries-info.json` |
+| Shipping lines | **54** | `src/lib/data/shipping-lines.ts` |
+| Freight forwarders | **15** | `src/lib/data/freight-forwarders.ts` |
+| Air cargo carriers | **15** | `src/lib/data/air-cargo-carriers.ts` |
+| World countries (static reference) | **66** | `src/lib/constants/world-ports-data.ts` |
+| Static world ports (reference subset) | **274** | `getWorldStatistics()` |
+
+### Technology Stack
+- **Framework:** Next.js 16 (App Router), TypeScript 5, Tailwind CSS 4
+- **UI:** shadcn/ui, Radix UI, Framer Motion, Recharts
+- **Data:** Prisma (SQLite), JSON port datasets, TanStack Query
+- **Auth:** NextAuth.js (configured)
+- **SEO:** JSON-LD schema components (`src/components/seo/`)
+
+### Completion vs. Targets
+| Goal | Target | Actual | Result |
+|------|--------|--------|--------|
+| Modules | 27 | 27 | Complete |
+| Tools | 150+ | 190 | Complete |
+| Documents | 120+ | 120 | Complete |
+| Glossary | 70+ | 74 | Complete |
+| App pages | 270+ | 281 | Complete |
+| Port database | 8,000+ (marketing) | 36,930 | Exceeded |
+
+### Marketing Copy Alignment (Action Items)
+Several surfaces still show legacy statistics. Canonical numbers should be **190 tools**, **120 documents**, **27 modules**, **74 glossary terms**.
+
+| Location | Current copy | Should be |
+|----------|--------------|-----------|
+| `src/app/page.tsx` (hero stats) | 82 calculators, 72 documents | 190 tools, 120 documents |
+| `src/app/layout.tsx` (meta description) | 82+ calculators, 72+ documents | 190+ tools, 120+ documents |
+| `src/app/pricing/page.tsx` | 82+ calculators, 72+ templates | 190+ tools, 120+ templates |
+| `src/app/register/page.tsx` | 82+ tools, 72+ documents | 190+ tools, 120+ documents |
+| `src/app/tradeflow-hub/page.tsx` | Explore All 82+ Tools | Explore All 190+ Tools |
+| `src/app/tools/page.tsx` | Already shows **190** | Aligned |
+
+### Platform Health
+- **Routing:** Dynamic catch-all routes for tools and documents; module index pages supported
+- **Legal / company pages:** Terms, Privacy, Cookies, GDPR, About, Careers, Contact, Help, API docs
+- **Trade hub:** Commodities, indexes, shares, currencies, crypto, bonds, earnings, freight index, ETFs
+- **Last known build:** 270+ static pages, no build errors (per Apr 2026 worklog entry)
+- **Recommended next step:** Run `bun run build` and `bun run lint` to refresh build verification after this status update
+
+### Stage Summary (25 May 2026)
+- Platform exceeds all original numeric targets (modules, tools, documents, glossary, pages, ports)
+- Core product is feature-complete for MVP / launch readiness
+- Primary follow-up: align homepage, layout meta, pricing, and register copy with catalog statistics (190 / 120 / 27 / 74)
+- Secondary follow-up: commit or `.gitignore` the untracked `shiportrade/` directory
+

@@ -37,7 +37,6 @@ import {
   List,
   BarChart2,
   Zap as Lightning,
-  Newspaper,
   Star,
   Eye,
   EyeOff,
@@ -178,50 +177,6 @@ const tradeCategories = [
   },
 ];
 
-// Market news data (simulated)
-const marketNews = [
-  {
-    id: '1',
-    title: 'Oil prices surge amid Middle East tensions',
-    summary: 'Crude oil futures climbed 2.5% as geopolitical concerns continue to impact supply expectations.',
-    category: 'Energy',
-    time: '2 hours ago',
-    impact: 'positive' as const,
-  },
-  {
-    id: '2',
-    title: 'Federal Reserve signals potential rate cuts',
-    summary: 'Minutes from the latest FOMC meeting suggest the central bank may consider rate reductions.',
-    category: 'Bonds',
-    time: '4 hours ago',
-    impact: 'neutral' as const,
-  },
-  {
-    id: '3',
-    title: 'Gold reaches new all-time high',
-    summary: 'Safe-haven demand pushes gold prices above $2,400 for the first time in history.',
-    category: 'Metals',
-    time: '5 hours ago',
-    impact: 'positive' as const,
-  },
-  {
-    id: '4',
-    title: 'Bitcoin ETF sees record inflows',
-    summary: 'Institutional investors continue to pour capital into spot Bitcoin ETFs.',
-    category: 'Crypto',
-    time: '6 hours ago',
-    impact: 'positive' as const,
-  },
-  {
-    id: '5',
-    title: 'China manufacturing PMI misses estimates',
-    summary: 'Economic data from China shows slower-than-expected manufacturing growth.',
-    category: 'Economy',
-    time: '8 hours ago',
-    impact: 'negative' as const,
-  },
-];
-
 // Top movers data
 interface TopMover {
   symbol: string;
@@ -251,7 +206,6 @@ export default function TradeClient() {
   const [cryptoData, setCryptoData] = useState<MarketItem[]>([]);
   const [lastUpdated, setLastUpdated] = useState<string>('');
   const [searchQuery, setSearchQuery] = useState('');
-  const [showAllNews, setShowAllNews] = useState(false);
   const [autoRefresh, setAutoRefresh] = useState(true);
 
   // Fetch market data
@@ -918,59 +872,6 @@ export default function TradeClient() {
               </div>
             </TabsContent>
           </Tabs>
-        </div>
-      </section>
-
-      {/* Market News Section */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Market News</h2>
-              <p className="text-gray-600 dark:text-gray-400">Latest updates affecting global markets</p>
-            </div>
-            <Button variant="ghost" size="sm" onClick={() => setShowAllNews(!showAllNews)}>
-              {showAllNews ? 'Show Less' : 'View All'}
-              <ChevronRight className={`h-4 w-4 ml-1 transition-transform ${showAllNews ? 'rotate-90' : ''}`} />
-            </Button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {(showAllNews ? marketNews : marketNews.slice(0, 3)).map((news, index) => (
-              <motion.div
-                key={news.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow h-full cursor-pointer">
-                  <CardContent className="p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Badge variant="outline" className="text-xs">{news.category}</Badge>
-                      <Badge 
-                        variant="outline" 
-                        className={
-                          news.impact === 'positive' 
-                            ? 'text-green-600 border-green-200 dark:text-green-400 dark:border-green-800' 
-                            : news.impact === 'negative'
-                            ? 'text-red-600 border-red-200 dark:text-red-400 dark:border-red-800'
-                            : 'text-gray-600 border-gray-200 dark:text-gray-400'
-                        }
-                      >
-                        {news.impact === 'positive' ? '↑ Bullish' : news.impact === 'negative' ? '↓ Bearish' : '→ Neutral'}
-                      </Badge>
-                    </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">{news.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{news.summary}</p>
-                    <div className="flex items-center gap-2 mt-4 text-xs text-gray-500 dark:text-gray-400">
-                      <Clock className="h-3 w-3" />
-                      {news.time}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

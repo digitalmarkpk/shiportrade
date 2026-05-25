@@ -85,9 +85,8 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "/about" },
-    { name: "Blog", href: "/news" },
-    { name: "Marketplace", href: "/marketplace" },
-    { name: "Academy", href: "/tradeflow-hub" },
+    { name: "Trade Intelligence", href: "/trade-intelligence" },
+    { name: "Knowledge Base", href: "/knowledge/trade-finance" },
     { name: "Careers", href: "/careers" },
     { name: "Contact", href: "/contact" },
     { name: "Brand Assets", href: "/logo" },

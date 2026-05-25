@@ -15,7 +15,6 @@ import {
   Calculator,
   FileText,
   Globe,
-  Newspaper,
   DollarSign,
   User,
   Settings,
@@ -52,10 +51,6 @@ import {
   LucideIcon,
   Calendar,
   Coins,
-  Store,
-  Wrench,
-  Users,
-  Handshake,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -429,15 +424,7 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Position 2: News - Simple Link */}
-            <Button variant="ghost" asChild className="h-10 px-4 text-sm font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 dark:text-gray-200 dark:hover:text-emerald-400 dark:hover:bg-emerald-950 transition-colors rounded-xl">
-              <Link href="/news" className="gap-2">
-                <Newspaper className="h-4 w-4" />
-                News
-              </Link>
-            </Button>
-
-            {/* Position 3: Tools Dropdown */}
+            {/* Position 2: Tools Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="gap-2 h-10 px-4 text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 dark:text-gray-200 dark:hover:text-blue-400 dark:hover:bg-blue-950 transition-colors rounded-xl">
@@ -896,232 +883,6 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Position 7: Marketplace Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="gap-2 h-10 px-4 text-sm font-medium text-gray-700 hover:text-emerald-600 hover:bg-emerald-50 dark:text-gray-200 dark:hover:text-emerald-400 dark:hover:bg-emerald-950 transition-colors rounded-xl">
-                  <Store className="h-4 w-4" />
-                  Marketplace
-                  <ChevronDown className="h-3 w-3 opacity-50" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                align="start" 
-                className="w-[950px] p-6 shadow-2xl border border-gray-200 dark:border-gray-700 rounded-2xl bg-white dark:bg-gray-900"
-                sideOffset={12}
-              >
-                {/* 9 Categories in 3-Column Grid */}
-                <div className="grid grid-cols-3 gap-6">
-                  {/* Column 1: Containers, Freight & Shipping, Transport & Trucking */}
-                  <div className="space-y-5">
-                    {/* 1. Containers */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/containers"
-                        className="flex items-center gap-2 font-semibold hover:text-emerald-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Container className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Containers</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/containers/buy" className="block text-xs text-muted-foreground hover:text-emerald-600 hover:translate-x-1 transition-all">Buy Containers</Link>
-                        <Link href="/marketplace/containers/sell" className="block text-xs text-muted-foreground hover:text-emerald-600 hover:translate-x-1 transition-all">Sell Containers</Link>
-                        <Link href="/marketplace/containers/lease" className="block text-xs text-muted-foreground hover:text-emerald-600 hover:translate-x-1 transition-all">Lease Containers</Link>
-                        <Link href="/marketplace/containers/reefer" className="block text-xs text-muted-foreground hover:text-emerald-600 hover:translate-x-1 transition-all">Reefer Containers</Link>
-                        <Link href="/marketplace/containers/special" className="block text-xs text-muted-foreground hover:text-emerald-600 hover:translate-x-1 transition-all">Special Containers</Link>
-                      </div>
-                    </div>
-                    
-                    {/* 2. Freight & Shipping */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/freight"
-                        className="flex items-center gap-2 font-semibold hover:text-cyan-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Ship className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Freight & Shipping</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/freight/quote" className="block text-xs text-muted-foreground hover:text-cyan-600 hover:translate-x-1 transition-all">Get Freight Quote</Link>
-                        <Link href="/marketplace/freight/post" className="block text-xs text-muted-foreground hover:text-cyan-600 hover:translate-x-1 transition-all">Post Shipment (RFQ)</Link>
-                        <Link href="/marketplace/freight/forwarders" className="block text-xs text-muted-foreground hover:text-cyan-600 hover:translate-x-1 transition-all">Find Freight Forwarder</Link>
-                        <Link href="/marketplace/freight/book" className="block text-xs text-muted-foreground hover:text-cyan-600 hover:translate-x-1 transition-all">Book Shipment</Link>
-                      </div>
-                    </div>
-                    
-                    {/* 3. Transport & Trucking */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/transport"
-                        className="flex items-center gap-2 font-semibold hover:text-orange-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Truck className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Transport & Trucking</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/transport/trucks" className="block text-xs text-muted-foreground hover:text-orange-600 hover:translate-x-1 transition-all">Find Truck</Link>
-                        <Link href="/marketplace/transport/post-load" className="block text-xs text-muted-foreground hover:text-orange-600 hover:translate-x-1 transition-all">Post Load</Link>
-                        <Link href="/marketplace/transport/available" className="block text-xs text-muted-foreground hover:text-orange-600 hover:translate-x-1 transition-all">Available Trucks</Link>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Column 2: Warehousing, Vessel & Chartering, Logistics Services */}
-                  <div className="space-y-5">
-                    {/* 4. Warehousing */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/warehousing"
-                        className="flex items-center gap-2 font-semibold hover:text-violet-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Warehouse className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Warehousing</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/warehousing/find" className="block text-xs text-muted-foreground hover:text-violet-600 hover:translate-x-1 transition-all">Find Warehouse</Link>
-                        <Link href="/marketplace/warehousing/list" className="block text-xs text-muted-foreground hover:text-violet-600 hover:translate-x-1 transition-all">List Warehouse</Link>
-                        <Link href="/marketplace/warehousing/cold-storage" className="block text-xs text-muted-foreground hover:text-violet-600 hover:translate-x-1 transition-all">Cold Storage</Link>
-                        <Link href="/marketplace/warehousing/fulfillment" className="block text-xs text-muted-foreground hover:text-violet-600 hover:translate-x-1 transition-all">Fulfillment Centers</Link>
-                      </div>
-                    </div>
-                    
-                    {/* 5. Vessel & Chartering */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/vessels"
-                        className="flex items-center gap-2 font-semibold hover:text-blue-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Anchor className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Vessel & Chartering</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/vessels/charter" className="block text-xs text-muted-foreground hover:text-blue-600 hover:translate-x-1 transition-all">Charter Vessel</Link>
-                        <Link href="/marketplace/vessels/list" className="block text-xs text-muted-foreground hover:text-blue-600 hover:translate-x-1 transition-all">List Vessel</Link>
-                        <Link href="/marketplace/vessels/cargo" className="block text-xs text-muted-foreground hover:text-blue-600 hover:translate-x-1 transition-all">Cargo for Vessel</Link>
-                      </div>
-                    </div>
-                    
-                    {/* 6. Logistics Services */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/services"
-                        className="flex items-center gap-2 font-semibold hover:text-rose-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Handshake className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Logistics Services</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/services/customs" className="block text-xs text-muted-foreground hover:text-rose-600 hover:translate-x-1 transition-all">Customs Clearance</Link>
-                        <Link href="/marketplace/services/forwarders" className="block text-xs text-muted-foreground hover:text-rose-600 hover:translate-x-1 transition-all">Freight Forwarders</Link>
-                        <Link href="/marketplace/services/inspection" className="block text-xs text-muted-foreground hover:text-rose-600 hover:translate-x-1 transition-all">Inspection Services</Link>
-                        <Link href="/marketplace/services/insurance" className="block text-xs text-muted-foreground hover:text-rose-600 hover:translate-x-1 transition-all">Insurance Providers</Link>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Column 3: Equipment & Machinery, Marine Spare Parts, B2B Trade */}
-                  <div className="space-y-5">
-                    {/* 7. Equipment & Machinery */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/equipment"
-                        className="flex items-center gap-2 font-semibold hover:text-slate-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-500 to-gray-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Wrench className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Equipment & Machinery</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/equipment/port" className="block text-xs text-muted-foreground hover:text-slate-600 hover:translate-x-1 transition-all">Port Equipment</Link>
-                        <Link href="/marketplace/equipment/cranes" className="block text-xs text-muted-foreground hover:text-slate-600 hover:translate-x-1 transition-all">Cranes</Link>
-                        <Link href="/marketplace/equipment/handling" className="block text-xs text-muted-foreground hover:text-slate-600 hover:translate-x-1 transition-all">Material Handling</Link>
-                      </div>
-                    </div>
-                    
-                    {/* 8. Marine Spare Parts */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/parts"
-                        className="flex items-center gap-2 font-semibold hover:text-sky-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Wrench className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">Marine Spare Parts</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/parts/engine" className="block text-xs text-muted-foreground hover:text-sky-600 hover:translate-x-1 transition-all">Engine Parts</Link>
-                        <Link href="/marketplace/parts/equipment" className="block text-xs text-muted-foreground hover:text-sky-600 hover:translate-x-1 transition-all">Ship Equipment</Link>
-                        <Link href="/marketplace/parts/navigation" className="block text-xs text-muted-foreground hover:text-sky-600 hover:translate-x-1 transition-all">Navigation Systems</Link>
-                      </div>
-                    </div>
-                    
-                    {/* 9. B2B Trade */}
-                    <div className="space-y-2">
-                      <Link
-                        href="/marketplace/b2b"
-                        className="flex items-center gap-2 font-semibold hover:text-indigo-600 transition-colors group"
-                      >
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
-                          <Users className="h-4 w-4 text-white" />
-                        </div>
-                        <span className="text-sm">B2B Trade</span>
-                      </Link>
-                      <div className="pl-10 space-y-1">
-                        <Link href="/marketplace/b2b/buyers" className="block text-xs text-muted-foreground hover:text-indigo-600 hover:translate-x-1 transition-all">Find Buyers</Link>
-                        <Link href="/marketplace/b2b/suppliers" className="block text-xs text-muted-foreground hover:text-indigo-600 hover:translate-x-1 transition-all">Find Suppliers</Link>
-                        <Link href="/marketplace/b2b/commodities" className="block text-xs text-muted-foreground hover:text-indigo-600 hover:translate-x-1 transition-all">Commodity Listings</Link>
-                        <Link href="/marketplace/b2b/rfqs" className="block text-xs text-muted-foreground hover:text-indigo-600 hover:translate-x-1 transition-all">RFQs</Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <DropdownMenuSeparator className="my-4" />
-                <div className="flex items-center justify-between">
-                  <Link
-                    href="/marketplace"
-                    className="flex items-center text-sm font-semibold text-emerald-600 hover:underline gap-1 py-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-emerald-950/50 transition-colors"
-                  >
-                    <Store className="h-4 w-4" />
-                    Browse Full Marketplace
-                    <ChevronRight className="h-4 w-4" />
-                  </Link>
-                  <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <CheckCircle className="h-3 w-3 text-green-500" />
-                      Verified Listings
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Globe className="h-3 w-3 text-blue-500" />
-                      Global Network
-                    </span>
-                  </div>
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* Position 8: TradeFlow Hub - Lighter Ghost Style */}
-            <Button variant="ghost" asChild className="h-10 px-4 text-sm font-medium text-gray-700 hover:text-emerald-500 hover:bg-emerald-50/50 dark:text-gray-300 dark:hover:text-emerald-400 dark:hover:bg-emerald-950/50 transition-colors rounded-xl">
-              <Link href="/tradeflow-hub" className="gap-2">
-                <Sparkles className="h-4 w-4" />
-                TradeFlow Hub
-                <Badge className="ml-1 px-1.5 py-0 text-[10px] bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 border-0">NEW</Badge>
-              </Link>
-            </Button>
           </nav>
 
           {/* Right Side Actions */}
@@ -1310,27 +1071,9 @@ export function Header() {
                           <p className="text-xs text-muted-foreground">Quantum AI intelligence</p>
                         </div>
                       </Link>
-                      {/* TradeFlow Hub - Featured */}
-                      <Link
-                        href="/tradeflow-hub"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors group"
-                      >
-                        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/80 to-teal-500/80 flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
-                          <Sparkles className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <span className="font-semibold text-emerald-600 transition-colors flex items-center gap-2">
-                            TradeFlow Hub
-                            <Badge className="text-[10px] bg-emerald-500 text-white border-0">NEW</Badge>
-                          </span>
-                          <p className="text-xs text-muted-foreground">Your personalized dashboard</p>
-                        </div>
-                      </Link>
                       {[
                         { icon: Layers, label: "Modules", href: "/modules", color: "bg-gradient-to-br from-cyan-500 to-blue-500", desc: "27 categories" },
-                        { icon: Newspaper, label: "News", href: "/news", color: "bg-gradient-to-br from-emerald-500 to-teal-500", desc: "Latest updates" },
-                        { icon: Calculator, label: "Tools", href: "/tools", color: "icon-ocean", desc: "150+ calculators" },
+                        { icon: Calculator, label: "Tools", href: "/tools", color: "icon-ocean", desc: "190+ calculators" },
                         { icon: FileText, label: "Documents", href: "/documents", color: "icon-logistics", desc: "120+ templates" },
                         { icon: Globe, label: "Directories", href: "/directories/ports", color: "icon-air", desc: "Global ports" },
                       ].map((item) => {
@@ -1382,11 +1125,6 @@ export function Header() {
               <Bot className="mr-3 h-4 w-4 text-blue-500" />
               AI Search Engine
               <Badge className="ml-2 text-[10px] bg-blue-500 text-white border-0">NEW</Badge>
-            </CommandItem>
-            <CommandItem onSelect={() => { setIsSearchOpen(false); window.location.href = "/tradeflow-hub"; }}>
-              <Sparkles className="mr-3 h-4 w-4 text-emerald-500" />
-              TradeFlow Hub
-              <Badge className="ml-2 text-[10px] bg-emerald-500 text-white border-0">NEW</Badge>
             </CommandItem>
             <CommandItem onSelect={() => { setIsSearchOpen(false); window.location.href = "/modules"; }}>
               <Layers className="mr-3 h-4 w-4 text-cyan-500" />
