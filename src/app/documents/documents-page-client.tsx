@@ -63,7 +63,7 @@ import {
   GitCompare,
   Clock,
   Ban,
-  ClipboardAlert,
+  ClipboardEdit,
   Droplet,
   Move,
   Fuel,

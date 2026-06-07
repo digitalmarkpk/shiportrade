@@ -103,7 +103,6 @@ const footerLinks = {
     { name: "Terms of Service", href: "/terms" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Cookie Policy", href: "/cookies" },
-    { name: "GDPR Compliance", href: "/gdpr" },
   ],
 };
 
@@ -341,7 +340,7 @@ export function Footer() {
               <span>© {new Date().getFullYear()} Shiportrade.com</span>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <div className="flex flex-wrap justify-center gap-4 text-xs">
               {footerLinks.legal.map((link) => (
                 <Link
                   key={link.href}
@@ -351,6 +350,12 @@ export function Footer() {
                   {link.name}
                 </Link>
               ))}
+              <Link
+                href="/gdpr"
+                className="text-muted-foreground/60 hover:text-foreground transition-colors"
+              >
+                GDPR
+              </Link>
             </div>
             
             <div className="flex items-center gap-2 text-sm text-muted-foreground">

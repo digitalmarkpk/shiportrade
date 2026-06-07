@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Packing List",
   description: "A packing list is a shipping document that accompanies delivery packages, usually inside an attached pouch or inside the package itself. It lists the contents of the package.",
   fields: [

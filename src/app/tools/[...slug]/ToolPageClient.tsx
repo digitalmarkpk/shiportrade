@@ -65,9 +65,9 @@ import {
   type ModuleMetadata 
 } from "@/lib/constants/tools";
 import { 
-  type ModuleSEOData, 
   type ToolSEOData,
-  generateFAQStructuredData 
+  generateFAQSchema,
+  moduleSEOData
 } from "@/lib/constants/seoData";
 import { type ModuleContent } from "@/lib/constants/moduleContent";
 
@@ -142,7 +142,7 @@ interface ToolPageProps {
 // Props for Module page
 interface ModulePageProps {
   category: ToolCategory;
-  moduleSeo: Record<string, ModuleSEOData>;
+  moduleSeo: Record<string, ModuleContent>;
   moduleContent: ModuleContent | null;
   moduleMetadata: ModuleMetadata | undefined;
   relatedDocuments: (Document & { categorySlug: string })[];
@@ -171,7 +171,7 @@ function ToolDetailView({ category, tool, toolSeo, moduleSlug, breadcrumbData }:
   const Icon = iconMap[category.icon] || Calculator;
   
   // Generate FAQ structured data
-  const faqStructuredData = toolSeo?.faqs ? generateFAQStructuredData(toolSeo.faqs) : null;
+  const faqStructuredData = toolSeo?.faq?.length ? generateFAQSchema(toolSeo.faq) : null;
   
   // Get related tools
   const relatedTools = category.tools.filter(t => t.id !== tool.id).slice(0, 4);
@@ -241,7 +241,7 @@ function ToolDetailView({ category, tool, toolSeo, moduleSlug, breadcrumbData }:
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-6">
-                  {toolSeo?.useCase || tool.description}
+                  {toolSeo?.introduction || tool.description}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button asChild className={`bg-gradient-to-r ${colors.gradient} text-white`}>
@@ -325,7 +325,7 @@ function ToolDetailView({ category, tool, toolSeo, moduleSlug, breadcrumbData }:
             </Card>
 
             {/* FAQ Section */}
-            {toolSeo?.faqs && toolSeo.faqs.length > 0 && (
+            {toolSeo?.faq && toolSeo.faq.length > 0 && (
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg">
@@ -335,7 +335,7 @@ function ToolDetailView({ category, tool, toolSeo, moduleSlug, breadcrumbData }:
                 </CardHeader>
                 <CardContent>
                   <Accordion type="single" collapsible className="w-full">
-                    {toolSeo.faqs.map((faq, index) => (
+                    {toolSeo.faq.map((faq, index) => (
                       <AccordionItem key={index} value={`faq-${index}`}>
                         <AccordionTrigger className="text-left font-medium">
                           {faq.question}
@@ -456,7 +456,7 @@ function ModuleDetailView({
   const seoData = moduleSeo[moduleSlug];
   
   // Generate FAQ structured data
-  const faqStructuredData = seoData?.faqs ? generateFAQStructuredData(seoData.faqs) : null;
+  const faqStructuredData = null;
   
   return (
     <div className="min-h-screen bg-background">
@@ -495,7 +495,7 @@ function ModuleDetailView({
           </motion.div>
           
           <p className="text-lg text-muted-foreground max-w-2xl mb-6">
-            {seoData?.longDescription || category.description}
+            {seoData?.aboutModule || category.description}
           </p>
           
           <div className="flex items-center gap-4 flex-wrap">
@@ -633,7 +633,7 @@ function ModuleDetailView({
             </CardHeader>
             <CardContent>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {(seoData?.useCases || moduleContent.industryApplications).map((application, index) => (
+                {(seoData?.industryApplications || moduleContent.industryApplications).map((application, index) => (
                   <div key={index} className="p-3 bg-background rounded-lg border">
                     <p className="text-sm text-muted-foreground">{application}</p>
                   </div>

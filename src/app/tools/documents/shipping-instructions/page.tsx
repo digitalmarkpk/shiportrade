@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Shipping Instructions",
   description: "Shipping instructions provide detailed information to the carrier about how to handle and transport cargo, including special requirements and documentation.",
   fields: [

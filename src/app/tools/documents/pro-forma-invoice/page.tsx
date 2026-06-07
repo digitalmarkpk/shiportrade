@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Pro Forma Invoice",
   description: "A pro forma invoice is a preliminary bill of sale sent to buyers in advance of a shipment or delivery of goods. It describes the purchased items and other important information.",
   fields: [

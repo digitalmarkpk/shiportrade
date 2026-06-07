@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Certificate of Origin",
   description: "A Certificate of Origin is a document certifying that the goods in a particular shipment are of a certain origin. It is often required by customs authorities.",
   fields: [

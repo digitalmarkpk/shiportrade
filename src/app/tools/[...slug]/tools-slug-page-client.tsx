@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { notFound } from 'next/navigation';
 import { motion } from "framer-motion";
 import {
   Calculator,
@@ -170,74 +171,16 @@ export default function ModuleOrToolPage({ slug }: { slug: string[] }) {
 
     // Case 1: Tool does not exist in catalog at all
     if (!tool) {
-      return (
-        <div className="min-h-screen bg-background flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Tool Not Found</h1>
-            <p className="text-muted-foreground mb-6">The tool &quot;{toolSlug}&quot; doesn&apos;t exist in {category.name}.</p>
-            <div className="flex gap-4 justify-center">
-              <Button asChild variant="outline">
-                <Link href={`/tools/${moduleSlug}`}>View {category.name}</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/tools">All Tools</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      );
+      notFound();
+      return null;
     }
 
     // Case 2: Tool exists but is "Coming Soon" (Not Implemented)
     const isComingSoon = COMING_SOON_MODULES.includes(moduleSlug) || COMING_SOON_TOOLS.includes(toolSlug);
 
     if (isComingSoon) {
-      return (
-        <div className="min-h-screen bg-gradient-to-b from-background to-muted/20 flex items-center justify-center p-4">
-          <Card className="max-w-lg w-full text-center shadow-xl border-t-4 border-amber-400 dark:border-amber-600">
-            <CardHeader className="pt-8">
-              <div className="mx-auto bg-amber-100 dark:bg-amber-900/50 w-20 h-20 rounded-full flex items-center justify-center mb-6 ring-4 ring-amber-100 dark:ring-amber-900">
-                <Construction className="h-10 w-10 text-amber-600 dark:text-amber-400" />
-              </div>
-              <Badge className="mx-auto mb-4 bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300 hover:bg-amber-100">
-                Coming Soon
-              </Badge>
-              <CardTitle className="text-3xl font-bold">{tool.name}</CardTitle>
-              <CardDescription className="text-base pt-2 text-muted-foreground">
-                This tool is currently under active development.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="pb-8">
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                We are working hard to bring you this feature. It will be available in the next update. Stay tuned!
-              </p>
-              
-              <div className="bg-muted/50 rounded-lg p-4 mb-8 text-left">
-                <h3 className="font-semibold mb-2 flex items-center gap-2 text-sm uppercase tracking-wide text-muted-foreground">
-                  <Info className="h-4 w-4" /> Expected Features
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {tool.description}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button asChild variant="outline" className="border-amber-300 dark:border-amber-700 hover:bg-amber-50 dark:hover:bg-amber-950">
-                  <Link href={`/tools/${moduleSlug}`}>
-                    <ArrowRight className="h-4 w-4 mr-2 rotate-180" />
-                    Back to {category.name}
-                  </Link>
-                </Button>
-                <Button asChild className="bg-amber-500 hover:bg-amber-600 text-white">
-                  <Link href="/contact">
-                    Notify Me When Ready
-                  </Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      );
+      notFound();
+      return null;
     }
 
     // Case 3: Tool is Working (Show Normal Page)

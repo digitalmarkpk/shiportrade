@@ -24,6 +24,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.shiportrade.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Shiportrade.com - Global Supply Chain Intelligence Hub",
   description: META_PLATFORM_DESCRIPTION,
   keywords: ["logistics", "freight", "supply chain", "trade finance", "CBM calculator", "HS code", "landed cost", "shipping documents", "Incoterms"],
@@ -36,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shiportrade.com - Global Supply Chain Intelligence Hub",
     description: "The ultimate platform for global logistics, trade finance, and supply chain management.",
-    url: "https://shiportrade.com",
+    url: "https://www.shiportrade.com",
     siteName: "Shiportrade",
     type: "website",
     images: [

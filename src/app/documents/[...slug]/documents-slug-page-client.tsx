@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { notFound } from 'next/navigation';
 import { motion } from "framer-motion";
 import {
   FileText,
@@ -53,17 +54,7 @@ export default function DocumentModulePage({ slug }: { slug: string[] }) {
   const category = documentCategories.find(c => c.slug === moduleSlug || c.id === moduleSlug);
 
   if (!category) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Document Category Not Found</h1>
-          <p className="text-muted-foreground mb-6">The category &quot;{moduleSlug}&quot; doesn&apos;t exist.</p>
-          <Button asChild>
-            <Link href="/documents">Back to Documents</Link>
-          </Button>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   const colors = categoryColors[category.slug] || categoryColors[category.id] || categoryColors["trade-documents"];
@@ -74,22 +65,7 @@ export default function DocumentModulePage({ slug }: { slug: string[] }) {
     const document = category.documents.find(d => d.slug === documentSlug);
 
     if (!document) {
-      return (
-        <div className="min-h-screen bg-background flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Document Not Found</h1>
-            <p className="text-muted-foreground mb-6">The document &quot;{documentSlug}&quot; doesn&apos;t exist in {category.name}.</p>
-            <div className="flex gap-4 justify-center">
-              <Button asChild variant="outline">
-                <Link href={`/documents/${category.slug}`}>View {category.name}</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/documents">All Documents</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      );
+      notFound();
     }
 
     // Show document page

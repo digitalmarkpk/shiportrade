@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 
+import { notFound } from 'next/navigation';
 import { useMemo } from "react";
 import Link from "next/link";
 import {
@@ -79,29 +80,8 @@ export default function DocumentGeneratorPage({
   }, [categorySlug, documentSlug]);
 
   if (!category || !document) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-            <FileText className="h-10 w-10 text-slate-400" />
-          </div>
-          <h1 className="text-2xl font-bold mb-2">Document Not Found</h1>
-          <p className="text-muted-foreground mb-6">
-            The document you're looking for doesn't exist or has been moved.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Button asChild variant="outline">
-              <Link href={`/documents/${categorySlug || ''}`}>
-                View Category
-              </Link>
-            </Button>
-            <Button asChild>
-              <Link href="/documents">All Documents</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-    );
+    notFound();
+    return null;
   }
 
   return <Generator />;

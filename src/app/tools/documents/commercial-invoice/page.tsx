@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Commercial Invoice",
   description: "A commercial invoice is a legal document between a supplier and a customer that clearly describes the sold goods and the amount due. It is required for customs clearance and is used to calculate duties and taxes.",
   fields: [

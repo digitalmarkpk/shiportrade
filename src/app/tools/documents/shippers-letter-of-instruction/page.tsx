@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Shipper's Letter of Instruction",
   description: "An SLI is a document from the shipper to the freight forwarder with detailed instructions on how to handle an export shipment, including documentation requirements.",
   fields: [

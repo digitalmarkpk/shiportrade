@@ -257,6 +257,17 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'shiportrade.com',
+          },
+        ],
+        destination: 'https://www.shiportrade.com/:path*',
+        permanent: true,
+      },
+      {
         source: '/tools/ocean-freight/port-code-finder',
         destination: '/directories/ports',
         permanent: true,

@@ -3282,7 +3282,7 @@ export function generateDocumentSchema(doc: DocumentSEOData, url: string) {
       "name": "Shiportrade",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://shiportrade.com/logo.svg"
+        "url": "https://www.shiportrade.com/logo.svg"
       }
     }
   };
@@ -3364,7 +3364,7 @@ export function generateModuleStructuredData(moduleSlug: string, url: string) {
     "provider": {
       "@type": "Organization",
       "name": "Shiportrade",
-      "url": "https://shiportrade.com"
+      "url": "https://www.shiportrade.com"
     },
     "educationalLevel": "Professional",
     "about": {

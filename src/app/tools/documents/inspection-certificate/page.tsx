@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Inspection Certificate",
   description: "An inspection certificate is a document certifying that goods have been inspected and meet specified standards. It is often required by importers and regulatory authorities.",
   fields: [

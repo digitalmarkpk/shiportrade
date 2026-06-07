@@ -1,8 +1,9 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
-const template = {
+const template: DocumentTemplate = {
   title: "Bill of Lading",
   description: "A Bill of Lading is a legal document issued by a carrier to acknowledge receipt of cargo for shipment. It serves as a receipt, contract of carriage, and document of title.",
   fields: [

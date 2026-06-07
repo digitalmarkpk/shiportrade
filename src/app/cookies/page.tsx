@@ -177,9 +177,6 @@ export default function CookiesPage() {
         <Button asChild variant="outline">
           <Link href="/terms">Terms of Service</Link>
         </Button>
-        <Button asChild variant="outline">
-          <Link href="/gdpr">GDPR Compliance</Link>
-        </Button>
       </div>
     </div>
   );

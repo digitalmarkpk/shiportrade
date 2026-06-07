@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Export Declaration",
   description: "An export declaration is a formal document submitted to customs authorities declaring goods being exported, including their value, classification, and destination.",
   fields: [

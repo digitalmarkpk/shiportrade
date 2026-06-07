@@ -17,9 +17,9 @@ export interface WebSiteSchemaProps {
 
 const defaultWebSiteData = {
   name: "Shiportrade",
-  url: "https://shiportrade.com",
+  url: "https://www.shiportrade.com",
   description: "Global trade and logistics intelligence platform",
-  searchUrl: "https://shiportrade.com/ai-search"
+  searchUrl: "https://www.shiportrade.com/ai-search"
 };
 
 export function WebSiteSchema({

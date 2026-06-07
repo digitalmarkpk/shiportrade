@@ -9,7 +9,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { FileText, Download, Printer, Eye, Edit3, AlertCircle, Info } from 'lucide-react';
 
-interface DocumentField {
+export interface DocumentField {
   name: string;
   label: string;
   type: 'text' | 'date' | 'number' | 'textarea' | 'select';
@@ -18,7 +18,7 @@ interface DocumentField {
   options?: string[];
 }
 
-interface DocumentTemplate {
+export interface DocumentTemplate {
   title: string;
   description: string;
   fields: DocumentField[];

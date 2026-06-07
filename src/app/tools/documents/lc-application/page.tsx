@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Letter of Credit Application",
   description: "A Letter of Credit application is submitted to a bank to open an LC for international trade transactions, providing payment security for both buyer and seller.",
   fields: [

@@ -235,9 +235,6 @@ export default function PrivacyPage() {
         <Button asChild variant="outline">
           <Link href="/cookies">Cookie Policy</Link>
         </Button>
-        <Button asChild variant="outline">
-          <Link href="/gdpr">GDPR Compliance</Link>
-        </Button>
       </div>
     </div>
   );

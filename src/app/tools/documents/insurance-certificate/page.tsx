@@ -1,9 +1,10 @@
 "use client";
 
 import DocumentGenerator from "@/components/tools/DocumentGenerator";
+import type { DocumentTemplate } from "@/components/tools/DocumentGenerator";
 
 
-const template = {
+const template: DocumentTemplate = {
   title: "Insurance Certificate",
   description: "An insurance certificate is a document that provides evidence of insurance coverage for a specific shipment. It is often required by banks and buyers.",
   fields: [

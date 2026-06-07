@@ -20,8 +20,8 @@ export interface OrganizationSchemaProps {
 
 const defaultOrganizationData = {
   name: "Shiportrade",
-  url: "https://shiportrade.com",
-  logo: "https://shiportrade.com/logo.png",
+  url: "https://www.shiportrade.com",
+  logo: "https://www.shiportrade.com/logo.png",
   description: "Global trade and logistics intelligence platform providing calculators, document generators, and comprehensive trade intelligence for supply chain professionals.",
   sameAs: [
     "https://linkedin.com/company/shiportrade",
